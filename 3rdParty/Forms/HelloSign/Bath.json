@@ -1,0 +1,4392 @@
+[
+  {
+    "key": "buyerAddress",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Address",
+      "placeholder": "",
+      "description": " Buyer Address",
+      "required": true
+    }
+  },
+  {
+    "key": "city",
+    "type": "input",
+    "templateOptions": {
+      "label": " City",
+      "placeholder": "",
+      "description": " City",
+      "required": true
+    }
+  },
+  {
+    "key": "state",
+    "type": "input",
+    "templateOptions": {
+      "label": " State",
+      "placeholder": "",
+      "description": " State",
+      "required": true
+    }
+  },
+  {
+    "key": "zip",
+    "type": "input",
+    "templateOptions": {
+      "label": " Zip",
+      "placeholder": "",
+      "description": " Zip",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerName",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Name",
+      "placeholder": "",
+      "description": " Buyer Name",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerPhone",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Phone",
+      "placeholder": "",
+      "description": " Buyer Phone",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerMail",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Mail",
+      "placeholder": "",
+      "description": " Buyer Mail",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerFinancing",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Buyer Financing",
+      "description": " Buyer Financing",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeToilet",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Toilet",
+      "description": " Remove Toilet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeToiletandVanity",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Toiletand Vanity",
+      "description": " Remove Toiletand Vanity",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeTubDeckingShowerBase",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Tub Decking Shower Base",
+      "description": " Remove Tub Decking Shower Base",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeAllFixtures",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove All Fixtures",
+      "description": " Remove All Fixtures",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "capWaterLines",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Cap Water Lines",
+      "description": " Cap Water Lines",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "partialGut",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Partial Gut",
+      "description": " Partial Gut",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "partialGutApproxSf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Partial Gut Approx S F",
+      "placeholder": "",
+      "description": " Partial Gut Approx S F",
+      "required": true
+    }
+  },
+  {
+    "key": "otherArea",
+    "type": "input",
+    "templateOptions": {
+      "label": " Other Area",
+      "placeholder": "",
+      "description": " Other Area",
+      "required": true
+    }
+  },
+  {
+    "key": "otherAreaSf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Other Area S F",
+      "placeholder": "",
+      "description": " Other Area S F",
+      "required": true
+    }
+  },
+  {
+    "key": "gutAllInteriorBathroomWall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gut All Interior Bathroom Wall",
+      "description": " Gut All Interior Bathroom Wall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "firOverMudsetTile",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Fir Over Mudset Tile",
+      "description": " Fir Over Mudset Tile",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeNonLoadBearingWall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Non Load Bearing Wall",
+      "description": " Remove Non Load Bearing Wall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "header",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Header",
+      "description": " Header",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "noHeaderperDesign",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " No Headerper Design",
+      "description": " No Headerper Design",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeNonLoadWallApproxLf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Remove Non Load Wall Approx L F",
+      "placeholder": "",
+      "description": " Remove Non Load Wall Approx L F",
+      "required": true
+    }
+  },
+  {
+    "key": "removeLoadBearingWallHeader",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Load Bearing Wall Header",
+      "description": " Remove Load Bearing Wall Header",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeLoadWallHeaderApproxLf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Remove Load Wall Header Approx L F",
+      "placeholder": "",
+      "description": " Remove Load Wall Header Approx L F",
+      "required": true
+    }
+  },
+  {
+    "key": "removeItemCloset",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Item Closet",
+      "description": " Remove Item Closet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "leaveItemCloset",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Leave Item Closet",
+      "description": " Leave Item Closet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "haulAwayJobDebris",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Haul Away Job Debris",
+      "description": " Haul Away Job Debris",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "homeownerWillKeepCheckbox",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Homeowner Will Keep Checkbox",
+      "description": " Homeowner Will Keep Checkbox",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "homeownerWillKeep",
+    "type": "input",
+    "templateOptions": {
+      "label": " Homeowner Will Keep",
+      "placeholder": "",
+      "description": " Homeowner Will Keep",
+      "required": true
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "firFrameExistingWall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Fir Frame Existing Wall",
+      "description": " Fir Frame Existing Wall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "extendWindowDoorJambo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Extend Window Door Jambo",
+      "description": " Extend Window Door Jambo",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "buildNewWallsDesign",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Build New Walls Design",
+      "description": " Build New Walls Design",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "fireBlockBathroom",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Fire Block Bathroom",
+      "description": " Fire Block Bathroom",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "relocateHvaCductColdAir",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Relocate H V A Cduct Cold Air",
+      "description": " Relocate H V A Cduct Cold Air",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "relocateHvacDuctintoCabinet",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Relocate H V A C Ductinto Cabinet",
+      "description": " Relocate H V A C Ductinto Cabinet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "insulateExteriorBathWall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Insulate Exterior Bath Wall",
+      "description": " Insulate Exterior Bath Wall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "closeOffWindowInsideOnly",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Close Off Window Inside Only",
+      "description": " Close Off Window Inside Only",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "frameCustomPlatform",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Frame Custom Platform",
+      "description": " Frame Custom Platform",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "frame12Wall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Frame1/2 Wall",
+      "description": " Frame1/2 Wall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "approximateHeight",
+    "type": "input",
+    "templateOptions": {
+      "label": " Approximate Height",
+      "placeholder": "",
+      "description": " Approximate Height",
+      "required": true
+    }
+  },
+  {
+    "key": "sillMaterialColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Sill Material Color",
+      "placeholder": "",
+      "description": " Sill Material Color",
+      "required": true
+    }
+  },
+  {
+    "key": "applyApproximately",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Apply Approximately",
+      "description": " Apply Approximately",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sfOfDryWall",
+    "type": "input",
+    "templateOptions": {
+      "label": " Sf Of Dry Wall",
+      "placeholder": "",
+      "description": " Sf Of Dry Wall",
+      "required": true
+    }
+  },
+  {
+    "key": "installWaterproofBacker",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Waterproof Backer",
+      "description": " Install Waterproof Backer",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "removeExistingSoffitPatchAdjoining",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Existing Soffit Patch Adjoining",
+      "description": " Remove Existing Soffit Patch Adjoining",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "existingSoffitToAcceptNewDesign",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Existing Soffit To Accept New Design",
+      "description": " Existing Soffit To Accept New Design",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "addNewSoffit",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Add New Soffit",
+      "description": " Add New Soffit",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "approximatelyLf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Approximately L F",
+      "placeholder": "",
+      "description": " Approximately L F",
+      "required": true
+    }
+  },
+  {
+    "key": "removeSuspendedCeilingDamaged",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Suspended Ceiling Damaged",
+      "description": " Remove Suspended Ceiling Damaged",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "damagePlasterorDryWall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Damage Plasteror Dry Wall",
+      "description": " Damage Plasteror Dry Wall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "approximatelySf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Approximately S F",
+      "placeholder": "",
+      "description": " Approximately S F",
+      "required": true
+    }
+  },
+  {
+    "key": "repairMinorCracksCeiling",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Repair Minor Cracks Ceiling",
+      "description": " Repair Minor Cracks Ceiling",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "laminateNewDrywall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Laminate New Drywall",
+      "description": " Laminate New Drywall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "newDrywallApproximatelySf",
+    "type": "input",
+    "templateOptions": {
+      "label": " New Drywall Approximately S F",
+      "placeholder": "",
+      "description": " New Drywall Approximately S F",
+      "required": true
+    }
+  },
+  {
+    "key": "frameDownBelowExistingCeiling",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Frame Down Below Existing Ceiling",
+      "description": " Frame Down Below Existing Ceiling",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installNew2X2",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install New2x2",
+      "description": " Install New2x2",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "ceilingApproximately",
+    "type": "input",
+    "templateOptions": {
+      "label": " Ceiling Approximately",
+      "placeholder": "",
+      "description": " Ceiling Approximately",
+      "required": true
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "noFlooringWork",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " No Flooring Work",
+      "description": " No Flooring Work",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeCarpetVinylLaminateHardwood",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Carpet Vinyl Laminate Hardwood",
+      "description": " Remove Carpet Vinyl Laminate Hardwood",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeThinsetCeramic",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Thinset Ceramic",
+      "description": " Remove Thinset Ceramic",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "remove1MudsetTileFloor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove1\" Mudset Tile Floor",
+      "description": " Remove1\" Mudset Tile Floor",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "remove3Or6InchMudsetTile",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove3\"or6\"inch Mudset Tile",
+      "description": " Remove3\"or6\"inch Mudset Tile",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeDamagesubFloor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Damagesub Floor",
+      "description": " Remove Damagesub Floor",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeSubFloorApproximatelySf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Remove Sub Floor Approximately S F",
+      "placeholder": "",
+      "description": " Remove Sub Floor Approximately S F",
+      "required": true
+    }
+  },
+  {
+    "key": "replaceFloorJoists",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Floor Joists",
+      "description": " Replace Floor Joists",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "patchSubFloor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Patch Sub Floor",
+      "description": " Patch Sub Floor",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "subFloorApproximatelySf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Sub Floor Approximately S F",
+      "placeholder": "",
+      "description": " Sub Floor Approximately S F",
+      "required": true
+    }
+  },
+  {
+    "key": "areaPatch",
+    "type": "input",
+    "templateOptions": {
+      "label": " Area Patch",
+      "placeholder": "",
+      "description": " Area Patch",
+      "required": true
+    }
+  },
+  {
+    "key": "installUnderlayment",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Underlayment",
+      "description": " Install Underlayment",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "14LauanPlywood",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 1/4\" Lauan Plywood",
+      "description": " 1/4\" Lauan Plywood",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "liquidLevelor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Liquid Levelor",
+      "description": " Liquid Levelor",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "durockCementBoard",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Durock Cement Board",
+      "description": " Durock Cement Board",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installAlternaVinylTile",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Alterna Vinyl Tile",
+      "description": " Install Alterna Vinyl Tile",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "vinylTile",
+    "type": "input",
+    "templateOptions": {
+      "label": " Vinyl Tile",
+      "placeholder": "",
+      "description": " Vinyl Tile",
+      "required": true
+    }
+  },
+  {
+    "key": "groutColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Grout Color",
+      "placeholder": "",
+      "description": " Grout Color",
+      "required": true
+    }
+  },
+  {
+    "key": "installTileMpg",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Tile M P G",
+      "description": " Install Tile M P G",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tileColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Tile Color",
+      "placeholder": "",
+      "description": " Tile Color",
+      "required": true
+    }
+  },
+  {
+    "key": "groutColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Grout Color",
+      "placeholder": "",
+      "description": " Grout Color",
+      "required": true
+    }
+  },
+  {
+    "key": "tileSize",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Tile Size",
+      "description": " Tile Size",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tileSizeNumber",
+    "type": "input",
+    "templateOptions": {
+      "label": " Tile Size Number",
+      "placeholder": "",
+      "description": " Tile Size Number",
+      "required": true
+    }
+  },
+  {
+    "key": "squareLayout",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Square Layout",
+      "description": " Square Layout",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "brickLayout",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Brick Layout",
+      "description": " Brick Layout",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "diagonalLayout",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Diagonal Layout",
+      "description": " Diagonal Layout",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installRadiantHeatingFlooring",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Radiant Heating Flooring",
+      "description": " Install Radiant Heating Flooring",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "provideInstallTileWetArea",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Provide Install Tile Wet Area",
+      "description": " Provide Install Tile Wet Area",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tileinWetArea",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Tilein Wet Area",
+      "description": " Tilein Wet Area",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wetArea",
+    "type": "input",
+    "templateOptions": {
+      "label": " Wet Area",
+      "placeholder": "",
+      "description": " Wet Area",
+      "required": true
+    }
+  },
+  {
+    "key": "squareLayout",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Square Layout",
+      "description": " Square Layout",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "brickLayout",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Brick Layout",
+      "description": " Brick Layout",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "diagonalLayout",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Diagonal Layout",
+      "description": " Diagonal Layout",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tileHeight",
+    "type": "input",
+    "templateOptions": {
+      "label": " Tile Height",
+      "placeholder": "",
+      "description": " Tile Height",
+      "required": true
+    }
+  },
+  {
+    "key": "installClientTile",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Client Tile",
+      "description": " Install Client Tile",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installClientTileDesigns",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Client Tile Designs",
+      "description": " Install Client Tile Designs",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "syntheticMarbleOnyx",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Synthetic Marble Onyx",
+      "description": " Synthetic Marble Onyx",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wallsinWetAreaColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Wallsin Wet Area Color",
+      "placeholder": "",
+      "description": " Wallsin Wet Area Color",
+      "required": true
+    }
+  },
+  {
+    "key": "syntheticMarbleHeight",
+    "type": "input",
+    "templateOptions": {
+      "label": " Synthetic Marble Height",
+      "placeholder": "",
+      "description": " Synthetic Marble Height",
+      "required": true
+    }
+  },
+  {
+    "key": "soapShampooHolder",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Soap Shampoo Holder",
+      "description": " Soap Shampoo Holder",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "small",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Small",
+      "description": " Small",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "large",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Large",
+      "description": " Large",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "corner",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Corner",
+      "description": " Corner",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "cornerShelf",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Corner Shelf",
+      "description": " Corner Shelf",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "cornerSeat",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Corner Seat",
+      "description": " Corner Seat",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "soapDIsh1",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Soap D Ish1",
+      "description": " Soap D Ish1",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "soapDish2",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Soap Dish2",
+      "description": " Soap Dish2",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tileMfg",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Tile M F G",
+      "description": " Tile M F G",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tileStyleName",
+    "type": "input",
+    "templateOptions": {
+      "label": " Tile Style Name",
+      "placeholder": "",
+      "description": " Tile Style Name",
+      "required": true
+    }
+  },
+  {
+    "key": "tileColor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Tile Color",
+      "description": " Tile Color",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tileNumberColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Tile Number Color",
+      "placeholder": "",
+      "description": " Tile Number Color",
+      "required": true
+    }
+  },
+  {
+    "key": "groutColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Grout Color",
+      "placeholder": "",
+      "description": " Grout Color",
+      "required": true
+    }
+  },
+  {
+    "key": "acrylicWallSurroundWetArea",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Acrylic Wall Surround Wet Area",
+      "description": " Acrylic Wall Surround Wet Area",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "numberMfg",
+    "type": "input",
+    "templateOptions": {
+      "label": " Number M F G",
+      "placeholder": "",
+      "description": " Number M F G",
+      "required": true
+    }
+  },
+  {
+    "key": "white",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " White",
+      "description": " White",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "bone",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bone",
+      "description": " Bone",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowTrim",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Window Trim",
+      "description": " Window Trim",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowTrimDescription",
+    "type": "input",
+    "templateOptions": {
+      "label": " Window Trim Description",
+      "placeholder": "",
+      "description": " Window Trim Description",
+      "required": true
+    }
+  },
+  {
+    "key": "wainscit",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wainscit",
+      "description": " Wainscit",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wainscotHeight",
+    "type": "input",
+    "templateOptions": {
+      "label": " Wainscot Height",
+      "placeholder": "",
+      "description": " Wainscot Height",
+      "required": true
+    }
+  },
+  {
+    "key": "wainscotType",
+    "type": "input",
+    "templateOptions": {
+      "label": " Wainscot Type",
+      "placeholder": "",
+      "description": " Wainscot Type",
+      "required": true
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "manufacturer",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Manufacturer",
+      "description": " Manufacturer",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "cabinetManufacturer",
+    "type": "input",
+    "templateOptions": {
+      "label": " Cabinet Manufacturer",
+      "placeholder": "",
+      "description": " Cabinet Manufacturer",
+      "required": true
+    }
+  },
+  {
+    "key": "styleFinish",
+    "type": "input",
+    "templateOptions": {
+      "label": " Style Finish",
+      "placeholder": "",
+      "description": " Style Finish",
+      "required": true
+    }
+  },
+  {
+    "key": "recessedPanel",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Recessed Panel",
+      "description": " Recessed Panel",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "raisedPanel",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Raised Panel",
+      "description": " Raised Panel",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "maple",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Maple",
+      "description": " Maple",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "white",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " White",
+      "description": " White",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "cherry",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Cherry",
+      "description": " Cherry",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "hickory",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Hickory",
+      "description": " Hickory",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "oak",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Oak",
+      "description": " Oak",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "paintColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Paint Color",
+      "placeholder": "",
+      "description": " Paint Color",
+      "required": true
+    }
+  },
+  {
+    "key": "glazeColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Glaze Color",
+      "placeholder": "",
+      "description": " Glaze Color",
+      "required": true
+    }
+  },
+  {
+    "key": "standardBoxConstruction",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Standard Box Construction",
+      "description": " Standard Box Construction",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "plywoodVeneeredEnds",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Plywood Veneered Ends",
+      "description": " Plywood Veneered Ends",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "woodDovetailed",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wood Dovetailed",
+      "description": " Wood Dovetailed",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "drawersLeft",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Drawers Left",
+      "description": " Drawers Left",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "drawersRight",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Drawers Right",
+      "description": " Drawers Right",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "hisHerDrawers",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " His Her Drawers",
+      "description": " His Her Drawers",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "5PieceDrawerFront",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 5piece Drawer Front",
+      "description": " 5piece Drawer Front",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "matchingCrownMolding",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Matching Crown Molding",
+      "description": " Matching Crown Molding",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "matchingLinenCabinet",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Matching Linen Cabinet",
+      "description": " Matching Linen Cabinet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "matchingVanityTowerCabinet",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Matching Vanity Tower Cabinet",
+      "description": " Matching Vanity Tower Cabinet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "matchingVanityApronDrawer",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Matching Vanity Apron Drawer",
+      "description": " Matching Vanity Apron Drawer",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "matchingToiletTopperCabinet",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Matching Toilet Topper Cabinet",
+      "description": " Matching Toilet Topper Cabinet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "noCabinetHardware",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " No Cabinet Hardware",
+      "description": " No Cabinet Hardware",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installClientsCabinetHardware",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Clients Cabinet Hardware",
+      "description": " Install Clients Cabinet Hardware",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "installClientMedicineCabinetMirror",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Client Medicine Cabinet Mirror",
+      "description": " Install Client Medicine Cabinet Mirror",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "provideMedicineCabinet",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Provide Medicine Cabinet",
+      "description": " Provide Medicine Cabinet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "numberMfg",
+    "type": "input",
+    "templateOptions": {
+      "label": " Number M F G",
+      "placeholder": "",
+      "description": " Number M F G",
+      "required": true
+    }
+  },
+  {
+    "key": "surfaceMount",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Surface Mount",
+      "description": " Surface Mount",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "recessedIntoWall",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Recessed Into Wall",
+      "description": " Recessed Into Wall",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "newMirror",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " New Mirror",
+      "description": " New Mirror",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "newMirrorApproximately",
+    "type": "input",
+    "templateOptions": {
+      "label": " New Mirror Approximately",
+      "placeholder": "",
+      "description": " New Mirror Approximately",
+      "required": true
+    }
+  },
+  {
+    "key": "groundEdge",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Ground Edge",
+      "description": " Ground Edge",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "beveledEdge",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Beveled Edge",
+      "description": " Beveled Edge",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "applyMirroredBeveledEdgeStrips",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Apply Mirrored Beveled Edge Strips",
+      "description": " Apply Mirrored Beveled Edge Strips",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "syntheticMarble",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Synthetic Marble",
+      "description": " Synthetic Marble",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "onyx",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Onyx",
+      "description": " Onyx",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "granite",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Granite",
+      "description": " Granite",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "quartz",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Quartz",
+      "description": " Quartz",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "solidSurface",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Solid Surface",
+      "description": " Solid Surface",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "vanityTopColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Vanity Top Color",
+      "placeholder": "",
+      "description": " Vanity Top Color",
+      "required": true
+    }
+  },
+  {
+    "key": "approximateWidth",
+    "type": "input",
+    "templateOptions": {
+      "label": " Approximate Width",
+      "placeholder": "",
+      "description": " Approximate Width",
+      "required": true
+    }
+  },
+  {
+    "key": "approximateDepth",
+    "type": "input",
+    "templateOptions": {
+      "label": " Approximate Depth",
+      "placeholder": "",
+      "description": " Approximate Depth",
+      "required": true
+    }
+  },
+  {
+    "key": "standard",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Standard",
+      "description": " Standard",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "eased",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Eased",
+      "description": " Eased",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "roundOver",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Round Over",
+      "description": " Round Over",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "fullBullNose",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Full Bull Nose",
+      "description": " Full Bull Nose",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "bevel",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bevel",
+      "description": " Bevel",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "ogee",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Ogee",
+      "description": " Ogee",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "backSplashYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Back Splash Yes",
+      "description": " Back Splash Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "backSplashNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Back Splash No",
+      "description": " Back Splash No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "provideInstallSidesplash",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Provide Install Sidesplash",
+      "description": " Provide Install Sidesplash",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "oval",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Oval",
+      "description": " Oval",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "shell",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shell",
+      "description": " Shell",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "rectangle",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Rectangle",
+      "description": " Rectangle",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wave",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wave",
+      "description": " Wave",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "recessedRim",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Recessed Rim",
+      "description": " Recessed Rim",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "dropIn",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Drop In",
+      "description": " Drop In",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "undermount",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Undermount",
+      "description": " Undermount",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "banjoStyleTop",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Banjo Style Top",
+      "description": " Banjo Style Top",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "singleHoleDrilling",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Single Hole Drilling",
+      "description": " Single Hole Drilling",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "4Drilling",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 4\" Drilling",
+      "description": " 4\" Drilling",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "8Drilling",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 8\" Drilling",
+      "description": " 8\" Drilling",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installClientBowl",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Client Bowl",
+      "description": " Install Client Bowl",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "provideInstall1Bowl",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Provide Install1 Bowl",
+      "description": " Provide Install1 Bowl",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "provideInstall2Bowl",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Provide Install2 Bowl",
+      "description": " Provide Install2 Bowl",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Style Color",
+      "placeholder": "",
+      "description": " Style Color",
+      "required": true
+    }
+  },
+  {
+    "key": "pedestalLavatory",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Pedestal Lavatory",
+      "description": " Pedestal Lavatory",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "mfgColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Mfg Color",
+      "placeholder": "",
+      "description": " Mfg Color",
+      "required": true
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "updateReworkNecessaryElectricperPlan",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Update Rework Necessary Electricper Plan",
+      "description": " Update Rework Necessary Electricper Plan",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "killRelocateAddSwitchesJBox",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Kill Relocate Add Switches J Box",
+      "description": " Kill Relocate Add Switches J Box",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "addSmokeDectors",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Add Smoke Dectors",
+      "description": " Add Smoke Dectors",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "numberOutlet",
+    "type": "input",
+    "templateOptions": {
+      "label": " Number Outlet",
+      "placeholder": "",
+      "description": " Number Outlet",
+      "required": true
+    }
+  },
+  {
+    "key": "numberSwitches",
+    "type": "input",
+    "templateOptions": {
+      "label": " Number Switches",
+      "placeholder": "",
+      "description": " Number Switches",
+      "required": true
+    }
+  },
+  {
+    "key": "dedicatedCircuits",
+    "type": "input",
+    "templateOptions": {
+      "label": " Dedicated Circuits",
+      "placeholder": "",
+      "description": " Dedicated Circuits",
+      "required": true
+    }
+  },
+  {
+    "key": "colorWhite",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color White",
+      "description": " Color White",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorIvory",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Ivory",
+      "description": " Color Ivory",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorOtherCheckBox",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Other Check Box",
+      "description": " Color Other Check Box",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorOtherText",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color Other Text",
+      "placeholder": "",
+      "description": " Color Other Text",
+      "required": true
+    }
+  },
+  {
+    "key": "installclientBaroverVanityYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Installclient Barover Vanity Yes",
+      "description": " Installclient Barover Vanity Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installclientBaroverVanityNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Installclient Barover Vanity No",
+      "description": " Installclient Barover Vanity No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "numberMfg",
+    "type": "input",
+    "templateOptions": {
+      "label": " Number M F G",
+      "placeholder": "",
+      "description": " Number M F G",
+      "required": true
+    }
+  },
+  {
+    "key": "recessedcanLight",
+    "type": "input",
+    "templateOptions": {
+      "label": " Recessedcan Light",
+      "placeholder": "",
+      "description": " Recessedcan Light",
+      "required": true
+    }
+  },
+  {
+    "key": "surfaceMountLights",
+    "type": "input",
+    "templateOptions": {
+      "label": " Surface Mount Lights",
+      "placeholder": "",
+      "description": " Surface Mount Lights",
+      "required": true
+    }
+  },
+  {
+    "key": "canLightExhaustfanComboUnit",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Can Light Exhaustfan Combo Unit",
+      "description": " Can Light Exhaustfan Combo Unit",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "waterProofCanLight",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Water Proof Can Light",
+      "description": " Water Proof Can Light",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installClientExhaustFan",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Client Exhaust Fan",
+      "description": " Install Client Exhaust Fan",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "provideInstallExhaustFan",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Provide Install Exhaust Fan",
+      "description": " Provide Install Exhaust Fan",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "exhaustFanLightComboUnit",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Exhaust Fan Light Combo Unit",
+      "description": " Exhaust Fan Light Combo Unit",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "exhaustFanLightComboUnit2",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Exhaust Fan Light Combo Unit2",
+      "description": " Exhaust Fan Light Combo Unit2",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "toespaceHeaterorinWaterHeater",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Toespace Heaterorin Water Heater",
+      "description": " Toespace Heaterorin Water Heater",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "upgradeElectricService",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Upgrade Electric Service",
+      "description": " Upgrade Electric Service",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "100AmPwithBreaker",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 100 A M Pwith Breaker",
+      "description": " 100 A M Pwith Breaker",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "200AmPwithBreaker",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 200 A M Pwith Breaker",
+      "description": " 200 A M Pwith Breaker",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "existingPanelandAddSubPanelAdditionalCircuits",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Existing Paneland Add Sub Panel Additional Circuits",
+      "description": " Existing Paneland Add Sub Panel Additional Circuits",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "noWorkbyMidtownClientWorkingwithOther",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " No Workby Midtown Client Workingwith Other",
+      "description": " No Workby Midtown Client Workingwith Other",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "rePlumbDraintoVanity1",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Re Plumb Drainto Vanity1",
+      "description": " Re Plumb Drainto Vanity1",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "rePlumbDraintoVanity2",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Re Plumb Drainto Vanity2",
+      "description": " Re Plumb Drainto Vanity2",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "rePlumbDraintoVanityYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Re Plumb Drainto Vanity Yes",
+      "description": " Re Plumb Drainto Vanity Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "rePlumbDraintoVanityNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Re Plumb Drainto Vanity No",
+      "description": " Re Plumb Drainto Vanity No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installPBvalveAdjascentBathYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install P Bvalve Adjascent Bath Yes",
+      "description": " Install P Bvalve Adjascent Bath Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installPBvalveAdjascentBathNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install P Bvalve Adjascent Bath No",
+      "description": " Install P Bvalve Adjascent Bath No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "12BathRoughinThroughConcreteYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 1/2 Bath Roughin Through Concrete Yes",
+      "description": " 1/2 Bath Roughin Through Concrete Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "12BathRoughinThroughConcreteNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 1/2 Bath Roughin Through Concrete No",
+      "description": " 1/2 Bath Roughin Through Concrete No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "roughInSecondVanityBowlYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Rough In Second Vanity Bowl Yes",
+      "description": " Rough In Second Vanity Bowl Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "roughInSecondVanityBowlNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Rough In Second Vanity Bowl No",
+      "description": " Rough In Second Vanity Bowl No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeReinstallToiletYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Reinstall Toilet Yes",
+      "description": " Remove Reinstall Toilet Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "removeReinstallToiletNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Remove Reinstall Toilet No",
+      "description": " Remove Reinstall Toilet No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "fullBathRoughinThroughConcreteYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Full Bath Roughin Through Concrete Yes",
+      "description": " Full Bath Roughin Through Concrete Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "fullBathRoughinThroughConcreteNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Full Bath Roughin Through Concrete No",
+      "description": " Full Bath Roughin Through Concrete No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installToiletYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Toilet Yes",
+      "description": " Install Toilet Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installToiletNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Toilet No",
+      "description": " Install Toilet No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceClosetBendFloorCollarYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Closet Bend Floor Collar Yes",
+      "description": " Replace Closet Bend Floor Collar Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceClosetBendFloorCollarNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Closet Bend Floor Collar No",
+      "description": " Replace Closet Bend Floor Collar No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "barSinkRoughinThroughConcreteYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bar Sink Roughin Through Concrete Yes",
+      "description": " Bar Sink Roughin Through Concrete Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "barSinkRoughinThroughConcreteNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bar Sink Roughin Through Concrete No",
+      "description": " Bar Sink Roughin Through Concrete No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replumbDraintoShowerYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replumb Drainto Shower Yes",
+      "description": " Replumb Drainto Shower Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replumbDraintoShowerNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replumb Drainto Shower No",
+      "description": " Replumb Drainto Shower No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "addCopperLinesWhereNeededYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Add Copper Lines Where Needed Yes",
+      "description": " Add Copper Lines Where Needed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "addCopperLinesWhereNeededNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Add Copper Lines Where Needed No",
+      "description": " Add Copper Lines Where Needed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceBathroomSoilStackYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Bathroom Soil Stack Yes",
+      "description": " Replace Bathroom Soil Stack Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceBathroomSoilStackNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Bathroom Soil Stack No",
+      "description": " Replace Bathroom Soil Stack No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replumbDraintotuborWhirlpoolYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replumb Draintotubor Whirlpool Yes",
+      "description": " Replumb Draintotubor Whirlpool Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replumbDraintotuborWhirlpoolNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replumb Draintotubor Whirlpool No",
+      "description": " Replumb Draintotubor Whirlpool No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "relocateTubShowerDrainJoistsYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Relocate Tub Shower Drain Joists Yes",
+      "description": " Relocate Tub Shower Drain Joists Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "relocateTubShowerDrainJoistsNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Relocate Tub Shower Drain Joists No",
+      "description": " Relocate Tub Shower Drain Joists No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installPbValveYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install P B Valve Yes",
+      "description": " Install P B Valve Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installPbValveNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install P B Valve No",
+      "description": " Install P B Valve No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "relocateTubShowerDrainConcreteYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Relocate Tub Shower Drain Concrete Yes",
+      "description": " Relocate Tub Shower Drain Concrete Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "relocateTubShowerDrainConcreteNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Relocate Tub Shower Drain Concrete No",
+      "description": " Relocate Tub Shower Drain Concrete No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceNeccessaryDrainYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Neccessary Drain Yes",
+      "description": " Replace Neccessary Drain Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceNeccessaryDrainNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Neccessary Drain No",
+      "description": " Replace Neccessary Drain No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "installedWindow",
+    "type": "input",
+    "templateOptions": {
+      "label": " Installed Window",
+      "placeholder": "",
+      "description": " Installed Window",
+      "required": true
+    }
+  },
+  {
+    "key": "brand",
+    "type": "input",
+    "templateOptions": {
+      "label": " Brand",
+      "placeholder": "",
+      "description": " Brand",
+      "required": true
+    }
+  },
+  {
+    "key": "styleDoubleHung",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Double Hung",
+      "description": " Style Double Hung",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleCasement",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Casement",
+      "description": " Style Casement",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "stylePicture",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Picture",
+      "description": " Style Picture",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleTransom",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Transom",
+      "description": " Style Transom",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleSlider",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Slider",
+      "description": " Style Slider",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleGarden",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Garden",
+      "description": " Style Garden",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleBay",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Bay",
+      "description": " Style Bay",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleBow",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Bow",
+      "description": " Style Bow",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleHopper",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Hopper",
+      "description": " Style Hopper",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleAwing",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Awing",
+      "description": " Style Awing",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "styleEgressWindowSystem",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Style Egress Window System",
+      "description": " Style Egress Window System",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "glassStyle",
+    "type": "input",
+    "templateOptions": {
+      "label": " Glass Style",
+      "placeholder": "",
+      "description": " Glass Style",
+      "required": true
+    }
+  },
+  {
+    "key": "colorWhite",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color White",
+      "description": " Color White",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorAlmond",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Almond",
+      "description": " Color Almond",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorBronze",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Bronze",
+      "description": " Color Bronze",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorOther",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color Other",
+      "placeholder": "",
+      "description": " Color Other",
+      "required": true
+    }
+  },
+  {
+    "key": "windowMisc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Window Misc",
+      "placeholder": "",
+      "description": " Window Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "installDoor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Install Door",
+      "placeholder": "",
+      "description": " Install Door",
+      "required": true
+    }
+  },
+  {
+    "key": "doorBrand",
+    "type": "input",
+    "templateOptions": {
+      "label": " Door Brand",
+      "placeholder": "",
+      "description": " Door Brand",
+      "required": true
+    }
+  },
+  {
+    "key": "single",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Single",
+      "description": " Single",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "biFold",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bi Fold",
+      "description": " Bi Fold",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "french",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " French",
+      "description": " French",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "slidingPocket",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Sliding Pocket",
+      "description": " Sliding Pocket",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "flatLauan",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Flat Lauan",
+      "description": " Flat Lauan",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "6Panel",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 6 Panel",
+      "description": " 6 Panel",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "2Panel",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 2 Panel",
+      "description": " 2 Panel",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "hollowCore",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Hollow Core",
+      "description": " Hollow Core",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "solidWood",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Solid Wood",
+      "description": " Solid Wood",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "primed",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Primed",
+      "description": " Primed",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clear",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Clear",
+      "description": " Clear",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "frontEntry",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Front Entry",
+      "description": " Front Entry",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "rearEntry",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Rear Entry",
+      "description": " Rear Entry",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "garageEntry",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Garage Entry",
+      "description": " Garage Entry",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "slidingPatio",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Sliding Patio",
+      "description": " Sliding Patio",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "atrium",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Atrium",
+      "description": " Atrium",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "exteriorFrench",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Exterior French",
+      "description": " Exterior French",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "cutBottomOfDoorDown",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Cut Bottom Of Door Down",
+      "description": " Cut Bottom Of Door Down",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "doorMisc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Door Misc",
+      "placeholder": "",
+      "description": " Door Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "homeisFramed",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Homeis Framed",
+      "description": " Homeis Framed",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "homeisMasonry",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Homeis Masonry",
+      "description": " Homeis Masonry",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "performCutoutInstallSupport",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Perform Cutout Install Support",
+      "description": " Perform Cutout Install Support",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "provideInstallSunTunnelSkylight",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Provide Install Sun Tunnel Skylight",
+      "description": " Provide Install Sun Tunnel Skylight",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "baseMolding",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Base Molding",
+      "description": " Base Molding",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "baseMoldingColonial",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Base Molding Colonial",
+      "description": " Base Molding Colonial",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "baseMoldingHollywood",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Base Molding Hollywood",
+      "description": " Base Molding Hollywood",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "baseMolding214",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Base Molding2,1/4\"",
+      "description": " Base Molding2,1/4\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "baseMolding314",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Base Molding3,1/4\"",
+      "description": " Base Molding3,1/4\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "baseMoldingSize",
+    "type": "input",
+    "templateOptions": {
+      "label": " Base Molding Size",
+      "placeholder": "",
+      "description": " Base Molding Size",
+      "required": true
+    }
+  },
+  {
+    "key": "doorCasing",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Door Casing",
+      "description": " Door Casing",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "doorCasingColonial",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Door Casing Colonial",
+      "description": " Door Casing Colonial",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "doorCasingHollywood",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Door Casing Hollywood",
+      "description": " Door Casing Hollywood",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "doorCasing214",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Door Casing2,1/4\"",
+      "description": " Door Casing2,1/4\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "doorCasing314",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Door Casing3,1/4\"",
+      "description": " Door Casing3,1/4\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "doorCasingSize",
+    "type": "input",
+    "templateOptions": {
+      "label": " Door Casing Size",
+      "placeholder": "",
+      "description": " Door Casing Size",
+      "required": true
+    }
+  },
+  {
+    "key": "windowCasing",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Window Casing",
+      "description": " Window Casing",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowCasingColonial",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Window Casing Colonial",
+      "description": " Window Casing Colonial",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowCasingHollywood",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Window Casing Hollywood",
+      "description": " Window Casing Hollywood",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowCasing214",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Window Casing2,1/4\"",
+      "description": " Window Casing2,1/4\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowCasing314",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Window Casing3,1/4\"",
+      "description": " Window Casing3,1/4\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "trimtobePrimed",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Trimtobe Primed",
+      "description": " Trimtobe Primed",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "trimtobeClear",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Trimtobe Clear",
+      "description": " Trimtobe Clear",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "crownMolding",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Crown Molding",
+      "description": " Crown Molding",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "crownMolding358",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Crown Molding3,5/8\"",
+      "description": " Crown Molding3,5/8\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "crownMolding514",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Crown Molding5,1/4\"",
+      "description": " Crown Molding5,1/4\"",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "crownMolding2Tier",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Crown Molding2 Tier",
+      "description": " Crown Molding2 Tier",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowSill",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Window Sill",
+      "description": " Window Sill",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "windowSillDescription",
+    "type": "input",
+    "templateOptions": {
+      "label": " Window Sill Description",
+      "placeholder": "",
+      "description": " Window Sill Description",
+      "required": true
+    }
+  },
+  {
+    "key": "installCeramicTile",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Ceramic Tile",
+      "description": " Install Ceramic Tile",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "misc",
+    "type": "input",
+    "templateOptions": {
+      "label": " Misc",
+      "placeholder": "",
+      "description": " Misc",
+      "required": true
+    }
+  },
+  {
+    "key": "lavatoryFaucetFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet Furnished Yes",
+      "description": " Lavatory Faucet Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "lavatoryFaucetFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet Furnished No",
+      "description": " Lavatory Faucet Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "lavatoryFaucetInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet Installed Yes",
+      "description": " Lavatory Faucet Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "lavatoryFaucetInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet Installed No",
+      "description": " Lavatory Faucet Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "lavatoryFaucet2FurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet2 Furnished Yes",
+      "description": " Lavatory Faucet2 Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "lavatoryFaucet2FurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet2 Furnished No",
+      "description": " Lavatory Faucet2 Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "lavatoryFaucet2InstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet2 Installed Yes",
+      "description": " Lavatory Faucet2 Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "lavatoryFaucet2InstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Lavatory Faucet2 Installed No",
+      "description": " Lavatory Faucet2 Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerFaucetFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Faucet Furnished Yes",
+      "description": " Shower Faucet Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerFaucetFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Faucet Furnished No",
+      "description": " Shower Faucet Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerFaucet2InstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Faucet2 Installed Yes",
+      "description": " Shower Faucet2 Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerFaucet2InstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Faucet2 Installed No",
+      "description": " Shower Faucet2 Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerTubFaucetFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Tub Faucet Furnished Yes",
+      "description": " Shower Tub Faucet Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerFaucetFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Faucet Furnished No",
+      "description": " Shower Faucet Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerTubFaucetInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Tub Faucet Installed Yes",
+      "description": " Shower Tub Faucet Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerTubFaucetInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Tub Faucet Installed No",
+      "description": " Shower Tub Faucet Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "keepExistingShowerHead",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Keep Existing Shower Head",
+      "description": " Keep Existing Shower Head",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installShowerHead",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Install Shower Head",
+      "description": " Install Shower Head",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "approxFromFloor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Approx From Floor",
+      "placeholder": "",
+      "description": " Approx From Floor",
+      "required": true
+    }
+  },
+  {
+    "key": "romanTubFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Roman Tub Furnished Yes",
+      "description": " Roman Tub Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "romanTubFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Roman Tub Furnished No",
+      "description": " Roman Tub Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "romanTubInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Roman Tub Installed Yes",
+      "description": " Roman Tub Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "romanTubInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Roman Tub Installed No",
+      "description": " Roman Tub Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "handHeldFaucetFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Hand Held Faucet Furnished Yes",
+      "description": " Hand Held Faucet Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "handHeldFaucetFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Hand Held Faucet Furnished No",
+      "description": " Hand Held Faucet Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "handHeldFaucetInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Hand Held Faucet Installed Yes",
+      "description": " Hand Held Faucet Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "handHeldFaucetInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Hand Held Faucet Installed No",
+      "description": " Hand Held Faucet Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "pedstalLavatoryFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Pedstal Lavatory Furnished Yes",
+      "description": " Pedstal Lavatory Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "pedstalLavatoryFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Pedstal Lavatory Furnished No",
+      "description": " Pedstal Lavatory Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "pedstalLavatoryInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Pedstal Lavatory Installed Yes",
+      "description": " Pedstal Lavatory Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "pedstalLavatoryInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Pedstal Lavatory Installed No",
+      "description": " Pedstal Lavatory Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "toiletFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Toilet Furnished Yes",
+      "description": " Toilet Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "toiletFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Toilet Furnished No",
+      "description": " Toilet Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "toiletInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Toilet Installed Yes",
+      "description": " Toilet Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "toiletInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Toilet Installed No",
+      "description": " Toilet Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "bathtubFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bathtub Furnished Yes",
+      "description": " Bathtub Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "bathtubFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bathtub Furnished No",
+      "description": " Bathtub Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "bathtubInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bathtub Installed Yes",
+      "description": " Bathtub Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "bathtubInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Bathtub Installed No",
+      "description": " Bathtub Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "whirlpoolFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Whirlpool Furnished Yes",
+      "description": " Whirlpool Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "whirlpoolFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Whirlpool Furnished No",
+      "description": " Whirlpool Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "whirlpoolInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Whirlpool Installed Yes",
+      "description": " Whirlpool Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "whirlpoolInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Whirlpool Installed No",
+      "description": " Whirlpool Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerBaseLength",
+    "type": "input",
+    "templateOptions": {
+      "label": " Shower Base Length",
+      "placeholder": "",
+      "description": " Shower Base Length",
+      "required": true
+    }
+  },
+  {
+    "key": "showerBaseDepth",
+    "type": "input",
+    "templateOptions": {
+      "label": " Shower Base Depth",
+      "placeholder": "",
+      "description": " Shower Base Depth",
+      "required": true
+    }
+  },
+  {
+    "key": "showerbaseFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Showerbase Furnished Yes",
+      "description": " Showerbase Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerbaseFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Showerbase Furnished No",
+      "description": " Showerbase Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerbaseInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Showerbase Installed Yes",
+      "description": " Showerbase Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerbaseInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Showerbase Installed No",
+      "description": " Showerbase Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerDoor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Door",
+      "description": " Shower Door",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "standardTubDoor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Standard Tub Door",
+      "description": " Standard Tub Door",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "customDoor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Custom Door",
+      "description": " Custom Door",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerDoorFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Door Furnished Yes",
+      "description": " Shower Door Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerDoorFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Door Furnished No",
+      "description": " Shower Door Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerDoorInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Door Installed Yes",
+      "description": " Shower Door Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "showerDoorInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Shower Door Installed No",
+      "description": " Shower Door Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "framed",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Framed",
+      "description": " Framed",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "semiFramed",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Semi Framed",
+      "description": " Semi Framed",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "38Frameless",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 3/8\" Frameless",
+      "description": " 3/8\" Frameless",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clear",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Clear",
+      "description": " Clear",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "obscure",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Obscure",
+      "description": " Obscure",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "otherField",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Other Field",
+      "description": " Other Field",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "other",
+    "type": "input",
+    "templateOptions": {
+      "label": " Other",
+      "placeholder": "",
+      "description": " Other",
+      "required": true
+    }
+  },
+  {
+    "key": "furnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Furnished Yes",
+      "description": " Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "furnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Furnished No",
+      "description": " Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Installed Yes",
+      "description": " Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "installedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Installed No",
+      "description": " Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "slider",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Slider",
+      "description": " Slider",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "pivot",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Pivot",
+      "description": " Pivot",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "otherCheckBox",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Other Check Box",
+      "description": " Other Check Box",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "otherText",
+    "type": "input",
+    "templateOptions": {
+      "label": " Other Text",
+      "placeholder": "",
+      "description": " Other Text",
+      "required": true
+    }
+  },
+  {
+    "key": "paperHolderFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Paper Holder Furnished Yes",
+      "description": " Paper Holder Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "paperHolderFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Paper Holder Furnished No",
+      "description": " Paper Holder Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "paperHolderInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Paper Holder Installed Yes",
+      "description": " Paper Holder Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "paperHolderInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Paper Holder Installed No",
+      "description": " Paper Holder Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelBarFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Bar Furnished Yes",
+      "description": " Towel Bar Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelBarFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Bar Furnished No",
+      "description": " Towel Bar Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelBarInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Bar Installed Yes",
+      "description": " Towel Bar Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelBarInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Bar Installed No",
+      "description": " Towel Bar Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelRingFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Ring Furnished Yes",
+      "description": " Towel Ring Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelRingFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Ring Furnished No",
+      "description": " Towel Ring Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelRingInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Ring Installed Yes",
+      "description": " Towel Ring Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "towelRingInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Towel Ring Installed No",
+      "description": " Towel Ring Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "grabBarFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Grab Bar Furnished Yes",
+      "description": " Grab Bar Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "grabBarFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Grab Bar Furnished No",
+      "description": " Grab Bar Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "grabBarInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Grab Bar Installed Yes",
+      "description": " Grab Bar Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "grabBarInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Grab Bar Installed No",
+      "description": " Grab Bar Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "miscFurnishedYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Misc Furnished Yes",
+      "description": " Misc Furnished Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "miscFurnishedNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Misc Furnished No",
+      "description": " Misc Furnished No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "miscInstalledYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Misc Installed Yes",
+      "description": " Misc Installed Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "miscInstalledNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Misc Installed No",
+      "description": " Misc Installed No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientDemoBathroom",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Demo Bathroom",
+      "description": " Client Demo Bathroom",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientHaulAwayDebri",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Haul Away Debri",
+      "description": " Client Haul Away Debri",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientProvideBathAccessories",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Provide Bath Accessories",
+      "description": " Client Provide Bath Accessories",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientElectricalBoxWorkOther",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Electrical Box Work Other",
+      "description": " Client Electrical Box Work Other",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientHandleAllWallpaperRemoval",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Handle All Wallpaper Removal",
+      "description": " Client Handle All Wallpaper Removal",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientWorkAllFloor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Work All Floor",
+      "description": " Client Work All Floor",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientProvideTub",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Provide Tub",
+      "description": " Client Provide Tub",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "cliebtWorkWIthOtherShowerDoor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Cliebt Work W Ith Other Shower Door",
+      "description": " Cliebt Work W Ith Other Shower Door",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clientProvideCabinet",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Client Provide Cabinet",
+      "description": " Client Provide Cabinet",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "note",
+    "type": "input",
+    "templateOptions": {
+      "label": " Note",
+      "placeholder": "",
+      "description": " Note",
+      "required": true
+    }
+  },
+  {
+    "key": "miscellaneous",
+    "type": "input",
+    "templateOptions": {
+      "label": " Miscellaneous",
+      "placeholder": "",
+      "description": " Miscellaneous",
+      "required": true
+    }
+  },
+  {
+    "key": "totalPrice",
+    "type": "input",
+    "templateOptions": {
+      "label": " Total Price",
+      "placeholder": "",
+      "description": " Total Price",
+      "required": true
+    }
+  },
+  {
+    "key": "downPayment",
+    "type": "input",
+    "templateOptions": {
+      "label": " Down Payment",
+      "placeholder": "",
+      "description": " Down Payment",
+      "required": true
+    }
+  },
+  {
+    "key": "unpaidBalance",
+    "type": "input",
+    "templateOptions": {
+      "label": " Unpaid Balance",
+      "placeholder": "",
+      "description": " Unpaid Balance",
+      "required": true
+    }
+  }
+]

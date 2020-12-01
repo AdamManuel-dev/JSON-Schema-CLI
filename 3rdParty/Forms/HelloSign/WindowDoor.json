@@ -1,0 +1,652 @@
+[
+  {
+    "key": "streetAddress",
+    "type": "input",
+    "templateOptions": {
+      "label": " Street Address",
+      "placeholder": "",
+      "description": " Street Address",
+      "required": true
+    }
+  },
+  {
+    "key": "city",
+    "type": "input",
+    "templateOptions": {
+      "label": " City",
+      "placeholder": "",
+      "description": " City",
+      "required": true
+    }
+  },
+  {
+    "key": "state",
+    "type": "input",
+    "templateOptions": {
+      "label": " State",
+      "placeholder": "",
+      "description": " State",
+      "required": true
+    }
+  },
+  {
+    "key": "zip",
+    "type": "input",
+    "templateOptions": {
+      "label": " Zip",
+      "placeholder": "",
+      "description": " Zip",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerName",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Name",
+      "placeholder": "",
+      "description": " Buyer Name",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerPhone",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Phone",
+      "placeholder": "",
+      "description": " Buyer Phone",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerMail",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Mail",
+      "placeholder": "",
+      "description": " Buyer Mail",
+      "required": true
+    }
+  },
+  {
+    "key": "financingBuyer",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Financing Buyer",
+      "description": " Financing Buyer",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "unitRemoved",
+    "type": "input",
+    "templateOptions": {
+      "label": " Unit Removed",
+      "placeholder": "",
+      "description": " Unit Removed",
+      "required": true
+    }
+  },
+  {
+    "key": "liteSliders",
+    "type": "input",
+    "templateOptions": {
+      "label": " Lite Sliders",
+      "placeholder": "",
+      "description": " Lite Sliders",
+      "required": true
+    }
+  },
+  {
+    "key": "entryLockStyleFinish",
+    "type": "input",
+    "templateOptions": {
+      "label": " Entry Lock Style Finish",
+      "placeholder": "",
+      "description": " Entry Lock Style Finish",
+      "required": true
+    }
+  },
+  {
+    "key": "unitsInstalled",
+    "type": "input",
+    "templateOptions": {
+      "label": " Units Installed",
+      "placeholder": "",
+      "description": " Units Installed",
+      "required": true
+    }
+  },
+  {
+    "key": "liteOneThird",
+    "type": "input",
+    "templateOptions": {
+      "label": " Lite One Third",
+      "placeholder": "",
+      "description": " Lite One Third",
+      "required": true
+    }
+  },
+  {
+    "key": "patioDoorsGlass",
+    "type": "input",
+    "templateOptions": {
+      "label": " Patio Doors Glass",
+      "placeholder": "",
+      "description": " Patio Doors Glass",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "liteOneFourthOneHalf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Lite One Fourth One Half",
+      "placeholder": "",
+      "description": " Lite One Fourth One Half",
+      "required": true
+    }
+  },
+  {
+    "key": "patioDoorHinged",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Patio Door Hinged",
+      "description": " Patio Door Hinged",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "patioDoorSiding",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Patio Door Siding",
+      "description": " Patio Door Siding",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "outsideTrimColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Outside Trim Color",
+      "placeholder": "",
+      "description": " Outside Trim Color",
+      "required": true
+    }
+  },
+  {
+    "key": "receiveCasements",
+    "type": "input",
+    "templateOptions": {
+      "label": " Receive Casements",
+      "placeholder": "",
+      "description": " Receive Casements",
+      "required": true
+    }
+  },
+  {
+    "key": "patioDoorColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Patio Door Color",
+      "placeholder": "",
+      "description": " Patio Door Color",
+      "required": true
+    }
+  },
+  {
+    "key": "obscureGlass",
+    "type": "input",
+    "templateOptions": {
+      "label": " Obscure Glass",
+      "placeholder": "",
+      "description": " Obscure Glass",
+      "required": true
+    }
+  },
+  {
+    "key": "pictureWindow",
+    "type": "input",
+    "templateOptions": {
+      "label": " Picture Window",
+      "placeholder": "",
+      "description": " Picture Window",
+      "required": true
+    }
+  },
+  {
+    "key": "patioDoorGrids",
+    "type": "input",
+    "templateOptions": {
+      "label": " Patio Door Grids",
+      "placeholder": "",
+      "description": " Patio Door Grids",
+      "required": true
+    }
+  },
+  {
+    "key": "withWoodGrain",
+    "type": "input",
+    "templateOptions": {
+      "label": " With Wood Grain",
+      "placeholder": "",
+      "description": " With Wood Grain",
+      "required": true
+    }
+  },
+  {
+    "key": "bayBows",
+    "type": "input",
+    "templateOptions": {
+      "label": " Bay Bows",
+      "placeholder": "",
+      "description": " Bay Bows",
+      "required": true
+    }
+  },
+  {
+    "key": "patioDoorWoodgrain",
+    "type": "input",
+    "templateOptions": {
+      "label": " Patio Door Woodgrain",
+      "placeholder": "",
+      "description": " Patio Door Woodgrain",
+      "required": true
+    }
+  },
+  {
+    "key": "interiorSeatOak",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Interior Seat Oak",
+      "description": " Interior Seat Oak",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "interiorSeatBirch",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Interior Seat Birch",
+      "description": " Interior Seat Birch",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "patioDoorDecorativeGlass",
+    "type": "input",
+    "templateOptions": {
+      "label": " Patio Door Decorative Glass",
+      "placeholder": "",
+      "description": " Patio Door Decorative Glass",
+      "required": true
+    }
+  },
+  {
+    "key": "withGrids",
+    "type": "input",
+    "templateOptions": {
+      "label": " With Grids",
+      "placeholder": "",
+      "description": " With Grids",
+      "required": true
+    }
+  },
+  {
+    "key": "garden",
+    "type": "input",
+    "templateOptions": {
+      "label": " Garden",
+      "placeholder": "",
+      "description": " Garden",
+      "required": true
+    }
+  },
+  {
+    "key": "addNotes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Add Notes",
+      "placeholder": "",
+      "description": " Add Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "gridTypes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Grid Types",
+      "placeholder": "",
+      "description": " Grid Types",
+      "required": true
+    }
+  },
+  {
+    "key": "hoppers",
+    "type": "input",
+    "templateOptions": {
+      "label": " Hoppers",
+      "placeholder": "",
+      "description": " Hoppers",
+      "required": true
+    }
+  },
+  {
+    "key": "awings",
+    "type": "input",
+    "templateOptions": {
+      "label": " Awings",
+      "placeholder": "",
+      "description": " Awings",
+      "required": true
+    }
+  },
+  {
+    "key": "pdHandleStandard",
+    "type": "input",
+    "templateOptions": {
+      "label": " Pd Handle Standard",
+      "placeholder": "",
+      "description": " Pd Handle Standard",
+      "required": true
+    }
+  },
+  {
+    "key": "screenFull",
+    "type": "input",
+    "templateOptions": {
+      "label": " Screen Full",
+      "placeholder": "",
+      "description": " Screen Full",
+      "required": true
+    }
+  },
+  {
+    "key": "screenHalf",
+    "type": "input",
+    "templateOptions": {
+      "label": " Screen Half",
+      "placeholder": "",
+      "description": " Screen Half",
+      "required": true
+    }
+  },
+  {
+    "key": "entryDoors",
+    "type": "input",
+    "templateOptions": {
+      "label": " Entry Doors",
+      "placeholder": "",
+      "description": " Entry Doors",
+      "required": true
+    }
+  },
+  {
+    "key": "sidelights",
+    "type": "input",
+    "templateOptions": {
+      "label": " Sidelights",
+      "placeholder": "",
+      "description": " Sidelights",
+      "required": true
+    }
+  },
+  {
+    "key": "stormDoors",
+    "type": "input",
+    "templateOptions": {
+      "label": " Storm Doors",
+      "placeholder": "",
+      "description": " Storm Doors",
+      "required": true
+    }
+  },
+  {
+    "key": "dH",
+    "type": "input",
+    "templateOptions": {
+      "label": " D H",
+      "placeholder": "",
+      "description": " D H",
+      "required": true
+    }
+  },
+  {
+    "key": "oriels",
+    "type": "input",
+    "templateOptions": {
+      "label": " Oriels",
+      "placeholder": "",
+      "description": " Oriels",
+      "required": true
+    }
+  },
+  {
+    "key": "entryDoorFront",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Entry Door Front",
+      "description": " Entry Door Front",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "entryDoorSide",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Entry Door Side",
+      "description": " Entry Door Side",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "entryDoorRear",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Entry Door Rear",
+      "description": " Entry Door Rear",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sdStyle",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Sd Style",
+      "description": " Sd Style",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sdColor",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Sd Color",
+      "description": " Sd Color",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "temperedGlass",
+    "type": "input",
+    "templateOptions": {
+      "label": " Tempered Glass",
+      "placeholder": "",
+      "description": " Tempered Glass",
+      "required": true
+    }
+  },
+  {
+    "key": "entryDoorModel",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Entry Door Model",
+      "description": " Entry Door Model",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "entryDoorFinish",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Entry Door Finish",
+      "description": " Entry Door Finish",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "addNotes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Add Notes",
+      "placeholder": "",
+      "description": " Add Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "interiorCasing",
+    "type": "input",
+    "templateOptions": {
+      "label": " Interior Casing",
+      "placeholder": "",
+      "description": " Interior Casing",
+      "required": true
+    }
+  },
+  {
+    "key": "primed",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Primed",
+      "description": " Primed",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "hollywood",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Hollywood",
+      "description": " Hollywood",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sidelightModel",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Sidelight Model",
+      "description": " Sidelight Model",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sidelightFinish",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Sidelight Finish",
+      "description": " Sidelight Finish",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "clear",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Clear",
+      "description": " Clear",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colonial",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Colonial",
+      "description": " Colonial",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "receiveSills",
+    "type": "input",
+    "templateOptions": {
+      "label": " Receive Sills",
+      "placeholder": "",
+      "description": " Receive Sills",
+      "required": true
+    }
+  },
+  {
+    "key": "note",
+    "type": "input",
+    "templateOptions": {
+      "label": " Note",
+      "placeholder": "",
+      "description": " Note",
+      "required": true
+    }
+  },
+  {
+    "key": "totalPrice",
+    "type": "input",
+    "templateOptions": {
+      "label": " Total Price",
+      "placeholder": "",
+      "description": " Total Price",
+      "required": true
+    }
+  },
+  {
+    "key": "lessDownPayment",
+    "type": "input",
+    "templateOptions": {
+      "label": " Less Down Payment",
+      "placeholder": "",
+      "description": " Less Down Payment",
+      "required": true
+    }
+  },
+  {
+    "key": "unpaidBalance",
+    "type": "input",
+    "templateOptions": {
+      "label": " Unpaid Balance",
+      "placeholder": "",
+      "description": " Unpaid Balance",
+      "required": true
+    }
+  }
+]

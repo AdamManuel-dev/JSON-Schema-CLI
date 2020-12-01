@@ -1,0 +1,602 @@
+[
+  {
+    "key": "buyerAddress",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Address",
+      "placeholder": "",
+      "description": " Buyer Address",
+      "required": true
+    }
+  },
+  {
+    "key": "city",
+    "type": "input",
+    "templateOptions": {
+      "label": " City",
+      "placeholder": "",
+      "description": " City",
+      "required": true
+    }
+  },
+  {
+    "key": "state",
+    "type": "input",
+    "templateOptions": {
+      "label": " State",
+      "placeholder": "",
+      "description": " State",
+      "required": true
+    }
+  },
+  {
+    "key": "zip",
+    "type": "input",
+    "templateOptions": {
+      "label": " Zip",
+      "placeholder": "",
+      "description": " Zip",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerName",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Name",
+      "placeholder": "",
+      "description": " Buyer Name",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerPhone",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Phone",
+      "placeholder": "",
+      "description": " Buyer Phone",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerMail",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Mail",
+      "placeholder": "",
+      "description": " Buyer Mail",
+      "required": true
+    }
+  },
+  {
+    "key": "financingBuyer",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Financing Buyer",
+      "description": " Financing Buyer",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sidingTearOffYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Siding Tear Off Yes",
+      "description": " Siding Tear Off Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sidingTearOffNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Siding Tear Off No",
+      "description": " Siding Tear Off No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "gutterTearOffYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gutter Tear Off Yes",
+      "description": " Gutter Tear Off Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "gutterTearOffNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gutter Tear Off No",
+      "description": " Gutter Tear Off No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "trimTearOffYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Trim Tear Off Yes",
+      "description": " Trim Tear Off Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "trimTearOffNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Trim Tear Off No",
+      "description": " Trim Tear Off No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceFasciaBoardYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Fascia Board Yes",
+      "description": " Replace Fascia Board Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceFasciaBoardNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Fascia Board No",
+      "description": " Replace Fascia Board No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "firOverExistingSurface",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Fir Over Existing Surface",
+      "description": " Fir Over Existing Surface",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sidingOverExistingSurface",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Siding Over Existing Surface",
+      "description": " Siding Over Existing Surface",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "siding",
+    "type": "input",
+    "templateOptions": {
+      "label": " Siding",
+      "placeholder": "",
+      "description": " Siding",
+      "required": true
+    }
+  },
+  {
+    "key": "soffit",
+    "type": "input",
+    "templateOptions": {
+      "label": " Soffit",
+      "placeholder": "",
+      "description": " Soffit",
+      "required": true
+    }
+  },
+  {
+    "key": "shutters",
+    "type": "input",
+    "templateOptions": {
+      "label": " Shutters",
+      "placeholder": "",
+      "description": " Shutters",
+      "required": true
+    }
+  },
+  {
+    "key": "frezeBoard",
+    "type": "input",
+    "templateOptions": {
+      "label": " Freze Board",
+      "placeholder": "",
+      "description": " Freze Board",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "style",
+    "type": "input",
+    "templateOptions": {
+      "label": " Style",
+      "placeholder": "",
+      "description": " Style",
+      "required": true
+    }
+  },
+  {
+    "key": "fascia",
+    "type": "input",
+    "templateOptions": {
+      "label": " Fascia",
+      "placeholder": "",
+      "description": " Fascia",
+      "required": true
+    }
+  },
+  {
+    "key": "pairs",
+    "type": "input",
+    "templateOptions": {
+      "label": " Pairs",
+      "placeholder": "",
+      "description": " Pairs",
+      "required": true
+    }
+  },
+  {
+    "key": "windowTrim",
+    "type": "input",
+    "templateOptions": {
+      "label": " Window Trim",
+      "placeholder": "",
+      "description": " Window Trim",
+      "required": true
+    }
+  },
+  {
+    "key": "backer",
+    "type": "input",
+    "templateOptions": {
+      "label": " Backer",
+      "placeholder": "",
+      "description": " Backer",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "gutter",
+    "type": "input",
+    "templateOptions": {
+      "label": " Gutter",
+      "placeholder": "",
+      "description": " Gutter",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "horizVert",
+    "type": "input",
+    "templateOptions": {
+      "label": " Horiz Vert",
+      "placeholder": "",
+      "description": " Horiz Vert",
+      "required": true
+    }
+  },
+  {
+    "key": "postBeams",
+    "type": "input",
+    "templateOptions": {
+      "label": " Post Beams",
+      "placeholder": "",
+      "description": " Post Beams",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "doorTrim",
+    "type": "input",
+    "templateOptions": {
+      "label": " Door Trim",
+      "placeholder": "",
+      "description": " Door Trim",
+      "required": true
+    }
+  },
+  {
+    "key": "porchCeiling",
+    "type": "input",
+    "templateOptions": {
+      "label": " Porch Ceiling",
+      "placeholder": "",
+      "description": " Porch Ceiling",
+      "required": true
+    }
+  },
+  {
+    "key": "colors",
+    "type": "input",
+    "templateOptions": {
+      "label": " Colors",
+      "placeholder": "",
+      "description": " Colors",
+      "required": true
+    }
+  },
+  {
+    "key": "columns",
+    "type": "input",
+    "templateOptions": {
+      "label": " Columns",
+      "placeholder": "",
+      "description": " Columns",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "sizeStyle",
+    "type": "input",
+    "templateOptions": {
+      "label": " Size Style",
+      "placeholder": "",
+      "description": " Size Style",
+      "required": true
+    }
+  },
+  {
+    "key": "vents",
+    "type": "input",
+    "templateOptions": {
+      "label": " Vents",
+      "placeholder": "",
+      "description": " Vents",
+      "required": true
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "gutterGuard",
+    "type": "input",
+    "templateOptions": {
+      "label": " Gutter Guard",
+      "placeholder": "",
+      "description": " Gutter Guard",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "addNotes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Add Notes",
+      "placeholder": "",
+      "description": " Add Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "totalPrice",
+    "type": "input",
+    "templateOptions": {
+      "label": " Total Price",
+      "placeholder": "",
+      "description": " Total Price",
+      "required": true
+    }
+  },
+  {
+    "key": "lessDownPayment",
+    "type": "input",
+    "templateOptions": {
+      "label": " Less Down Payment",
+      "placeholder": "",
+      "description": " Less Down Payment",
+      "required": true
+    }
+  },
+  {
+    "key": "unpaidBalance",
+    "type": "input",
+    "templateOptions": {
+      "label": " Unpaid Balance",
+      "placeholder": "",
+      "description": " Unpaid Balance",
+      "required": true
+    }
+  }
+]

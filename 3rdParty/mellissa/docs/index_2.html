@@ -1,0 +1,653 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Global Address Verification</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Global Address Verification</h1>
+    <div class="app-desc"><p><a href="http://wiki.melissadata.com/index.php?title=Global_Address_Verification">Global Address Verification Wiki</a></p>
+<h1>Overview</h1>
+<p>Welcome to Melissa's Global Address Verification.</p>
+<p>Global Address Verification is a real time address validation and correction service. Covering over 240+ different countries and territories around the world, this service allows you to ensure your address data is clean and accurate. Additionally, you can also parse the data and append latitude and longitude.</p>
+<p><img src="http://wiki.melissadata.com/images/9/93/EXT_QSG_Diagram_GlobalAddressVerification.png" alt="Global Address Verification Flowchart" title="Global Address Verification Flowchart" /></p>
+<h4>You can use Global Address Verification to:</h4>
+<ul>
+<li>Verify and correct addresses.</li>
+<li>Return the address parsed into individual components.</li>
+<li>Append latitude and longitude.</li>
+<li>Transliterate the address from or into the native language of the input country.</li>
+<li>Get the address formatted for mailing labels.</li>
+</ul>
+<h2>Field Names</h2>
+<p>This is a list of the request field names and their protocol naming conventions.</p>
+<p>| Field Name | REST | JSON/XML
+| ---------- | ---- | --------
+| Transmission Reference | t | TransmissionReference
+| License Key | id | CustomerID
+| Options | opt | Options
+| Format | format | Format
+| Record ID |  | RecordID
+| Organization | org | Organization
+| Address Line 1 | a1 | AddressLine1
+| Address Line 2 | a2 | AddressLine2
+| Address Line 3 | a3 | AddressLine3
+| Address Line 4 | a4 | AddressLine4
+| Address Line 5 | a5 | AddressLine5
+| Address Line 6 | a6 | AddressLine6
+| Address Line 7 | a7 | AddressLine7
+| Address Line 8 | a8 | AddressLine8
+| Double Dependent Locality | ddeploc | DoubleDependentLocality
+| Dependent Locality | deploc | DependentLocality
+| Locality | loc | Locality
+| Sub Administrative Area | subadmarea | SubAdministrativeArea
+| Administrative Area | admarea | AdministrativeArea
+| Postal Code | postal | PostalCode
+| Sub National Area | subnatarea | SubNationalArea
+| Country | ctry | Country</p>
+<h2>Options</h2>
+<p>Options allow you to make configuration changes to modify the output. This field is options, and they are passed in the format of <code>OptionName:Setting</code>. You can specify none, one, or more options at the same time by delimiting with a <code>,</code>(comma). For example: <code>OutputScript:LATN,DeliveryLines:ON,LineSeparator:Pipe</code></p>
+<h4>DeliveryLines:(on,off)</h4>
+<p>This options allows you to specify if the Address Lines 1-8 should contain just the delivery address or the entire address. Default of &quot;off&quot; will have address lines 1-8 return the entire address.</p>
+<h4>LineSeparator:(SEMICOLON,PIPE,CR,LF,CRLF,TAB,BR)</h4>
+<p>This is the line separator used for the FormattedAddress result.</p>
+<p>| Parameter | Description
+| --------- | -----------
+| SEMICOLON | Default. A semicolon (;).
+| PIPE | A pipe.
+| CR | A carriage return.
+| LF | A line feed.
+| CRLF | A carriage return + line feed.
+| TAB | A tab.
+| BR | A line break.</p>
+<h4>OutputScript:(NOCHANGE,LATN,NATIVE)</h4>
+<p>This is the script type used for all applicable fields.</p>
+<p>| Parameter | Description
+| --------- | -----------
+| NOCHANGE | Default. Returns the same script that is sent in.
+| LATN | Returns in the Latin script.
+| NATIVE | Returns in the native script for the designated country.</p>
+<h4>OutputGeo:(ON,OFF)</h4>
+<p>This options allows you to specify if you want geocoding output in the response. Default of &quot;ON&quot; will have the latitude and longitude returned when available.</p>
+<h4>CountryOfOrigin:([ISO Code])</h4>
+<p>This is used to determine whether or not to include the country name as the last line in FormattedAddress.</p>
+<p>This takes any valid ISO-3166-1 Alpha-2, ISO-3166-1 Alpha-3, or ISO-3166-1 Numeric code.</p>
+<ul>
+<li>If blank, invalid, or the same as the destination country, then the destination country is not appended to the end of the formatted address.</li>
+<li>If valid and different from the destination country, then the destination country is appended to the formatted address.</li>
+<li>US or US Territory:
+<ul>
+<li>If CountryOfOrigin and destination country being verified are both US or US Territories then the country will not be appended to FormattedAddress.</li>
+<li>US Territories will have &quot;United States of America&quot; appended if the CountryOfOrigin is not a US Territory, but the CountryName and ISO codes will be that of the territory.</li>
+<li>Canada is treated like any other non-US Territory.</li>
+</ul>
+</li>
+</ul>
+<h3>Outputs</h3>
+<h4>Response (Base)</h4>
+<p>| Column Name | Description
+| ----------- | -----------
+| Version | Current version of the service.
+| Transmission Reference | Unique identifier for this request.
+| Transmission Results | Lists result codes from the web service.
+| Total Records | Total number of records returned by the request, up to a maximum of 500.</p>
+<h4>Record</h4>
+<p>The following columns are part of the record.</p>
+<p>| Column Name | Description
+| ----------- | -----------
+| Record ID | Unique ID if processing multiple records.
+| Results | Results (status of the validation).
+| Formatted Address | Full address in one field. Mailing label format.
+| Organization | Organization name.
+| Address Line 1 | Address lines in 8 separate fields.
+| Address Line 2 | Address lines in 8 separate fields.
+| Address Line 3 | Address lines in 8 separate fields.
+| Address Line 4 | Address lines in 8 separate fields.
+| Address Line 5 | Address lines in 8 separate fields.
+| Address Line 6 | Address lines in 8 separate fields.
+| Address Line 7 | Address lines in 8 separate fields.
+| Address Line 8 | Address lines in 8 separate fields.
+| Sub Premises | Suite.
+| Double Dependent Locality | Smallest population center data element.
+| Dependent Locality | Urbanization. Smaller population center data element.
+| Locality | City.
+| Sub Administrative Area | County. Smallest geographic data element.
+| Administrative Area | State, municipality.
+| Postal Code | Postal code.
+| Address Type | One-character code for the type of address.
+| Address Key | Unique key generated for the address.
+| Sub National Area | Arbitrary administrative region.
+| Country Name | Official country name.
+| CountryISO3166_1_Alpha2 | Country 2 letter code.
+| CountryISO3166_1_Alpha3 | Country 3 letter code.
+| CountryISO3166_1_Numeric | Country numeric code.
+| Country Subdivision Code | Country subdivision code.
+| Thoroughfare | Street address.
+| Thoroughfare Pre Direction | Street prefix directional.
+| Thoroughfare Leading Type | Street leading type.
+| Thoroughfare Name | Street name.
+| Thoroughfare Trailing Type | Street trailing type.
+| Thoroughfare Post Direction | Street postfix directional.
+| Dependent Thoroughfare | Dependent street or block data element.
+| Dependent Thoroughfare Pre Direction | Dependent street or block data element prefix directional.
+| Dependent Thoroughfare Leading Type | Dependent street or block data element leading type.
+| Dependent Thoroughfare Name | Dependent street or block data element name indicator.
+| Dependent Thoroughfare Trailing Type | Dependent street or block element trailing type indicator.
+| Dependent Thoroughfare Post Direction | Dependent street or block data element postfix directional.
+| Building | Building name.
+| Premises Type | House type.
+| Premises Number | House number.
+| Sub Premises Type | Suite name.
+| Sub Premises Number | Suite number.
+| Post Box | Post office box.
+| Latitude | Geographic latitude coordinate.
+| Longitude | Geographic longitude coordinate.</p>
+<h2>License Key</h2>
+<p>You should have been provided an encrypted and unique License Key from Melissa. This is necessary for including with each request to Global Address Verification. This value should be put into the License Key element in each Web service request.
+If you do not have a License Key, please contact your Melissa sales representative at 1-800-MELISSA (1-800-635-4772).</p>
+<h2>Single vs. Batch</h2>
+<p>Melissa cloud services are capable of both single record real-time processing and batch processing. The difference is simply in the number of records sent in each request. Melissa cloud services take an array of records. This array can contain anything from one to one hundred records. For a real-time process like a web form entry or a call center application, send in a request with one record. For a batch processing scenario like a database, send requests of up to 100 records until all the records are processed. Note: Make sure each record in the request has a unique Record ID.</p>
+<h2>Choosing a Web Service Protocol</h2>
+<p>The Melissa Global Address Verification web service supports REST and JSON. For the undecided, here are some Pros and Cons of one Web Service protocol over the other.</p>
+<h4>REST</h4>
+<p><strong><em>Pros:</em></strong> REST is lightweight and relies upon HTTP to do its work. If you don't need a strict API definition, this is the way to go. REST is also format-agnostic so you can use XML or JSON as responses.</p>
+<p><strong><em>Cons:</em></strong> REST can only be used for sending of single records and doesn’t support strict contracts or more involved security. The Response is a JSON document.</p>
+<h4>JSON</h4>
+<p><strong><em>Pros:</em></strong> JSON relies on simple object serialization based on JavaScript’s object initialization. It is very simple to use with JavaScript and easily parsed and understood by developers.</p>
+<p><strong><em>Cons:</em></strong> No support for formal definitions. No namespace support. Not much support in Web Service clients with some platforms.</p>
+<h2>Basic Order of Operations (Pseudo Code)</h2>
+<ol>
+<li>Create a request using the pre-defined structure in SOAP, XML, or JSON.</li>
+<li>Fill in the request with your license or customer ID.</li>
+<li>Add address records to the <Records> array with anywhere from 1 to 100 <RequestRecord> items.</li>
+<li>Send the request to the service using the SOAP endpoint for SOAP requests and the WEB endpoint for XML or JSON requests and receive a response back.</li>
+<li>Parse the response and the results.</li>
+</ol>
+<h2>Interpreting Results</h2>
+<p>Melissa's Global Address Service uses Results Codes to determine if an address is good or bad.
+The following Results conventions are used:</p>
+<ul>
+<li>Cloud Service Errors: SExx</li>
+<li>Cloud Transmission Errors: GExx</li>
+<li>Address Status Codes: AVxx</li>
+<li>Address Error Codes: AExx</li>
+<li>Address Change Codes: ACxx</li>
+</ul>
+<p>The most important codes are the AV codes. The will tell you if the address we give back to you is good (and how good) or bad. The first digit can be a 1 (partially validated) or 2 (fully validated). The 2nd digit is to what level the address is validated to. The possible values are:</p>
+<ul>
+<li>administrative area</li>
+<li>locality</li>
+<li>thoroughfare</li>
+<li>premises</li>
+<li>subpremise</li>
+</ul>
+<p>For a country with good reference data like the US, a fully good address would be AV24 (a house) or AV25 (an apartment). Not every country has house number or subpremise data available. For a country with thoroughfare level data only, the maximum verification status is AV23 (thoroughfare).</p>
+<p>For more details, see the <a href="http://wiki.melissadata.com/index.php?title=Global_Address_Verification">Global Address Verification Wiki</a></p>
+<h2>Result Codes</h2>
+<p>The service returns a series of result codes to tell you of the status of the Address and any changes or errors found during the verification process.</p>
+<p>For a full list of the Result Codes returned by the Global Address Verification, see <a href="http://wiki.melissadata.com/index.php?title=Result_Code_Details#Global_Address_Verification">Global Address Verification Result Codes</a></p>
+<h2>Wiki Page</h2>
+<p>A product support Wiki is available for your convenience. In the Wiki, you will find documentation about the service in more detail.</p>
+<p><a href="http://wiki.melissadata.com/index.php?title=Global_Address_Verification">Global Address Verification Wiki Page</a></p>
+<h1>Misc. Considerations</h1>
+<h2>Firewall</h2>
+<p>If you are behind a firewall, you may need to allow specific IP addresses access in order to communicate with the service.</p>
+<p>For a full list of IP Addresses, see <a href="http://wiki.melissadata.com/index.php?title=IP_Address_Information">IP Address Information</a></p>
+</div>
+    <div class="app-desc">More information: <a href="http://melissadata.com/company/contact.htm">http://melissadata.com/company/contact.htm</a></div>
+    <div class="app-desc">Contact Info: <a href="team@openapitools.org">team@openapitools.org</a></div>
+    <div class="app-desc">Version: v3</div>
+    <div class="app-desc">BasePath:/v3/WEB</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Default">Default</a></h4>
+  <ul>
+  <li><a href="#doGlobalAddressGET"><code><span class="http-method">get</span> /GlobalAddress/doGlobalAddress</code></a></li>
+  </ul>
+
+  <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="doGlobalAddressGET"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /GlobalAddress/doGlobalAddress</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">doGlobalAddressGET</span>)</div>
+    <div class="method-notes"><p>Uses HTTP GET to accept one input record and returns the response in JSON format. This is useful for browser level or quick single queries.</p>
+<p><strong><em>Note:</em></strong> A request to Global Address Verification must consist of the License Key and at least an Address Line 1, Locality, Administrative Area, Postal Code, and Country.</p>
+</div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">t (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Transmission Reference - Serves as a unique identifier for this set of records. This allows you to match a response to a request. default: null </div><div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; License Key - License Key from Melissa default: null </div><div class="param">opt (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Options - Options to include (Ex:<code>OutputScript:LATN,DeliveryLines:ON</code>) default: null </div><div class="param">org (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Organization - Organization name default: null </div><div class="param">a1 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 1 - First address line default: null </div><div class="param">a2 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 2 - Second address line default: null </div><div class="param">a3 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 3 - Third address line default: null </div><div class="param">a4 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 4 - Fourth address line default: null </div><div class="param">a5 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 5 - Fifth address line default: null </div><div class="param">a6 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 6 - Sixth address line default: null </div><div class="param">a7 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 7 - Seventh address line default: null </div><div class="param">a8 (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Address Line 8 - Eigth address line default: null </div><div class="param">ddeploc (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Double Dependent Locality default: null </div><div class="param">deploc (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Dependent Locality default: null </div><div class="param">loc (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Locality (City) default: null </div><div class="param">subadmarea (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Sub Administrative Area default: null </div><div class="param">admarea (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Administrative Area (State) default: null </div><div class="param">subnatarea (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Sub National Area default: null </div><div class="param">postal (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Postal Code default: null </div><div class="param">ctry (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Country name default: null </div><div class="param">format (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Format of the request default: null </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Response">Response</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "TransmissionResults" : "TransmissionResults",
+  "Version" : "Version",
+  "TotalRecords" : "TotalRecords",
+  "Records" : [ {
+    "CountrySubdivisionCode" : "CountrySubdivisionCode",
+    "Building" : "Building",
+    "Organization" : "Organization",
+    "CountryName" : "CountryName",
+    "PostalCode" : "PostalCode",
+    "Latitude" : "Latitude",
+    "ThoroughfareName" : "ThoroughfareName",
+    "PostBox" : "PostBox",
+    "DoubleDependentLocality" : "DoubleDependentLocality",
+    "SubPremisesNumber" : "SubPremisesNumber",
+    "CountryISO3166_1_Alpha3" : "CountryISO3166_1_Alpha3",
+    "CountryISO3166_1_Alpha2" : "CountryISO3166_1_Alpha2",
+    "CountryISO3166_1_Numeric" : "CountryISO3166_1_Numeric",
+    "ThoroughfareLeadingType" : "ThoroughfareLeadingType",
+    "SubPremises" : "SubPremises",
+    "DependentThoroughfare" : "DependentThoroughfare",
+    "DependentThoroughfareTrailingType" : "DependentThoroughfareTrailingType",
+    "AdministrativeArea" : "AdministrativeArea",
+    "Thoroughfare" : "Thoroughfare",
+    "SubPremisesType" : "SubPremisesType",
+    "Locality" : "Locality",
+    "DependentThoroughfareName" : "DependentThoroughfareName",
+    "FormattedAddress" : "FormattedAddress",
+    "PremisesType" : "PremisesType",
+    "AddressLine8" : "AddressLine8",
+    "AddressKey" : "AddressKey",
+    "Longitude" : "Longitude",
+    "SubNationalArea" : "SubNationalArea",
+    "DependentLocality" : "DependentLocality",
+    "ThoroughfarePostDirection" : "ThoroughfarePostDirection",
+    "DependentThoroughfarePreDirection" : "DependentThoroughfarePreDirection",
+    "AddressLine3" : "AddressLine3",
+    "AddressLine2" : "AddressLine2",
+    "AddressLine1" : "AddressLine1",
+    "AddressLine7" : "AddressLine7",
+    "Results" : "Results",
+    "AddressLine6" : "AddressLine6",
+    "AddressLine5" : "AddressLine5",
+    "AddressLine4" : "AddressLine4",
+    "ThoroughfarePreDirection" : "ThoroughfarePreDirection",
+    "ThoroughfareTrailingType" : "ThoroughfareTrailingType",
+    "PremisesNumber" : "PremisesNumber",
+    "SubAdministrativeArea" : "SubAdministrativeArea",
+    "RecordID" : "RecordID",
+    "AddressType" : "AddressType",
+    "DependentThoroughfarePostDirection" : "DependentThoroughfarePostDirection",
+    "DependentThoroughfareLeadingType" : "DependentThoroughfareLeadingType"
+  }, {
+    "CountrySubdivisionCode" : "CountrySubdivisionCode",
+    "Building" : "Building",
+    "Organization" : "Organization",
+    "CountryName" : "CountryName",
+    "PostalCode" : "PostalCode",
+    "Latitude" : "Latitude",
+    "ThoroughfareName" : "ThoroughfareName",
+    "PostBox" : "PostBox",
+    "DoubleDependentLocality" : "DoubleDependentLocality",
+    "SubPremisesNumber" : "SubPremisesNumber",
+    "CountryISO3166_1_Alpha3" : "CountryISO3166_1_Alpha3",
+    "CountryISO3166_1_Alpha2" : "CountryISO3166_1_Alpha2",
+    "CountryISO3166_1_Numeric" : "CountryISO3166_1_Numeric",
+    "ThoroughfareLeadingType" : "ThoroughfareLeadingType",
+    "SubPremises" : "SubPremises",
+    "DependentThoroughfare" : "DependentThoroughfare",
+    "DependentThoroughfareTrailingType" : "DependentThoroughfareTrailingType",
+    "AdministrativeArea" : "AdministrativeArea",
+    "Thoroughfare" : "Thoroughfare",
+    "SubPremisesType" : "SubPremisesType",
+    "Locality" : "Locality",
+    "DependentThoroughfareName" : "DependentThoroughfareName",
+    "FormattedAddress" : "FormattedAddress",
+    "PremisesType" : "PremisesType",
+    "AddressLine8" : "AddressLine8",
+    "AddressKey" : "AddressKey",
+    "Longitude" : "Longitude",
+    "SubNationalArea" : "SubNationalArea",
+    "DependentLocality" : "DependentLocality",
+    "ThoroughfarePostDirection" : "ThoroughfarePostDirection",
+    "DependentThoroughfarePreDirection" : "DependentThoroughfarePreDirection",
+    "AddressLine3" : "AddressLine3",
+    "AddressLine2" : "AddressLine2",
+    "AddressLine1" : "AddressLine1",
+    "AddressLine7" : "AddressLine7",
+    "Results" : "Results",
+    "AddressLine6" : "AddressLine6",
+    "AddressLine5" : "AddressLine5",
+    "AddressLine4" : "AddressLine4",
+    "ThoroughfarePreDirection" : "ThoroughfarePreDirection",
+    "ThoroughfareTrailingType" : "ThoroughfareTrailingType",
+    "PremisesNumber" : "PremisesNumber",
+    "SubAdministrativeArea" : "SubAdministrativeArea",
+    "RecordID" : "RecordID",
+    "AddressType" : "AddressType",
+    "DependentThoroughfarePostDirection" : "DependentThoroughfarePostDirection",
+    "DependentThoroughfareLeadingType" : "DependentThoroughfareLeadingType"
+  } ],
+  "TransmissionReference" : "TransmissionReference"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    A response is the result of a request. This consists of returned results codes and parsed, corrected, and/or appended request elements, depending on the options selected.
+        <a href="#Response">Response</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Records"><code>Records</code> - </a></li>
+    <li><a href="#Response"><code>Response</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Records"><code>Records</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">RecordID (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> This is a string value containing a unique identifier for the current record. Use this to match the record submitted with the record returned. It will return what is inputted. </div>
+<div class="param">Results (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Returns record specific result codes. For more information, see Global Address Verification Result Codes. </div>
+<div class="param">FormattedAddress (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Returns the address in the correct mailing format for the country specified in the CountyOfOrigin element. </div>
+<div class="param">Organization (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Returns the organization name as sent in the input. </div>
+<div class="param">AddressLine1 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> First address line of the current address. </div>
+<div class="param">AddressLine2 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Second address line of the current address. </div>
+<div class="param">AddressLine3 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Third address line of the current address. </div>
+<div class="param">AddressLine4 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fourth address line of the current address. </div>
+<div class="param">AddressLine5 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Fifth address line of the current address. </div>
+<div class="param">AddressLine6 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Sixth address line of the current address. </div>
+<div class="param">AddressLine7 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Seventh address line of the current address. </div>
+<div class="param">AddressLine8 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Eigth address line of the current address. </div>
+<div class="param">SubPremises (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Suite. Parsed SubPremises from the AddressLine elements. </div>
+<div class="param">DoubleDependentLocality (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the DoubleDependentLocality element. </div>
+<div class="param">DependentLocality (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the DependentLocality element. </div>
+<div class="param">Locality (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the Locality element. </div>
+<div class="param">SubAdministrativeArea (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the SubAdministrativeArea element. </div>
+<div class="param">AdministrativeArea (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the AdministrativeArea element. </div>
+<div class="param">PostalCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the PostalCode element. </div>
+<div class="param">AddressType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Returns a one-character code for the type of address coded. This element works only for US and Canadian addresses. </div>
+<div class="param">AddressKey (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Unique key for the address. Only for US and Canadian addresses. The AddressKey can be used by other Melissa services, such as Geocoder or RBDI. </div>
+<div class="param">SubNationalArea (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the SubNationalArea element. </div>
+<div class="param">CountryName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Standardized contents of the CountryName element. </div>
+<div class="param">CountryISO3166_1_Alpha2 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed CountryISO3166_1_Alpha2 element from the input. </div>
+<div class="param">CountryISO3166_1_Alpha3 (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed CountryISO3166_1_Alpha3 element from the input. </div>
+<div class="param">CountryISO3166_1_Numeric (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed CountryISO3166_1_Numeric element from the input. </div>
+<div class="param">CountrySubdivisionCode (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> ISO3166-2 code for country subdivisions, usually the administrative area for a country. </div>
+<div class="param">Thoroughfare (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed Thoroughfare element from the input. </div>
+<div class="param">ThoroughfarePreDirection (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed ThoroughfarePreDirection element from the input. </div>
+<div class="param">ThoroughfareLeadingType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed ThoroughfareLeadingType element from the input. </div>
+<div class="param">ThoroughfareName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed ThoroughfareName element from the input. </div>
+<div class="param">ThoroughfareTrailingType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed ThoroughfareTrailingType element from the input. </div>
+<div class="param">ThoroughfarePostDirection (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed ThoroughfarePostDirection element from the input. </div>
+<div class="param">DependentThoroughfare (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed DependentThoroughfare element from the input. </div>
+<div class="param">DependentThoroughfarePreDirection (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed DependentThoroughfarePreDirection element from the input. </div>
+<div class="param">DependentThoroughfareLeadingType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed DependentThoroughfareLeadingType element from the input. </div>
+<div class="param">DependentThoroughfareName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed DependentThoroughfareName element from the input. </div>
+<div class="param">DependentThoroughfareTrailingType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed DependentThoroughfareTrailingType element from the input. </div>
+<div class="param">DependentThoroughfarePostDirection (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed DependentThoroughfarePostDirection element from the input. </div>
+<div class="param">Building (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed Building element from the input. </div>
+<div class="param">PremisesType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed PremisesType element from the input. </div>
+<div class="param">PremisesNumber (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed PremisesNumber element from the input. </div>
+<div class="param">SubPremisesType (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed SubPremisesType element from the input. </div>
+<div class="param">SubPremisesNumber (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed SubPremisesNumber element from the input. </div>
+<div class="param">PostBox (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed PostBox element from the input. </div>
+<div class="param">Latitude (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed Latitude element from the input. </div>
+<div class="param">Longitude (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Parsed Longitude element from the input. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Response"><code>Response</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">Version </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">TransmissionReference </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">TransmissionResults </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">TotalRecords </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">Records </div><div class="param-desc"><span class="param-type"><a href="#Records">array[Records]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>

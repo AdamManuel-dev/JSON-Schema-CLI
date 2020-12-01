@@ -1,0 +1,70 @@
+{
+  "name": "augitype",
+  "version": "1.0.0",
+  "description": "This is repo to version control the types and definitions for the Midtown API and Types",
+  "main": "./bin/index.js",
+  "scripts": {
+    "~~  CRUD  ~~": "",
+    "gen:crud": "mkdir ./dist/CRUD && node ./Crud_Generator/run.js > ./dist/CRUD/without_types.oas2.json",
+    "clean:crud": "npx @openapitools/openapi-generator-cli generate -i ./dist/CRUD/oas2.json -o ./dist/CRUD/oas3 -g openapi",
+    "postman:crud": "openapi2postmanv2 -s ./dist/CRUD/oas3/openapi.json -o ./dist/crud_collection.json -p",
+    "gen:CRUD:dart": "npx @openapitools/openapi-generator-cli generate -i ./dist/CRUD/oas3/openapi.json -o ./dist/CRUD/dart -g dart --skip-validate-spec",
+    "gen:CRUD:csharp": "npx @openapitools/openapi-generator-cli generate -i ./dist/CRUD/oas3/openapi.json -o ./dist/CRUD/net-core -g csharp-netcore --skip-validate-spec",
+    "gen:CRUD:ts-axios": "npx @openapitools/openapi-generator-cli generate -i ./dist/CRUD/oas3/openapi.json -o ./dist/CRUD/ts-axios -g typescript-axios --skip-validate-spec",
+    "gen:CRUD:ts-rxjs": "npx @openapitools/openapi-generator-cli generate -i ./dist/CRUD/oas3/openapi.json -o ./dist/CRUD/ts-rxjs -g typescript-rxjs --skip-validate-spec",
+    "~~  Typing  ~~": "",
+    "build": "webpack --development",
+    "gen:type": "npx openapi-client-axios-typegen ./OpenAPI.json > client.d.ts",
+    "~~  OpenAPI  ~~": "",
+    "gen": "npx @openapitools/openapi-generator-cli generate -i ./OpenAPI.json -o ./dist/clean -g openapi",
+    "gen:dart": "npx @openapitools/openapi-generator-cli generate -i ./OpenAPI.json -o ./dist/dart -g dart --skip-validate-spec",
+    "gen:ts-axios": "npx @openapitools/openapi-generator-cli generate -i ./OpenAPI.json -o ./dist/ts-axios -g typescript-axios --skip-validate-spec",
+    "gen:ts-rxjs": "npx @openapitools/openapi-generator-cli generate -i ./OpenAPI.json -o ./dist/ts-rxjs -g typescript-rxjs --skip-validate-spec",
+    "gen:docs": "openapi-generator generate -i ./OpenAPI.json -o ./docs -g html -p providedInRoot=true -p supportsES6=true -p withInterfaces=true -p taggedUnions=true -p ngVersion=8.0.0 -p prependFormOrBodyParameters=true -p stringEnums=true",
+    "postman": "openapi2postmanv2 -s ./CRUD_v2_1.json -o ./dist/crud_collection.json -p",
+    "~~  Utility  ~~": "",
+    "clean": "rm -rf ./dist && mkdir ./dist",
+    "bin": "npm run types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://ADXBI@dev.azure.com/ADXBI/Midtown/_git/Definitions"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/cosmos": "^3.6.3",
+    "@buzuli/json": "^2.1.0",
+    "@stoplight/spectral": "^4.0.3",
+    "chalk": "^4.0.0",
+    "fs-extra": "^9.0.0",
+    "get-stdin": "^7.0.0",
+    "immer": "^6.0.3",
+    "kontur": "^0.2.0",
+    "openapi-to-postmanv2": "^1.1.12",
+    "ora": "^4.0.4",
+    "parasite": "0.0.6",
+    "quicktype-core": "^6.0.56",
+    "rambdax": "^3.7.0",
+    "ramda": "^0.27.0",
+    "replace-in-file": "^4.0.0",
+    "rxjs": "^6.5.5",
+    "shelljs": "^0.8.3",
+    "terminal-link": "^2.1.1",
+    "vorpal": "^1.12.0",
+    "vorpal-rc": "^1.1.0"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^1.0.10-4.2.3",
+    "lodash": "^4.17.15",
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-stats-plugin": "^0.3.1",
+    "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "bin": {
+    "types": "./bin/index.js"
+  }
+}

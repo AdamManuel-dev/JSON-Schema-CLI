@@ -1,0 +1,1032 @@
+{
+  "@name": "form",
+  "id": "windowForm",
+  "children": [
+    {
+      "@name": "dropdownButton",
+      "id": "shingleMake",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "ikoAshpalt",
+          "value": "ikoAshpalt",
+          "label": "IKO (ASHPALT)"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "certainteedMetal",
+          "value": "certainteedMetal",
+          "label": "CERTAINTEED (METAL)"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "certainteedMetalStyle",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "shake",
+          "value": "shake",
+          "label": "SHAKE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "slate",
+          "value": "slate",
+          "label": "SLATE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "tile",
+          "value": "tile",
+          "label": "TILE"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "protectiveMembrane",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "synfelt",
+          "value": "synfelt",
+          "label": "SYNFELT"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "asphaltDiamondDeckMetal",
+          "value": "asphaltDiamondDeckMetal",
+          "label": "(ASPHALT) DIAMOND DECK (METAL)"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "flangeCovers",
+          "value": "flangeCovers",
+          "label": "FLANGE COVERS "
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "allLead",
+          "value": "allLead",
+          "label": "ALL LEAD"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "spectraGutterColors",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "30DegreeWhite",
+          "value": "30DegreeWhite",
+          "label": "30 DEGREE WHITE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "pearlGray",
+          "value": "pearlGray",
+          "label": "PEARL GRAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "cream",
+          "value": "cream",
+          "label": "CREAM"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "doveGray",
+          "value": "doveGray",
+          "label": "DOVE GRAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "bronze",
+          "value": "bronze",
+          "label": "BRONZE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "forestGreen",
+          "value": "forestGreen",
+          "label": "FOREST GREEN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "linen",
+          "value": "linen",
+          "label": "LINEN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "musketBrown",
+          "value": "musketBrown",
+          "label": "MUSKET BROWN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "copper",
+          "value": "copper",
+          "label": "COPPER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "traditionalBlue",
+          "value": "traditionalBlue",
+          "label": "TRADITIONAL BLUE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "cocoaBrown",
+          "value": "cocoaBrown",
+          "label": "COCOA BROWN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "tuxedoGray",
+          "value": "tuxedoGray",
+          "label": "TUXEDO GRAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "almond",
+          "value": "almond",
+          "label": "ALMOND"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "eggshell",
+          "value": "eggshell",
+          "label": "EGGSHELL"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "scotchRed",
+          "value": "scotchRed",
+          "label": "SCOTCH RED"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "terratone",
+          "value": "terratone",
+          "label": "TERRATONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "wicker",
+          "value": "wicker",
+          "label": "WICKER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "royalBrown",
+          "value": "royalBrown",
+          "label": "ROYAL BROWN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "antiqueIvory",
+          "value": "antiqueIvory",
+          "label": "ANTIQUE IVORY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "clay",
+          "value": "clay",
+          "label": "CLAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "colonialGray",
+          "value": "colonialGray",
+          "label": "COLONIAL GRAY"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "asphaltStyle",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "dynasty",
+          "value": "dynasty",
+          "label": "DYNASTY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "nordic",
+          "value": "nordic",
+          "label": "NORDIC"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "shakeMetalColors",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "cedar",
+          "value": "cedar",
+          "label": "CEDAR"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "timberAsh",
+          "value": "timberAsh",
+          "label": "TIMBER ASH"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "weatherwood",
+          "value": "weatherwood",
+          "label": "WEATHERWOOD"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "shorewood",
+          "value": "shorewood",
+          "label": "SHOREWOOD"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "iceWaterProtection",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "eaves",
+          "value": "eaves",
+          "label": "EAVES"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "valleys",
+          "value": "valleys",
+          "label": "VALLEYS"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "ridgeVent",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "tamkoAsphalt",
+          "value": "tamkoAsphalt",
+          "label": "TAMKO (ASPHALT)"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "certainteedMetal",
+          "value": "certainteedMetal",
+          "label": "CERTAINTEED (METAL)"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "certainteedMetalStyle",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "silver",
+          "value": "silver",
+          "label": "SILVER"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "dynastyAsphaltColors",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "graniteBlack",
+          "value": "graniteBlack",
+          "label": "GRANITE BLACK"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "glacier",
+          "value": "glacier",
+          "label": "GLACIER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "castleGrey",
+          "value": "castleGrey",
+          "label": "CASTLE GREY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "driftshake",
+          "value": "driftshake",
+          "label": "DRIFTSHAKE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "sedona",
+          "value": "sedona",
+          "label": "SEDONA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "cornerstone",
+          "value": "cornerstone",
+          "label": "CORNERSTONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "appalachian",
+          "value": "appalachian",
+          "label": "APPALACHIAN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "brownstone",
+          "value": "brownstone",
+          "label": "BROWNSTONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "frostoneGrey",
+          "value": "frostoneGrey",
+          "label": "FROSTONE GREY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "biscayne",
+          "value": "biscayne",
+          "label": "BISCAYNE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "atlanticBlue",
+          "value": "atlanticBlue",
+          "label": "ATLANTIC BLUE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "monacoRed",
+          "value": "monacoRed",
+          "label": "MONACO RED"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "emeraldGreen",
+          "value": "emeraldGreen",
+          "label": "EMERALD GREEN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "pacificRim",
+          "value": "pacificRim",
+          "label": "PACIFIC RIM"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "shadowBrown",
+          "value": "shadowBrown",
+          "label": "SHADOW BROWN"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "slateMetalColors",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "brownstone",
+          "value": "brownstone",
+          "label": "BROWNSTONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "cobalt",
+          "value": "cobalt",
+          "label": "COBALT"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "castleGrey",
+          "value": "castleGrey",
+          "label": "CASTLE GREY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "mountainSage",
+          "value": "mountainSage",
+          "label": "MOUNTAIN SAGE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "stormSlate",
+          "value": "stormSlate",
+          "label": "STORM SLATE"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "flashingCounterFlashing",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "all",
+          "value": "all",
+          "label": "ALL"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "soffit",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "560AutumnLeaf",
+          "value": "560AutumnLeaf",
+          "label": "560 AUTUMN LEAF"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "518Black",
+          "value": "518Black",
+          "label": "518 BLACK"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "502Brown",
+          "value": "502Brown",
+          "label": "502 BROWN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "200Cactus",
+          "value": "200Cactus",
+          "label": "200 CACTUS"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "827Champagne",
+          "value": "827Champagne",
+          "label": "827 CHAMPAGNE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "807Clay",
+          "value": "807Clay",
+          "label": "807 CLAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "559Cypress",
+          "value": "559Cypress",
+          "label": "559 CYPRESS"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "327DesertTan",
+          "value": "327DesertTan",
+          "label": "327 DESERT TAN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "503Eggshell",
+          "value": "503Eggshell",
+          "label": "503 EGGSHELL"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "605EldridgeGray",
+          "value": "605EldridgeGray",
+          "label": "605 ELDRIDGE GRAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "522Forest",
+          "value": "522Forest",
+          "label": "522 FOREST"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "204Granite",
+          "value": "204Granite",
+          "label": "204 GRANITE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "506Heather",
+          "value": "506Heather",
+          "label": "506 HEATHER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "819Herringbone",
+          "value": "819Herringbone",
+          "label": "819 HERRINGBONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "577Mocha",
+          "value": "577Mocha",
+          "label": "577 MOCHA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "508Musket",
+          "value": "508Musket",
+          "label": "508 MUSKET"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "521Navy",
+          "value": "521Navy",
+          "label": "521 NAVY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "509Norwood",
+          "value": "509Norwood",
+          "label": "509 NORWOOD"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "805Pewter",
+          "value": "805Pewter",
+          "label": "805 PEWTER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "549PrairieSand",
+          "value": "549PrairieSand",
+          "label": "549 PRAIRIE SAND"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "538Sable",
+          "value": "538Sable",
+          "label": "538 SABLE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "177SandyBeige",
+          "value": "177SandyBeige",
+          "label": "177 SANDY BEIGE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "523SnowMist",
+          "value": "523SnowMist",
+          "label": "523 SNOW MIST"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "511Terratone",
+          "value": "511Terratone",
+          "label": "511 TERRATONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "280White",
+          "value": "280White",
+          "label": "280 WHITE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "809Wicker",
+          "value": "809Wicker",
+          "label": "809 WICKER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "604Wineberry",
+          "value": "604Wineberry",
+          "label": "604 WINEBERRY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "401BenningtonBeige",
+          "value": "401BenningtonBeige",
+          "label": "401 BENNINGTON BEIGE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "411CottageRed",
+          "value": "411CottageRed",
+          "label": "411 COTTAGE RED"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "404Dune",
+          "value": "404Dune",
+          "label": "404 DUNE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "405FoothillBlue",
+          "value": "405FoothillBlue",
+          "label": "405 FOOTHILL BLUE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "407Sahara",
+          "value": "407Sahara",
+          "label": "407 SAHARA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "409Sycamore",
+          "value": "409Sycamore",
+          "label": "409 SYCAMORE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "410Thatch",
+          "value": "410Thatch",
+          "label": "410 THATCH"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "gutterSize",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "5",
+          "value": "5",
+          "label": "5\""
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "6",
+          "value": "6",
+          "label": "6\""
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "nordicAsphaltColors",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "graniteBlack",
+          "value": "graniteBlack",
+          "label": "GRANITE BLACK"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "cornerstone",
+          "value": "cornerstone",
+          "label": "CORNERSTONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "driftshake",
+          "value": "driftshake",
+          "label": "DRIFTSHAKE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "castleGrey",
+          "value": "castleGrey",
+          "label": "CASTLE GREY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "sedona",
+          "value": "sedona",
+          "label": "SEDONA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "frostoneGrey",
+          "value": "frostoneGrey",
+          "label": "FROSTONE GREY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "brownstone",
+          "value": "brownstone",
+          "label": "BROWNSTONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "shadowBrown",
+          "value": "shadowBrown",
+          "label": "SHADOW BROWN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "glacier",
+          "value": "glacier",
+          "label": "GLACIER"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "tileMetalColors",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "terracotta",
+          "value": "terracotta",
+          "label": "TERRACOTTA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "weatheredTerracotta",
+          "value": "weatheredTerracotta",
+          "label": "WEATHERED TERRACOTTA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "brickBlend",
+          "value": "brickBlend",
+          "label": "BRICK BLEND"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "weatheredCanyon",
+          "value": "weatheredCanyon",
+          "label": "WEATHERED CANYON"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "tuscanStone",
+          "value": "tuscanStone",
+          "label": "TUSCAN STONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "weatheredSequoia",
+          "value": "weatheredSequoia",
+          "label": "WEATHERED SEQUOIA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "jade",
+          "value": "jade",
+          "label": "JADE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "weatheredSage",
+          "value": "weatheredSage",
+          "label": "WEATHERED SAGE"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "dripEdge",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "all",
+          "value": "all",
+          "label": "ALL"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "fascia",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "560AutumnLeaf",
+          "value": "560AutumnLeaf",
+          "label": "560 AUTUMN LEAF"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "518Black",
+          "value": "518Black",
+          "label": "518 BLACK"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "502Brown",
+          "value": "502Brown",
+          "label": "502 BROWN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "200Cactus",
+          "value": "200Cactus",
+          "label": "200 CACTUS"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "827Champagne",
+          "value": "827Champagne",
+          "label": "827 CHAMPAGNE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "807Clay",
+          "value": "807Clay",
+          "label": "807 CLAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "559Cypress",
+          "value": "559Cypress",
+          "label": "559 CYPRESS"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "327DesertTan",
+          "value": "327DesertTan",
+          "label": "327 DESERT TAN"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "503Eggshell",
+          "value": "503Eggshell",
+          "label": "503 EGGSHELL"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "605EldridgeGray",
+          "value": "605EldridgeGray",
+          "label": "605 ELDRIDGE GRAY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "522Forest",
+          "value": "522Forest",
+          "label": "522 FOREST"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "204Granite",
+          "value": "204Granite",
+          "label": "204 GRANITE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "506Heather",
+          "value": "506Heather",
+          "label": "506 HEATHER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "819Herringbone",
+          "value": "819Herringbone",
+          "label": "819 HERRINGBONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "577Mocha",
+          "value": "577Mocha",
+          "label": "577 MOCHA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "508Musket",
+          "value": "508Musket",
+          "label": "508 MUSKET"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "521Navy",
+          "value": "521Navy",
+          "label": "521 NAVY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "509Norwood",
+          "value": "509Norwood",
+          "label": "509 NORWOOD"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "805Pewter",
+          "value": "805Pewter",
+          "label": "805 PEWTER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "549PrairieSand",
+          "value": "549PrairieSand",
+          "label": "549 PRAIRIE SAND"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "538Sable",
+          "value": "538Sable",
+          "label": "538 SABLE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "177SandyBeige",
+          "value": "177SandyBeige",
+          "label": "177 SANDY BEIGE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "523SnowMist",
+          "value": "523SnowMist",
+          "label": "523 SNOW MIST"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "511Terratone",
+          "value": "511Terratone",
+          "label": "511 TERRATONE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "280White",
+          "value": "280White",
+          "label": "280 WHITE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "809Wicker",
+          "value": "809Wicker",
+          "label": "809 WICKER"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "604Wineberry",
+          "value": "604Wineberry",
+          "label": "604 WINEBERRY"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "401BenningtonBeige",
+          "value": "401BenningtonBeige",
+          "label": "401 BENNINGTON BEIGE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "411CottageRed",
+          "value": "411CottageRed",
+          "label": "411 COTTAGE RED"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "404Dune",
+          "value": "404Dune",
+          "label": "404 DUNE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "405FoothillBlue",
+          "value": "405FoothillBlue",
+          "label": "405 FOOTHILL BLUE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "407Sahara",
+          "value": "407Sahara",
+          "label": "407 SAHARA"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "409Sycamore",
+          "value": "409Sycamore",
+          "label": "409 SYCAMORE"
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "410Thatch",
+          "value": "410Thatch",
+          "label": "410 THATCH"
+        }
+      ]
+    },
+    {
+      "@name": "dropdownButton",
+      "id": "downspoutsSize",
+      "choices": [
+        {
+          "@name": "dropdownOption",
+          "id": "2X3",
+          "value": "2X3",
+          "label": "2\" X 3\""
+        },
+        {
+          "@name": "dropdownOption",
+          "id": "3X4",
+          "value": "3X4",
+          "label": "3\" X 4\""
+        }
+      ]
+    }
+  ]
+}

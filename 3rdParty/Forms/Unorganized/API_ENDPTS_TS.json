@@ -1,0 +1,45 @@
+{
+    "CRUD": {
+        "CreateRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}",
+        "DeleteRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}/delete",
+        "GetRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}/id",
+        "GetAndPickRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}/id",
+        "GetRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}/id",
+        "PostWithParams": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}/post",
+        "SearchRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}/search",
+        "ListRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}",
+        "UpdateRecord": "https://midtown-ts.azurewebsites.net/api/base/{type:alpha}",
+    },
+    "SAGAS": {
+        "OrderSagas": "https://midtown-ts.azurewebsites.net/api/order/action",
+        "GetForm": "https://midtown-ts.azurewebsites.net/api/forms/{formname:alpha}",
+        "TaskSagas": "https://midtown-ts.azurewebsites.net/api/task/action",
+        "JobSagas": "https://midtown-ts.azurewebsites.net/api/job/{type:alpha}",
+        "AreaSagas": "https://midtown-ts.azurewebsites.net/api/area/{type:alpha}",
+    },
+    "REPEATABLE": {
+        "TableViews_pull": "https://midtown-ts.azurewebsites.net/api/tableview/pull",
+        "TableViews_push": "https://midtown-ts.azurewebsites.net/api/tableview/push",
+    },
+    "BASIC": {
+        "AddRemoveFromGroup": "https://midtown-ts.azurewebsites.net/api/group/edituser",
+        "AddressCheck": "https://midtown-ts.azurewebsites.net/api/check",
+        "AppointmentsGetForToday": "https://midtown-ts.azurewebsites.net/api/appointmentmanagement/gettoday",
+        "AppointmentsQuery": "https://midtown-ts.azurewebsites.net/api/appointmentmanagement/between",
+        "CreateAppointmentForLead": "https://midtown-ts.azurewebsites.net/api/leadmanagement/addappointment",
+        "CreateFullLead": "https://midtown-ts.azurewebsites.net/api/leadmanagement/fulllead",
+        "CreateResidenceLead": "https://midtown-ts.azurewebsites.net/api/leadmanagement/halflead",
+        "GeoQuery": "https://midtown-ts.azurewebsites.net/api/map/search",
+        "GetAllConnectedMarketing": "https://midtown-ts.azurewebsites.net/api/leadmanagement/searchleadedges",
+        "GetAssociatedToResidence": "https://midtown-ts.azurewebsites.net/api/location/details",
+        "GroupRequest": "https://midtown-ts.azurewebsites.net/api/group",
+        "HelloSign": "https://midtown-ts.azurewebsites.net/api/hellosign",
+        "HelloSignHook": "https://midtown-ts.azurewebsites.net/api/hellosign_event",
+        "HelloSignUserHook": "https://midtown-ts.azurewebsites.net/api/hellosign_account_event",
+        "HelloWorld": "https://midtown-ts.azurewebsites.net/api/helloworld",
+        "ParseForm": "https://midtown-ts.azurewebsites.net/api/forms",
+        "PostLogin": "https://midtown-ts.azurewebsites.net/api/postlogin",
+        "SendEmail": "https://midtown-ts.azurewebsites.net/api/email/send",
+        "UserFuzzySearch": "https://midtown-ts.azurewebsites.net/api/user/search"
+    }
+}

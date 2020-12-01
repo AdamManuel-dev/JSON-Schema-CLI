@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Cancel Contract Short",
+    "category": "HelloSign",
+    "callback": "https://midtown-ts.azurewebsites.net/api/hellosign/form",
+    "template_id": "c3696a5f56cd42df77e4b2bfb3b53d565ff98ddd",
+    "message": "",
+    "roles": [
+      {
+        "name": "Buyer",
+        "order": 1
+      }
+    ],
+    "definition": [],
+    "type": "Form",
+    "_partitionKey": "Form"
+  },
+  {
+    "name": "Change Order Form",
+    "category": "HelloSign",
+    "callback": "https://midtown-ts.azurewebsites.net/api/hellosign/form",
+    "template_id": "c3696a5f56cd42df77e4b2bfb3b53d565ff98ddd",
+    "message": "",
+    "roles": [
+      {
+        "name": "Buyer",
+        "order": 1
+      }
+    ],
+    "definition": [],
+    "type": "Form",
+    "_partitionKey": "Form"
+  },
+  {
+    "name": "Cancel Contract Long",
+    "category": "HelloSign",
+    "callback": "https://midtown-ts.azurewebsites.net/api/hellosign/form",
+    "template_id": "c3696a5f56cd42df77e4b2bfb3b53d565ff98ddd",
+    "message": "",
+    "roles": [
+      {
+        "name": "Buyer",
+        "order": 1
+      }
+    ],
+    "definition": [],
+    "type": "Form",
+    "_partitionKey": "Form"
+  }
+]

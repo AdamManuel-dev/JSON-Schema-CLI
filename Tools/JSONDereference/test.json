@@ -1,0 +1,231 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/TopLevelElement"
+    },
+    "definitions": {
+        "TopLevelElement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "streetAddress": {
+                    "type": "string"
+                },
+                "city": {
+                    "$ref": "#/definitions/City"
+                },
+                "state": {
+                    "$ref": "#/definitions/State"
+                },
+                "zip": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "type": {
+                    "$ref": "#/definitions/TopLevelType"
+                },
+                "createdOn": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "_lsn": {
+                    "type": "integer"
+                },
+                "_metadata": {
+                    "$ref": "#/definitions/Metadata"
+                },
+                "address": {
+                    "$ref": "#/definitions/Address"
+                },
+                "location": {
+                    "$ref": "#/definitions/Location"
+                },
+                "updatedOn": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "city",
+                "createdOn",
+                "id",
+                "state",
+                "streetAddress",
+                "type",
+                "zip"
+            ],
+            "title": "TopLevelElement"
+        },
+        "Metadata": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Metadata"
+        },
+        "Address": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "streetNumber": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "streetName": {
+                    "type": "string"
+                },
+                "municipality": {
+                    "$ref": "#/definitions/CountryTertiarySubdivision"
+                },
+                "countrySecondarySubdivision": {
+                    "$ref": "#/definitions/CountrySecondarySubdivision"
+                },
+                "countryTertiarySubdivision": {
+                    "$ref": "#/definitions/CountryTertiarySubdivision"
+                },
+                "countrySubdivision": {
+                    "$ref": "#/definitions/State"
+                },
+                "countrySubdivisionName": {
+                    "$ref": "#/definitions/CountrySubdivisionName"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "countryCode": {
+                    "$ref": "#/definitions/CountryCode"
+                },
+                "country": {
+                    "$ref": "#/definitions/Country"
+                },
+                "countryCodeISO3": {
+                    "$ref": "#/definitions/CountryCodeISO3"
+                },
+                "freeformAddress": {
+                    "type": "string"
+                },
+                "localName": {
+                    "$ref": "#/definitions/CountryTertiarySubdivision"
+                },
+                "extendedPostalCode": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "country",
+                "countryCode",
+                "countryCodeISO3",
+                "countrySecondarySubdivision",
+                "countrySubdivision",
+                "countrySubdivisionName",
+                "countryTertiarySubdivision",
+                "freeformAddress",
+                "localName",
+                "municipality",
+                "postalCode",
+                "streetName",
+                "streetNumber"
+            ],
+            "title": "Address"
+        },
+        "Location": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/LocationType"
+                },
+                "coordinates": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "coordinates",
+                "type"
+            ],
+            "title": "Location"
+        },
+        "Country": {
+            "type": "string",
+            "enum": [
+                "United States"
+            ],
+            "title": "Country"
+        },
+        "CountryCode": {
+            "type": "string",
+            "enum": [
+                "US"
+            ],
+            "title": "CountryCode"
+        },
+        "CountryCodeISO3": {
+            "type": "string",
+            "enum": [
+                "USA"
+            ],
+            "title": "CountryCodeISO3"
+        },
+        "CountrySecondarySubdivision": {
+            "type": "string",
+            "enum": [
+                "Saint-Charles"
+            ],
+            "title": "CountrySecondarySubdivision"
+        },
+        "State": {
+            "type": "string",
+            "enum": [
+                "Texas",
+                "MO"
+            ],
+            "title": "State"
+        },
+        "CountrySubdivisionName": {
+            "type": "string",
+            "enum": [
+                "Missouri"
+            ],
+            "title": "CountrySubdivisionName"
+        },
+        "CountryTertiarySubdivision": {
+            "type": "string",
+            "enum": [
+                "Lake Saint Louis",
+                "O'Fallon",
+                "Boone",
+                "Wentzville"
+            ],
+            "title": "CountryTertiarySubdivision"
+        },
+        "City": {
+            "type": "string",
+            "enum": [
+                "San Antonio",
+                "Lake Saint Louis",
+                "OFallon"
+            ],
+            "title": "City"
+        },
+        "LocationType": {
+            "type": "string",
+            "enum": [
+                "Point"
+            ],
+            "title": "LocationType"
+        },
+        "TopLevelType": {
+            "type": "string",
+            "enum": [
+                "Residence"
+            ],
+            "title": "TopLevelType"
+        }
+    }
+}

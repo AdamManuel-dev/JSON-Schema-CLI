@@ -1,0 +1,572 @@
+[
+  {
+    "key": "date",
+    "type": "input",
+    "templateOptions": {
+      "label": " Date",
+      "placeholder": "",
+      "description": " Date",
+      "required": true
+    }
+  },
+  {
+    "key": "streetAddress",
+    "type": "input",
+    "templateOptions": {
+      "label": " Street Address",
+      "placeholder": "",
+      "description": " Street Address",
+      "required": true
+    }
+  },
+  {
+    "key": "city",
+    "type": "input",
+    "templateOptions": {
+      "label": " City",
+      "placeholder": "",
+      "description": " City",
+      "required": true
+    }
+  },
+  {
+    "key": "state",
+    "type": "input",
+    "templateOptions": {
+      "label": " State",
+      "placeholder": "",
+      "description": " State",
+      "required": true
+    }
+  },
+  {
+    "key": "zip",
+    "type": "input",
+    "templateOptions": {
+      "label": " Zip",
+      "placeholder": "",
+      "description": " Zip",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerName",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Name",
+      "placeholder": "",
+      "description": " Buyer Name",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerPhone",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Phone",
+      "placeholder": "",
+      "description": " Buyer Phone",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerMail",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Mail",
+      "placeholder": "",
+      "description": " Buyer Mail",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerFinancing",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Buyer_financing",
+      "description": " Buyer_financing",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "roofingTearOffYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Roofing Tear Off Yes",
+      "description": " Roofing Tear Off Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "roofingTearOffNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Roofing Tear Off No",
+      "description": " Roofing Tear Off No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "gutterTearOffYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gutter Tear Off Yes",
+      "description": " Gutter Tear Off Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "gutterTearOffNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gutter Tear Off No",
+      "description": " Gutter Tear Off No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "trimTearOffYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Trim Tear Off Yes",
+      "description": " Trim Tear Off Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "trimTearOffNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Trim Tear Off No",
+      "description": " Trim Tear Off No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceFasciaBoardYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Fascia Board Yes",
+      "description": " Replace Fascia Board Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "replaceFasciaBoardNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Replace Fascia Board No",
+      "description": " Replace Fascia Board No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sofit",
+    "type": "input",
+    "templateOptions": {
+      "label": " Sofit",
+      "placeholder": "",
+      "description": " Sofit",
+      "required": true
+    }
+  },
+  {
+    "key": "shingleMake",
+    "type": "input",
+    "templateOptions": {
+      "label": " Shingle Make",
+      "placeholder": "",
+      "description": " Shingle Make",
+      "required": true
+    }
+  },
+  {
+    "key": "homeAtticYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Home Attic Yes",
+      "description": " Home Attic Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "homeAtticNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Home Attic No",
+      "description": " Home Attic No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "shingleStyle",
+    "type": "input",
+    "templateOptions": {
+      "label": " Shingle Style",
+      "placeholder": "",
+      "description": " Shingle Style",
+      "required": true
+    }
+  },
+  {
+    "key": "blownInInsulationYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Blown In Insulation Yes",
+      "description": " Blown In Insulation Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "garageAreaNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Garage Area No",
+      "description": " Garage Area No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "garageAreaNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Garage Area No",
+      "description": " Garage Area No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "fascia",
+    "type": "input",
+    "templateOptions": {
+      "label": " Fascia",
+      "placeholder": "",
+      "description": " Fascia",
+      "required": true
+    }
+  },
+  {
+    "key": "protectiveMembrane",
+    "type": "input",
+    "templateOptions": {
+      "label": " Protective Membrane",
+      "placeholder": "",
+      "description": " Protective Membrane",
+      "required": true
+    }
+  },
+  {
+    "key": "blownInInsulationNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Blown In Insulation No",
+      "description": " Blown In Insulation No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "icewaterProtection",
+    "type": "input",
+    "templateOptions": {
+      "label": " Icewater Protection",
+      "placeholder": "",
+      "description": " Icewater Protection",
+      "required": true
+    }
+  },
+  {
+    "key": "blownInTo",
+    "type": "input",
+    "templateOptions": {
+      "label": " Blown In To",
+      "placeholder": "",
+      "description": " Blown In To",
+      "required": true
+    }
+  },
+  {
+    "key": "fishingcounterflashing",
+    "type": "input",
+    "templateOptions": {
+      "label": " Fishingcounterflashing",
+      "placeholder": "",
+      "description": " Fishingcounterflashing",
+      "required": true
+    }
+  },
+  {
+    "key": "sealAtticYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Seal Attic Yes",
+      "description": " Seal Attic Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "sealAtticNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Seal Attic No",
+      "description": " Seal Attic No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "gutter",
+    "type": "input",
+    "templateOptions": {
+      "label": " Gutter",
+      "placeholder": "",
+      "description": " Gutter",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "dripEdge",
+    "type": "input",
+    "templateOptions": {
+      "label": " Drip Edge",
+      "placeholder": "",
+      "description": " Drip Edge",
+      "required": true
+    }
+  },
+  {
+    "key": "energySavingsExtras",
+    "type": "input",
+    "templateOptions": {
+      "label": " Energy Savings Extras",
+      "placeholder": "",
+      "description": " Energy Savings Extras",
+      "required": true
+    }
+  },
+  {
+    "key": "fishingYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Fishing Yes",
+      "description": " Fishing Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "fishingNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Fishing No",
+      "description": " Fishing No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "flangeCovers",
+    "type": "input",
+    "templateOptions": {
+      "label": " Flange Covers",
+      "placeholder": "",
+      "description": " Flange Covers",
+      "required": true
+    }
+  },
+  {
+    "key": "itemOne",
+    "type": "input",
+    "templateOptions": {
+      "label": " Item One",
+      "placeholder": "",
+      "description": " Item One",
+      "required": true
+    }
+  },
+  {
+    "key": "gutterGuard",
+    "type": "input",
+    "templateOptions": {
+      "label": " Gutter Guard",
+      "placeholder": "",
+      "description": " Gutter Guard",
+      "required": true
+    }
+  },
+  {
+    "key": "ridgeVent",
+    "type": "input",
+    "templateOptions": {
+      "label": " Ridge Vent",
+      "placeholder": "",
+      "description": " Ridge Vent",
+      "required": true
+    }
+  },
+  {
+    "key": "itemTwo",
+    "type": "input",
+    "templateOptions": {
+      "label": " Item Two",
+      "placeholder": "",
+      "description": " Item Two",
+      "required": true
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "itemThree",
+    "type": "input",
+    "templateOptions": {
+      "label": " Item Three",
+      "placeholder": "",
+      "description": " Item Three",
+      "required": true
+    }
+  },
+  {
+    "key": "gutterSizeFive",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gutter Size Five",
+      "description": " Gutter Size Five",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "gutterSizeSix",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gutter Size Six",
+      "description": " Gutter Size Six",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "downspoutTwo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Downspout Two",
+      "description": " Downspout Two",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "downspoutThree",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Downspout Three",
+      "description": " Downspout Three",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "additionalPlywood",
+    "type": "input",
+    "templateOptions": {
+      "label": " Additional Plywood",
+      "placeholder": "",
+      "description": " Additional Plywood",
+      "required": true
+    }
+  },
+  {
+    "key": "totalprice",
+    "type": "input",
+    "templateOptions": {
+      "label": " Totalprice",
+      "placeholder": "",
+      "description": " Totalprice",
+      "required": true
+    }
+  },
+  {
+    "key": "lessDownPayment",
+    "type": "input",
+    "templateOptions": {
+      "label": " Less Down Payment",
+      "placeholder": "",
+      "description": " Less Down Payment",
+      "required": true
+    }
+  },
+  {
+    "key": "unpaidBalance",
+    "type": "input",
+    "templateOptions": {
+      "label": " Unpaid Balance",
+      "placeholder": "",
+      "description": " Unpaid Balance",
+      "required": true
+    }
+  }
+]

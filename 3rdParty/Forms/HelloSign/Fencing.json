@@ -1,0 +1,372 @@
+[
+  {
+    "key": "buyerAddress",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Address",
+      "placeholder": "",
+      "description": " Buyer Address",
+      "required": true
+    }
+  },
+  {
+    "key": "city",
+    "type": "input",
+    "templateOptions": {
+      "label": " City",
+      "placeholder": "",
+      "description": " City",
+      "required": true
+    }
+  },
+  {
+    "key": "state",
+    "type": "input",
+    "templateOptions": {
+      "label": " State",
+      "placeholder": "",
+      "description": " State",
+      "required": true
+    }
+  },
+  {
+    "key": "zip",
+    "type": "input",
+    "templateOptions": {
+      "label": " Zip",
+      "placeholder": "",
+      "description": " Zip",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerName",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Name",
+      "placeholder": "",
+      "description": " Buyer Name",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerPhone",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Phone",
+      "placeholder": "",
+      "description": " Buyer Phone",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerMail",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyer Mail",
+      "placeholder": "",
+      "description": " Buyer Mail",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerFinancing",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Buyer Financing",
+      "description": " Buyer Financing",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "existingFence",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Existing Fence",
+      "description": " Existing Fence",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "dynasty",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Dynasty",
+      "description": " Dynasty",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "savannah",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Savannah",
+      "description": " Savannah",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "malibu",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Malibu",
+      "description": " Malibu",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "american",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " American",
+      "description": " American",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "savannahLattice",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Savannah Lattice",
+      "description": " Savannah Lattice",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "malibuLattice",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Malibu Lattice",
+      "description": " Malibu Lattice",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "capeCod",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Cape Cod",
+      "description": " Cape Cod",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "savannahAccents",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Savannah Accents",
+      "description": " Savannah Accents",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "malibuAccents",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Malibu Accents",
+      "description": " Malibu Accents",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "customCheckbox",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Custom Checkbox",
+      "description": " Custom Checkbox",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "custom",
+    "type": "input",
+    "templateOptions": {
+      "label": " Custom",
+      "placeholder": "",
+      "description": " Custom",
+      "required": true
+    }
+  },
+  {
+    "key": "gate",
+    "type": "input",
+    "templateOptions": {
+      "label": " Gate",
+      "placeholder": "",
+      "description": " Gate",
+      "required": true
+    }
+  },
+  {
+    "key": "3",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 3'",
+      "description": " 3'",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "4",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 4'",
+      "description": " 4'",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "dd",
+    "type": "input",
+    "templateOptions": {
+      "label": " Dd",
+      "placeholder": "",
+      "description": " Dd",
+      "required": true
+    }
+  },
+  {
+    "key": "6",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 6'",
+      "description": " 6'",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "8",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 8'",
+      "description": " 8'",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "specialOrderGates",
+    "type": "input",
+    "templateOptions": {
+      "label": " Special Order Gates",
+      "placeholder": "",
+      "description": " Special Order Gates",
+      "required": true
+    }
+  },
+  {
+    "key": "flat",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Flat",
+      "description": " Flat",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "gothic",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Gothic",
+      "description": " Gothic",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "customer",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Customer",
+      "description": " Customer",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "midtown",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Midtown",
+      "description": " Midtown",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "yes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Yes",
+      "description": " Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "needsMarked",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Needs Marked",
+      "description": " Needs Marked",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "comments",
+    "type": "input",
+    "templateOptions": {
+      "label": " Comments",
+      "placeholder": "",
+      "description": " Comments",
+      "required": true
+    }
+  },
+  {
+    "key": "totalPrice",
+    "type": "input",
+    "templateOptions": {
+      "label": " Total Price",
+      "placeholder": "",
+      "description": " Total Price",
+      "required": true
+    }
+  },
+  {
+    "key": "lessDownPayment",
+    "type": "input",
+    "templateOptions": {
+      "label": " Less Down Payment",
+      "placeholder": "",
+      "description": " Less Down Payment",
+      "required": true
+    }
+  },
+  {
+    "key": "unpaidBalance",
+    "type": "input",
+    "templateOptions": {
+      "label": " Unpaid Balance",
+      "placeholder": "",
+      "description": " Unpaid Balance",
+      "required": true
+    }
+  }
+]

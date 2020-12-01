@@ -1,0 +1,252 @@
+{
+  "definitions": [
+    {
+      "key": "Input",
+      "type": "input",
+      "templateOptions": {
+        "label": "Input",
+        "placeholder": "Placeholder",
+        "description": "Description",
+        "required": true
+      }
+    },
+    {
+      "key": "Textarea",
+      "type": "textarea",
+      "templateOptions": {
+        "label": "Textarea",
+        "placeholder": "Placeholder",
+        "description": "Description",
+        "required": true
+      }
+    },
+    {
+      "key": "Checkbox",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Accept terms",
+        "description": "In order to proceed, please accept terms",
+        "pattern": "true",
+        "required": true
+      },
+      "validation": {
+        "messages": {
+          "pattern": "Please accept the terms"
+        }
+      }
+    },
+    {
+      "key": "Radio",
+      "type": "radio",
+      "templateOptions": {
+        "label": "Radio",
+        "placeholder": "Placeholder",
+        "description": "Description",
+        "required": true,
+        "options": [
+          {
+            "value": 1,
+            "label": "Option 1"
+          },
+          {
+            "value": 2,
+            "label": "Option 2"
+          },
+          {
+            "value": 3,
+            "label": "Option 3"
+          },
+          {
+            "value": 4,
+            "label": "Option 4"
+          }
+        ]
+      }
+    },
+    {
+      "key": "Select",
+      "type": "select",
+      "templateOptions": {
+        "label": "Select",
+        "placeholder": "Placeholder",
+        "description": "Description",
+        "required": true,
+        "options": [
+          {
+            "value": 1,
+            "label": "Option 1"
+          },
+          {
+            "value": 2,
+            "label": "Option 2"
+          },
+          {
+            "value": 3,
+            "label": "Option 3"
+          },
+          {
+            "value": 4,
+            "label": "Option 4"
+          }
+        ]
+      }
+    },
+    {
+      "key": "select_multi",
+      "type": "select",
+      "templateOptions": {
+        "label": "Select Multiple",
+        "placeholder": "Placeholder",
+        "description": "Description",
+        "required": true,
+        "multiple": true,
+        "selectAllOption": "Select All",
+        "options": [
+          {
+            "value": 1,
+            "label": "Option 1"
+          },
+          {
+            "value": 2,
+            "label": "Option 2"
+          },
+          {
+            "value": 3,
+            "label": "Option 3"
+          },
+          {
+            "value": 4,
+            "label": "Option 4"
+          }
+        ]
+      }
+    },
+    {
+      "key": "investments",
+      "type": "repeat",
+      "templateOptions": {
+        "addText": "Add another investment"
+      },
+      "fieldArray": {
+        "fieldGroup": [
+          {
+            "className": "col-sm-4",
+            "type": "input",
+            "key": "investmentName",
+            "templateOptions": {
+              "label": "Name of Investment:",
+              "required": true
+            }
+          },
+          {
+            "type": "input",
+            "key": "investmentDate",
+            "className": "col-sm-4",
+            "templateOptions": {
+              "type": "date",
+              "label": "Date of Investment:"
+            }
+          },
+          {
+            "type": "input",
+            "key": "stockIdentifier",
+            "className": "col-sm-4",
+            "templateOptions": {
+              "label": "Stock Identifier:",
+              "addonRight": {
+                "class": "fa fa-code"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "template": "<hr /><div><strong>Address:</strong></div>"
+    },
+    {
+      "fieldGroupClassName": "display-flex",
+      "fieldGroup": [
+        {
+          "className": "flex-2",
+          "type": "input",
+          "key": "street",
+          "templateOptions": {
+            "label": "Street"
+          }
+        },
+        {
+          "className": "flex-1",
+          "type": "input",
+          "key": "cityName",
+          "templateOptions": {
+            "label": "City"
+          }
+        },
+        {
+          "className": "flex-1",
+          "type": "input",
+          "key": "zip",
+          "templateOptions": {
+            "type": "number",
+            "label": "Zip",
+            "max": 99999,
+            "min": 0,
+            "pattern": "\\d{5}"
+          }
+        }
+      ]
+    }
+  ],
+  "stepper": [
+    {
+      "label": "Personal data",
+      "fields": [
+        {
+          "key": "firstname",
+          "type": "input",
+          "templateOptions": {
+            "label": "First name",
+            "required": true
+          }
+        },
+        {
+          "key": "age",
+          "type": "input",
+          "templateOptions": {
+            "type": "number",
+            "label": "Age",
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "Destination",
+      "fields": [
+        {
+          "key": "country",
+          "type": "input",
+          "templateOptions": {
+            "label": "Country",
+            "required": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "Day of the trip",
+      "fields": [
+        {
+          "key": "day",
+          "type": "input",
+          "templateOptions": {
+            "type": "date",
+            "label": "Day of the trip",
+            "required": true
+          }
+        }
+      ]
+    }
+  ]
+}

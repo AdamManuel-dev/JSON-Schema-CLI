@@ -1,0 +1,7413 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Midtown CRUD API",
+    "version": "3.5",
+    "description": "This is the Base API that the entire thing is built from ",
+    "contact": {
+      "name": "Adam Manuel",
+      "url": "https://augimenteddestiny.com",
+      "email": "support@augmenteddestiny.com"
+    },
+    "license": {
+      "name": "Commercial License"
+    }
+  },
+  "securityDefinitions": {
+    "User Authentication": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "Bearer Token"
+    }
+  },
+  "basePath": "",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "host": "midtown-ts.azurewebsites.net/api/base",
+  "tags": [
+    {
+      "name": "Appointment"
+    },
+    {
+      "name": "Contract"
+    },
+    {
+      "name": "Corporation"
+    },
+    {
+      "name": "Invoice"
+    },
+    {
+      "name": "Lead"
+    },
+    {
+      "name": "Message"
+    },
+    {
+      "name": "Note"
+    },
+    {
+      "name": "PaidTimeOff"
+    },
+    {
+      "name": "Payment"
+    },
+    {
+      "name": "Permission"
+    },
+    {
+      "name": "Phonecall"
+    },
+    {
+      "name": "Product"
+    },
+    {
+      "name": "Residence"
+    },
+    {
+      "name": "Role"
+    },
+    {
+      "name": "Scorecard"
+    },
+    {
+      "name": "Timeclock"
+    },
+    {
+      "name": "Twillio"
+    },
+    {
+      "name": "User"
+    },
+    {
+      "name": "UserLocation"
+    }
+  ],
+  "paths": {
+    "/Appointment/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Appointment-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Appointment"
+        ],
+        "summary": "Search for Appointments",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchAppointment"
+      }
+    },
+    "/Appointment/id": {
+      "post": {
+        "summary": "Get Appointment",
+        "operationId": "getAppointment",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Appointment-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Appointment's Vertex by it's ID. ",
+        "tags": [
+          "Appointment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getAppointmentBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Appointment record."
+          }
+        ]
+      }
+    },
+    "/Appointment": {
+      "get": {
+        "summary": "List Appointments",
+        "operationId": "listAppointments",
+        "description": "Lists Appointments",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Appointment-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Appointment"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Appointment-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Appointment",
+        "operationId": "insertAppointment",
+        "description": "Insert a new Appointment Vertex into the Graph. ",
+        "tags": [
+          "Appointment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertAppointmentBody",
+            "schema": {
+              "$ref": "#/definitions/Appointment"
+            },
+            "description": "Insert Appointment as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Appointment",
+        "operationId": "updateAppointment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateAppointmentBody",
+            "schema": {
+              "$ref": "#/definitions/Appointment"
+            },
+            "description": "New record details for Appointment"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Appointment-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Appointment Vertex Properties. ",
+        "tags": [
+          "Appointment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Appointment",
+        "operationId": "deleteAppointment",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Appointment-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Appointment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteAppointmentBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Appointment with given id"
+          }
+        ]
+      }
+    },
+    "/Contract/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Contract-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Contract"
+        ],
+        "summary": "Search for Contracts",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchContract"
+      }
+    },
+    "/Contract/id": {
+      "post": {
+        "summary": "Get Contract",
+        "operationId": "getContract",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Contract-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Contract's Vertex by it's ID. ",
+        "tags": [
+          "Contract"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getContractBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Contract record."
+          }
+        ]
+      }
+    },
+    "/Contract": {
+      "get": {
+        "summary": "List Contracts",
+        "operationId": "listContracts",
+        "description": "Lists Contracts",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Contract-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Contract"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Contract-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Contract",
+        "operationId": "insertContract",
+        "description": "Insert a new Contract Vertex into the Graph. ",
+        "tags": [
+          "Contract"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertContractBody",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            },
+            "description": "Insert Contract as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Contract",
+        "operationId": "updateContract",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateContractBody",
+            "schema": {
+              "$ref": "#/definitions/Contract"
+            },
+            "description": "New record details for Contract"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Contract-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Contract Vertex Properties. ",
+        "tags": [
+          "Contract"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Contract",
+        "operationId": "deleteContract",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Contract-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Contract"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteContractBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Contract with given id"
+          }
+        ]
+      }
+    },
+    "/Corporation/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Corporation-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Corporation"
+        ],
+        "summary": "Search for Corporations",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchCorporation"
+      }
+    },
+    "/Corporation/id": {
+      "post": {
+        "summary": "Get Corporation",
+        "operationId": "getCorporation",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Corporation-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Corporation's Vertex by it's ID. ",
+        "tags": [
+          "Corporation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getCorporationBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Corporation record."
+          }
+        ]
+      }
+    },
+    "/Corporation": {
+      "get": {
+        "summary": "List Corporations",
+        "operationId": "listCorporations",
+        "description": "Lists Corporations",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Corporation-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Corporation"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Corporation-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Corporation",
+        "operationId": "insertCorporation",
+        "description": "Insert a new Corporation Vertex into the Graph. ",
+        "tags": [
+          "Corporation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertCorporationBody",
+            "schema": {
+              "$ref": "#/definitions/Corporation"
+            },
+            "description": "Insert Corporation as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Corporation",
+        "operationId": "updateCorporation",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateCorporationBody",
+            "schema": {
+              "$ref": "#/definitions/Corporation"
+            },
+            "description": "New record details for Corporation"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Corporation-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Corporation Vertex Properties. ",
+        "tags": [
+          "Corporation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Corporation",
+        "operationId": "deleteCorporation",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Corporation-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Corporation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteCorporationBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Corporation with given id"
+          }
+        ]
+      }
+    },
+    "/Invoice/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Invoice-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Invoice"
+        ],
+        "summary": "Search for Invoices",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchInvoice"
+      }
+    },
+    "/Invoice/id": {
+      "post": {
+        "summary": "Get Invoice",
+        "operationId": "getInvoice",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Invoice-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Invoice's Vertex by it's ID. ",
+        "tags": [
+          "Invoice"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getInvoiceBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Invoice record."
+          }
+        ]
+      }
+    },
+    "/Invoice": {
+      "get": {
+        "summary": "List Invoices",
+        "operationId": "listInvoices",
+        "description": "Lists Invoices",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Invoice-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Invoice-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Invoice",
+        "operationId": "insertInvoice",
+        "description": "Insert a new Invoice Vertex into the Graph. ",
+        "tags": [
+          "Invoice"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertInvoiceBody",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            },
+            "description": "Insert Invoice as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Invoice",
+        "operationId": "updateInvoice",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateInvoiceBody",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            },
+            "description": "New record details for Invoice"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Invoice-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Invoice Vertex Properties. ",
+        "tags": [
+          "Invoice"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Invoice",
+        "operationId": "deleteInvoice",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Invoice-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Invoice"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteInvoiceBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Invoice with given id"
+          }
+        ]
+      }
+    },
+    "/Lead/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Lead-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Lead"
+        ],
+        "summary": "Search for Leads",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchLead"
+      }
+    },
+    "/Lead/id": {
+      "post": {
+        "summary": "Get Lead",
+        "operationId": "getLead",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Lead-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Lead's Vertex by it's ID. ",
+        "tags": [
+          "Lead"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getLeadBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Lead record."
+          }
+        ]
+      }
+    },
+    "/Lead": {
+      "get": {
+        "summary": "List Leads",
+        "operationId": "listLeads",
+        "description": "Lists Leads",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Lead-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Lead"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Lead-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Lead",
+        "operationId": "insertLead",
+        "description": "Insert a new Lead Vertex into the Graph. ",
+        "tags": [
+          "Lead"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertLeadBody",
+            "schema": {
+              "$ref": "#/definitions/Lead"
+            },
+            "description": "Insert Lead as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Lead",
+        "operationId": "updateLead",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateLeadBody",
+            "schema": {
+              "$ref": "#/definitions/Lead"
+            },
+            "description": "New record details for Lead"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Lead-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Lead Vertex Properties. ",
+        "tags": [
+          "Lead"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Lead",
+        "operationId": "deleteLead",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Lead-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Lead"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteLeadBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Lead with given id"
+          }
+        ]
+      }
+    },
+    "/Message/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Message-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Message"
+        ],
+        "summary": "Search for Messages",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchMessage"
+      }
+    },
+    "/Message/id": {
+      "post": {
+        "summary": "Get Message",
+        "operationId": "getMessage",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Message-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Message's Vertex by it's ID. ",
+        "tags": [
+          "Message"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getMessageBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Message record."
+          }
+        ]
+      }
+    },
+    "/Message": {
+      "get": {
+        "summary": "List Messages",
+        "operationId": "listMessages",
+        "description": "Lists Messages",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Message-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Message"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Message-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Message",
+        "operationId": "insertMessage",
+        "description": "Insert a new Message Vertex into the Graph. ",
+        "tags": [
+          "Message"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertMessageBody",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            },
+            "description": "Insert Message as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Message",
+        "operationId": "updateMessage",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateMessageBody",
+            "schema": {
+              "$ref": "#/definitions/Message"
+            },
+            "description": "New record details for Message"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Message-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Message Vertex Properties. ",
+        "tags": [
+          "Message"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Message",
+        "operationId": "deleteMessage",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Message-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Message"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteMessageBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Message with given id"
+          }
+        ]
+      }
+    },
+    "/Note/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Note-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Note"
+        ],
+        "summary": "Search for Notes",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchNote"
+      }
+    },
+    "/Note/id": {
+      "post": {
+        "summary": "Get Note",
+        "operationId": "getNote",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Note-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Note's Vertex by it's ID. ",
+        "tags": [
+          "Note"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getNoteBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Note record."
+          }
+        ]
+      }
+    },
+    "/Note": {
+      "get": {
+        "summary": "List Notes",
+        "operationId": "listNotes",
+        "description": "Lists Notes",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Note-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Note"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Note-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Note",
+        "operationId": "insertNote",
+        "description": "Insert a new Note Vertex into the Graph. ",
+        "tags": [
+          "Note"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertNoteBody",
+            "schema": {
+              "$ref": "#/definitions/Note"
+            },
+            "description": "Insert Note as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Note",
+        "operationId": "updateNote",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateNoteBody",
+            "schema": {
+              "$ref": "#/definitions/Note"
+            },
+            "description": "New record details for Note"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Note-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Note Vertex Properties. ",
+        "tags": [
+          "Note"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Note",
+        "operationId": "deleteNote",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Note-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Note"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteNoteBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Note with given id"
+          }
+        ]
+      }
+    },
+    "/PaidTimeOff/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/PaidTimeOff-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "PaidTimeOff"
+        ],
+        "summary": "Search for PaidTimeOffs",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchPaidTimeOff"
+      }
+    },
+    "/PaidTimeOff/id": {
+      "post": {
+        "summary": "Get PaidTimeOff",
+        "operationId": "getPaidTimeOff",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/PaidTimeOff-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a PaidTimeOff's Vertex by it's ID. ",
+        "tags": [
+          "PaidTimeOff"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getPaidTimeOffBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a PaidTimeOff record."
+          }
+        ]
+      }
+    },
+    "/PaidTimeOff": {
+      "get": {
+        "summary": "List PaidTimeOffs",
+        "operationId": "listPaidTimeOffs",
+        "description": "Lists PaidTimeOffs",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/PaidTimeOff-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "PaidTimeOff"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/PaidTimeOff-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert PaidTimeOff",
+        "operationId": "insertPaidTimeOff",
+        "description": "Insert a new PaidTimeOff Vertex into the Graph. ",
+        "tags": [
+          "PaidTimeOff"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertPaidTimeOffBody",
+            "schema": {
+              "$ref": "#/definitions/PaidTimeOff"
+            },
+            "description": "Insert PaidTimeOff as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update PaidTimeOff",
+        "operationId": "updatePaidTimeOff",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updatePaidTimeOffBody",
+            "schema": {
+              "$ref": "#/definitions/PaidTimeOff"
+            },
+            "description": "New record details for PaidTimeOff"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/PaidTimeOff-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the PaidTimeOff Vertex Properties. ",
+        "tags": [
+          "PaidTimeOff"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete PaidTimeOff",
+        "operationId": "deletePaidTimeOff",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/PaidTimeOff-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "PaidTimeOff"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deletePaidTimeOffBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete PaidTimeOff with given id"
+          }
+        ]
+      }
+    },
+    "/Payment/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Payment-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Payment"
+        ],
+        "summary": "Search for Payments",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchPayment"
+      }
+    },
+    "/Payment/id": {
+      "post": {
+        "summary": "Get Payment",
+        "operationId": "getPayment",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Payment-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Payment's Vertex by it's ID. ",
+        "tags": [
+          "Payment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getPaymentBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Payment record."
+          }
+        ]
+      }
+    },
+    "/Payment": {
+      "get": {
+        "summary": "List Payments",
+        "operationId": "listPayments",
+        "description": "Lists Payments",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Payment-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Payment-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Payment",
+        "operationId": "insertPayment",
+        "description": "Insert a new Payment Vertex into the Graph. ",
+        "tags": [
+          "Payment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertPaymentBody",
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            },
+            "description": "Insert Payment as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Payment",
+        "operationId": "updatePayment",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updatePaymentBody",
+            "schema": {
+              "$ref": "#/definitions/Payment"
+            },
+            "description": "New record details for Payment"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Payment-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Payment Vertex Properties. ",
+        "tags": [
+          "Payment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Payment",
+        "operationId": "deletePayment",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Payment-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Payment"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deletePaymentBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Payment with given id"
+          }
+        ]
+      }
+    },
+    "/Permission/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Permission-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Permission"
+        ],
+        "summary": "Search for Permissions",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchPermission"
+      }
+    },
+    "/Permission/id": {
+      "post": {
+        "summary": "Get Permission",
+        "operationId": "getPermission",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Permission-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Permission's Vertex by it's ID. ",
+        "tags": [
+          "Permission"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getPermissionBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Permission record."
+          }
+        ]
+      }
+    },
+    "/Permission": {
+      "get": {
+        "summary": "List Permissions",
+        "operationId": "listPermissions",
+        "description": "Lists Permissions",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Permission-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Permission"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Permission-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Permission",
+        "operationId": "insertPermission",
+        "description": "Insert a new Permission Vertex into the Graph. ",
+        "tags": [
+          "Permission"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertPermissionBody",
+            "schema": {
+              "$ref": "#/definitions/Permission"
+            },
+            "description": "Insert Permission as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Permission",
+        "operationId": "updatePermission",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updatePermissionBody",
+            "schema": {
+              "$ref": "#/definitions/Permission"
+            },
+            "description": "New record details for Permission"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Permission-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Permission Vertex Properties. ",
+        "tags": [
+          "Permission"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Permission",
+        "operationId": "deletePermission",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Permission-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Permission"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deletePermissionBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Permission with given id"
+          }
+        ]
+      }
+    },
+    "/Phonecall/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Phonecall-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Phonecall"
+        ],
+        "summary": "Search for Phonecalls",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchPhonecall"
+      }
+    },
+    "/Phonecall/id": {
+      "post": {
+        "summary": "Get Phonecall",
+        "operationId": "getPhonecall",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Phonecall-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Phonecall's Vertex by it's ID. ",
+        "tags": [
+          "Phonecall"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getPhonecallBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Phonecall record."
+          }
+        ]
+      }
+    },
+    "/Phonecall": {
+      "get": {
+        "summary": "List Phonecalls",
+        "operationId": "listPhonecalls",
+        "description": "Lists Phonecalls",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Phonecall-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Phonecall"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Phonecall-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Phonecall",
+        "operationId": "insertPhonecall",
+        "description": "Insert a new Phonecall Vertex into the Graph. ",
+        "tags": [
+          "Phonecall"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertPhonecallBody",
+            "schema": {
+              "$ref": "#/definitions/Phonecall"
+            },
+            "description": "Insert Phonecall as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Phonecall",
+        "operationId": "updatePhonecall",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updatePhonecallBody",
+            "schema": {
+              "$ref": "#/definitions/Phonecall"
+            },
+            "description": "New record details for Phonecall"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Phonecall-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Phonecall Vertex Properties. ",
+        "tags": [
+          "Phonecall"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Phonecall",
+        "operationId": "deletePhonecall",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Phonecall-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Phonecall"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deletePhonecallBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Phonecall with given id"
+          }
+        ]
+      }
+    },
+    "/Product/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Product-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Product"
+        ],
+        "summary": "Search for Products",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchProduct"
+      }
+    },
+    "/Product/id": {
+      "post": {
+        "summary": "Get Product",
+        "operationId": "getProduct",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Product-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Product's Vertex by it's ID. ",
+        "tags": [
+          "Product"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getProductBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Product record."
+          }
+        ]
+      }
+    },
+    "/Product": {
+      "get": {
+        "summary": "List Products",
+        "operationId": "listProducts",
+        "description": "Lists Products",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Product-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Product"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Product-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Product",
+        "operationId": "insertProduct",
+        "description": "Insert a new Product Vertex into the Graph. ",
+        "tags": [
+          "Product"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertProductBody",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            },
+            "description": "Insert Product as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Product",
+        "operationId": "updateProduct",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateProductBody",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            },
+            "description": "New record details for Product"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Product-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Product Vertex Properties. ",
+        "tags": [
+          "Product"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Product",
+        "operationId": "deleteProduct",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Product-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Product"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteProductBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Product with given id"
+          }
+        ]
+      }
+    },
+    "/Residence/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Residence-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Residence"
+        ],
+        "summary": "Search for Residences",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchResidence"
+      }
+    },
+    "/Residence/id": {
+      "post": {
+        "summary": "Get Residence",
+        "operationId": "getResidence",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Residence-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Residence's Vertex by it's ID. ",
+        "tags": [
+          "Residence"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getResidenceBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Residence record."
+          }
+        ]
+      }
+    },
+    "/Residence": {
+      "get": {
+        "summary": "List Residences",
+        "operationId": "listResidences",
+        "description": "Lists Residences",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Residence-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Residence"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Residence-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Residence",
+        "operationId": "insertResidence",
+        "description": "Insert a new Residence Vertex into the Graph. ",
+        "tags": [
+          "Residence"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertResidenceBody",
+            "schema": {
+              "$ref": "#/definitions/Residence"
+            },
+            "description": "Insert Residence as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Residence",
+        "operationId": "updateResidence",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateResidenceBody",
+            "schema": {
+              "$ref": "#/definitions/Residence"
+            },
+            "description": "New record details for Residence"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Residence-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Residence Vertex Properties. ",
+        "tags": [
+          "Residence"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Residence",
+        "operationId": "deleteResidence",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Residence-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Residence"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteResidenceBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Residence with given id"
+          }
+        ]
+      }
+    },
+    "/Role/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Role-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Role"
+        ],
+        "summary": "Search for Roles",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchRole"
+      }
+    },
+    "/Role/id": {
+      "post": {
+        "summary": "Get Role",
+        "operationId": "getRole",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Role-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Role's Vertex by it's ID. ",
+        "tags": [
+          "Role"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getRoleBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Role record."
+          }
+        ]
+      }
+    },
+    "/Role": {
+      "get": {
+        "summary": "List Roles",
+        "operationId": "listRoles",
+        "description": "Lists Roles",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Role-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Role"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Role-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Role",
+        "operationId": "insertRole",
+        "description": "Insert a new Role Vertex into the Graph. ",
+        "tags": [
+          "Role"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertRoleBody",
+            "schema": {
+              "$ref": "#/definitions/Role"
+            },
+            "description": "Insert Role as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Role",
+        "operationId": "updateRole",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateRoleBody",
+            "schema": {
+              "$ref": "#/definitions/Role"
+            },
+            "description": "New record details for Role"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Role-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Role Vertex Properties. ",
+        "tags": [
+          "Role"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Role",
+        "operationId": "deleteRole",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Role-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Role"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteRoleBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Role with given id"
+          }
+        ]
+      }
+    },
+    "/Scorecard/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Scorecard-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Scorecard"
+        ],
+        "summary": "Search for Scorecards",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchScorecard"
+      }
+    },
+    "/Scorecard/id": {
+      "post": {
+        "summary": "Get Scorecard",
+        "operationId": "getScorecard",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Scorecard-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Scorecard's Vertex by it's ID. ",
+        "tags": [
+          "Scorecard"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getScorecardBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Scorecard record."
+          }
+        ]
+      }
+    },
+    "/Scorecard": {
+      "get": {
+        "summary": "List Scorecards",
+        "operationId": "listScorecards",
+        "description": "Lists Scorecards",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Scorecard-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Scorecard"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Scorecard-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Scorecard",
+        "operationId": "insertScorecard",
+        "description": "Insert a new Scorecard Vertex into the Graph. ",
+        "tags": [
+          "Scorecard"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertScorecardBody",
+            "schema": {
+              "$ref": "#/definitions/Scorecard"
+            },
+            "description": "Insert Scorecard as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Scorecard",
+        "operationId": "updateScorecard",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateScorecardBody",
+            "schema": {
+              "$ref": "#/definitions/Scorecard"
+            },
+            "description": "New record details for Scorecard"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Scorecard-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Scorecard Vertex Properties. ",
+        "tags": [
+          "Scorecard"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Scorecard",
+        "operationId": "deleteScorecard",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Scorecard-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Scorecard"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteScorecardBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Scorecard with given id"
+          }
+        ]
+      }
+    },
+    "/Timeclock/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Timeclock-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Timeclock"
+        ],
+        "summary": "Search for Timeclocks",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchTimeclock"
+      }
+    },
+    "/Timeclock/id": {
+      "post": {
+        "summary": "Get Timeclock",
+        "operationId": "getTimeclock",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Timeclock-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Timeclock's Vertex by it's ID. ",
+        "tags": [
+          "Timeclock"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getTimeclockBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Timeclock record."
+          }
+        ]
+      }
+    },
+    "/Timeclock": {
+      "get": {
+        "summary": "List Timeclocks",
+        "operationId": "listTimeclocks",
+        "description": "Lists Timeclocks",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Timeclock-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Timeclock"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Timeclock-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Timeclock",
+        "operationId": "insertTimeclock",
+        "description": "Insert a new Timeclock Vertex into the Graph. ",
+        "tags": [
+          "Timeclock"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertTimeclockBody",
+            "schema": {
+              "$ref": "#/definitions/Timeclock"
+            },
+            "description": "Insert Timeclock as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Timeclock",
+        "operationId": "updateTimeclock",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateTimeclockBody",
+            "schema": {
+              "$ref": "#/definitions/Timeclock"
+            },
+            "description": "New record details for Timeclock"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Timeclock-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Timeclock Vertex Properties. ",
+        "tags": [
+          "Timeclock"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Timeclock",
+        "operationId": "deleteTimeclock",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Timeclock-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Timeclock"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteTimeclockBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Timeclock with given id"
+          }
+        ]
+      }
+    },
+    "/Twillio/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Twillio-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Twillio"
+        ],
+        "summary": "Search for Twillios",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchTwillio"
+      }
+    },
+    "/Twillio/id": {
+      "post": {
+        "summary": "Get Twillio",
+        "operationId": "getTwillio",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Twillio-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a Twillio's Vertex by it's ID. ",
+        "tags": [
+          "Twillio"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getTwillioBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a Twillio record."
+          }
+        ]
+      }
+    },
+    "/Twillio": {
+      "get": {
+        "summary": "List Twillios",
+        "operationId": "listTwillios",
+        "description": "Lists Twillios",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Twillio-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "Twillio"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Twillio-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert Twillio",
+        "operationId": "insertTwillio",
+        "description": "Insert a new Twillio Vertex into the Graph. ",
+        "tags": [
+          "Twillio"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertTwillioBody",
+            "schema": {
+              "$ref": "#/definitions/Twillio"
+            },
+            "description": "Insert Twillio as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Twillio",
+        "operationId": "updateTwillio",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateTwillioBody",
+            "schema": {
+              "$ref": "#/definitions/Twillio"
+            },
+            "description": "New record details for Twillio"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Twillio-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the Twillio Vertex Properties. ",
+        "tags": [
+          "Twillio"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete Twillio",
+        "operationId": "deleteTwillio",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Twillio-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "Twillio"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteTwillioBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete Twillio with given id"
+          }
+        ]
+      }
+    },
+    "/User/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/User-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "summary": "Search for Users",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchUser"
+      }
+    },
+    "/User/id": {
+      "post": {
+        "summary": "Get User",
+        "operationId": "getUser",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/User-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a User's Vertex by it's ID. ",
+        "tags": [
+          "User"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getUserBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a User record."
+          }
+        ]
+      }
+    },
+    "/User": {
+      "get": {
+        "summary": "List Users",
+        "operationId": "listUsers",
+        "description": "Lists Users",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/User-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/User-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert User",
+        "operationId": "insertUser",
+        "description": "Insert a new User Vertex into the Graph. ",
+        "tags": [
+          "User"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertUserBody",
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "description": "Insert User as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update User",
+        "operationId": "updateUser",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateUserBody",
+            "schema": {
+              "$ref": "#/definitions/User"
+            },
+            "description": "New record details for User"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/User-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the User Vertex Properties. ",
+        "tags": [
+          "User"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete User",
+        "operationId": "deleteUser",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/User-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "User"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteUserBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete User with given id"
+          }
+        ]
+      }
+    },
+    "/UserLocation/search": {
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/UserLocation-List-Response"
+          }
+        },
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "UserLocation"
+        ],
+        "summary": "Search for UserLocations",
+        "description": "List all of the contracts that have a specific attribute: value pairs. ",
+        "operationId": "searchUserLocation"
+      }
+    },
+    "/UserLocation/id": {
+      "post": {
+        "summary": "Get UserLocation",
+        "operationId": "getUserLocation",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/UserLocation-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Gets a UserLocation's Vertex by it's ID. ",
+        "tags": [
+          "UserLocation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "getUserLocationBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Request to get a UserLocation record."
+          }
+        ]
+      }
+    },
+    "/UserLocation": {
+      "get": {
+        "summary": "List UserLocations",
+        "operationId": "listUserLocations",
+        "description": "Lists UserLocations",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/UserLocation-List-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "tags": [
+          "UserLocation"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "type": "number",
+            "description": "This is the max amount of whatever record you are requesting.",
+            "default": "20"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "type": "string",
+            "default": "0",
+            "description": "Number of records to omit from start of scan. "
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "default": "_ts",
+            "description": "Order of database scan. Must be an attribute of the type"
+          },
+          {
+            "in": "query",
+            "name": "dir",
+            "type": "string",
+            "default": "desc",
+            "description": "Direction of the ordering from the order parameter."
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "$ref": "#/responses/UserLocation-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "summary": "Insert UserLocation",
+        "operationId": "insertUserLocation",
+        "description": "Insert a new UserLocation Vertex into the Graph. ",
+        "tags": [
+          "UserLocation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "insertUserLocationBody",
+            "schema": {
+              "$ref": "#/definitions/UserLocation"
+            },
+            "description": "Insert UserLocation as a new record"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update UserLocation",
+        "operationId": "updateUserLocation",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "updateUserLocationBody",
+            "schema": {
+              "$ref": "#/definitions/UserLocation"
+            },
+            "description": "New record details for UserLocation"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/UserLocation-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Updates the UserLocation Vertex Properties. ",
+        "tags": [
+          "UserLocation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "summary": "Delete UserLocation",
+        "operationId": "deleteUserLocation",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/UserLocation-Remove-Response"
+          },
+          "400": {
+            "$ref": "#/responses/Error-Response"
+          }
+        },
+        "description": "Deletes the Vertex associated with provided Id. ",
+        "tags": [
+          "UserLocation"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "deleteUserLocationBody",
+            "schema": {
+              "$ref": "#/definitions/Record-Request-Definition"
+            },
+            "description": "Delete UserLocation with given id"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "User"
+          ],
+          "type": "string"
+        },
+        "faceListId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "gender": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "companyId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "firstName": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "lastName": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "phoneNumber": {
+          "pattern": "\\d\\(\\d{3}\\)\\d{3}-\\d{4}",
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "minimum": 18,
+          "maximum": 100,
+          "type": "integer"
+        },
+        "ssn": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "companyTitle": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "ipAddress": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "group": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "userType": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "email": {
+          "format": "email",
+          "type": "string"
+        },
+        "permissionId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "theming": {
+          "properties": {
+            "type": {
+              "enum": [
+                "UserSettings"
+              ],
+              "type": "string"
+            },
+            "productIDs": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "darkmode": {
+              "type": "boolean"
+            }
+          },
+          "type": "object",
+          "required": [
+            "darkmode"
+          ]
+        },
+        "twillioId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "intuitId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "payrollId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "contractId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "noteIds": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "gender",
+        "verified",
+        "firstName",
+        "lastName",
+        "dateOfBirth",
+        "group",
+        "userType",
+        "email",
+        "theming"
+      ]
+    },
+    "Residence": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Address"
+          ],
+          "type": "string"
+        },
+        "streetAddress": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "city": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "zip": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "state": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "address": {
+          "properties": {
+            "streetNumber": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "streetName": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "municipality": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "countrySecondarySubdivision": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "countryTertiarySubdivision": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "countrySubdivision": {
+              "maxLength": 2,
+              "type": "string"
+            },
+            "countrySubdivisionName": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "postalCode": {
+              "maxLength": 5,
+              "type": "string"
+            },
+            "extendedPostalCode": {
+              "maxLength": 9,
+              "type": "string"
+            },
+            "countryCode": {
+              "maxLength": 4,
+              "type": "string"
+            },
+            "country": {
+              "maxLength": 80,
+              "type": "string"
+            },
+            "countryCodeISO3": {
+              "maxLength": 5,
+              "type": "string"
+            },
+            "freeformAddress": {
+              "maxLength": 100,
+              "type": "string"
+            },
+            "localName": {
+              "maxLength": 80,
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "required": [
+            "streetNumber",
+            "streetName",
+            "municipality",
+            "countrySecondarySubdivision",
+            "countryTertiarySubdivision",
+            "countrySubdivision",
+            "countrySubdivisionName",
+            "postalCode",
+            "extendedPostalCode",
+            "countryCode",
+            "country",
+            "countryCodeISO3",
+            "freeformAddress",
+            "localName"
+          ]
+        },
+        "location": {
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lon": {
+              "type": "number"
+            }
+          },
+          "type": "object",
+          "required": [
+            "lat",
+            "lon"
+          ]
+        },
+        "owner": {
+          "properties": {
+            "users": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "groups": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "noteIds": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "streetAddress",
+        "city",
+        "zip",
+        "state",
+        "address",
+        "location",
+        "owner"
+      ]
+    },
+    "Twillio": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Twillio"
+          ],
+          "type": "string"
+        },
+        "messageSid": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "recordingSid": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "ApplicationSid": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "TwillioURL": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "isoCountryCode": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "CallSid": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "ConferenceSid": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "IncomingPhoneNumberSid": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "OutgoingCallerIdSid": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "messageSid",
+        "recordingSid",
+        "ApplicationSid",
+        "TwillioURL",
+        "isoCountryCode",
+        "CallSid",
+        "ConferenceSid",
+        "IncomingPhoneNumberSid",
+        "OutgoingCallerIdSid"
+      ]
+    },
+    "Phonecall": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Phonecall"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "REHASH",
+            "REHASH_2",
+            "MEDIA1",
+            "CV_CALLBACK",
+            "HOME_SHOWS",
+            "CR1",
+            "CR2",
+            "PC1",
+            "HS1",
+            "NH1",
+            "SURVEY1",
+            "RS1",
+            "PC2",
+            "PC3",
+            "PC4",
+            "PC5",
+            "HS2",
+            "HS3",
+            "HS4",
+            "HS5",
+            "HS6",
+            "MEDIA2",
+            "MEDIA3",
+            "MEDIA4",
+            "NH2",
+            "NH3",
+            "NH4",
+            "SURVEY2",
+            "SURVEY3",
+            "SURVEY4",
+            "SURVEY5",
+            "SURVEY6",
+            "RS2",
+            "RS3",
+            "RS4",
+            "RH_CANCEL",
+            "BLOWOUT",
+            "COMPLETE",
+            "RESURECTION1",
+            "RESURECTION2",
+            "CUSTOMER_SURVEY",
+            "NOT_NET",
+            "CONFIRM1"
+          ],
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "OUTBOUND",
+            "INBOUND"
+          ],
+          "type": "string"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "status",
+        "direction"
+      ]
+    },
+    "PaidTimeOff": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "PaidTimeOff"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "hours": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "name",
+        "hours"
+      ]
+    },
+    "Note": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Note"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "SAVED",
+            "REMOVED"
+          ],
+          "type": "string"
+        },
+        "noteText": {
+          "maxLength": 240,
+          "minLength": 0,
+          "type": "string"
+        },
+        "imageURL": {
+          "type": "string"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "status"
+      ]
+    },
+    "Message": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Message"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "New",
+            "Draft",
+            "Viewed",
+            "Archived"
+          ],
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "sendType": {
+          "enum": [
+            "Group",
+            "User"
+          ],
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "sentAt": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "seenAt": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "owner": {
+          "properties": {
+            "users": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "groups": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "status",
+        "to",
+        "sendType",
+        "message",
+        "owner"
+      ]
+    },
+    "Scorecard": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "description": {
+          "maxLength": 200,
+          "type": "string"
+        },
+        "scores": {
+          "items": {
+            "properties": {
+              "id": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "user": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "createdOn": {
+                "minimum": 946684800,
+                "maximum": 2147483646,
+                "type": "integer"
+              },
+              "createdBy": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "updatedOn": {
+                "minimum": 946684800,
+                "maximum": 2147483646,
+                "type": "integer"
+              },
+              "updatedBy": {
+                "format": "uuid",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "scorecardType": {
+          "enum": [
+            "GROUP",
+            "INDIVIDUAL"
+          ],
+          "type": "string"
+        },
+        "series": {
+          "enum": [
+            "SINGLE",
+            "TIME"
+          ],
+          "type": "string"
+        },
+        "display": {
+          "enum": [
+            "AREA_CHART",
+            "BAR_CHART",
+            "COMPLEX_GAUGE",
+            "GROUPED_BAR_CHART",
+            "HEAT_MAP",
+            "LINE_CHART",
+            "NUMBER_CARD",
+            "PIE_CHART",
+            "POLAR_CHART"
+          ],
+          "type": "string"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "title",
+        "description",
+        "scores",
+        "scorecardType",
+        "series",
+        "display"
+      ]
+    },
+    "Lead": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Lead"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "AVOID",
+            "INTEREST",
+            "NEW",
+            "CUSTOMER",
+            "RECYCLE",
+            "PITCHING",
+            "ORDER",
+            "JOB"
+          ],
+          "type": "string"
+        },
+        "ownerType": {
+          "enum": [
+            "Single",
+            "Dual"
+          ],
+          "type": "string"
+        },
+        "title": {
+          "enum": [
+            "Mr.",
+            "Mrs."
+          ],
+          "type": "string"
+        },
+        "firstName": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "lastName": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "title_2": {
+          "enum": [
+            "Mr.",
+            "Mrs."
+          ],
+          "type": "string"
+        },
+        "firstName_2": {
+          "maxLength": 80,
+          "minLength": 0,
+          "type": "string"
+        },
+        "lastName_2": {
+          "type": "string"
+        },
+        "emailAddress": {
+          "format": "email",
+          "type": "string"
+        },
+        "primaryPhone": {
+          "pattern": "\\d\\(\\d{3}\\)\\d{3}-\\d{4}",
+          "type": "string"
+        },
+        "primaryPhoneType": {
+          "enum": [
+            "Cell",
+            "Work",
+            "Home",
+            "Fax"
+          ],
+          "type": "string"
+        },
+        "secondaryPhone": {
+          "pattern": "\\d\\(\\d{3}\\)\\d{3}-\\d{4}",
+          "type": "string"
+        },
+        "secondaryPhoneType": {
+          "enum": [
+            "Cell",
+            "Work",
+            "Home",
+            "Fax"
+          ],
+          "type": "string"
+        },
+        "residence": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "leadSource": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "owner": {
+          "properties": {
+            "users": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "groups": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "noteIds": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "status",
+        "ownerType",
+        "title",
+        "firstName",
+        "lastName",
+        "emailAddress",
+        "primaryPhoneType",
+        "leadSource",
+        "owner"
+      ]
+    },
+    "Timeclock": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Timeclock"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "OFF_CLOCK",
+            "ON_CLOCK",
+            "VACATION",
+            "SICK_LEAVE",
+            "START_BREAK",
+            "END_BREAK"
+          ],
+          "type": "string"
+        },
+        "date": {
+          "minimum": 10957,
+          "maximum": 24855,
+          "type": "integer"
+        },
+        "noteIds": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "status",
+        "date"
+      ]
+    },
+    "UserLocation": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Timeclock"
+          ],
+          "type": "string"
+        },
+        "locations": {
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lon": {
+              "type": "number"
+            }
+          },
+          "type": "object",
+          "required": [
+            "lat",
+            "lon"
+          ]
+        },
+        "currentArea": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "date": {
+          "minimum": 10957,
+          "maximum": 24855,
+          "type": "integer"
+        },
+        "owner": {
+          "properties": {
+            "users": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "groups": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "locations",
+        "date",
+        "owner"
+      ]
+    },
+    "Invoice": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Sales"
+          ],
+          "type": "string"
+        },
+        "salesID": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "Description": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "Amount": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "DetailType": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "UnitPrice": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "Qty": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "TaxCodeRef": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "salesItemLineDetail": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "Description",
+        "Amount",
+        "DetailType",
+        "UnitPrice",
+        "Qty",
+        "TaxCodeRef",
+        "salesItemLineDetail"
+      ]
+    },
+    "Corporation": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Corporation"
+          ],
+          "type": "string"
+        },
+        "corporationID": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "businessClassification": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "businessType": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "businessName": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "ein": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "businessAddress": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "businessClassification",
+        "businessType",
+        "businessName",
+        "ein",
+        "businessAddress"
+      ]
+    },
+    "Role": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "roleId": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "roleName": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "detailID": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "vendorID": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "roleId",
+        "roleName"
+      ]
+    },
+    "Payment": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "ContractStatus"
+          ],
+          "type": "string"
+        },
+        "contractId": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "contractStatus": {
+          "maxLength": 80,
+          "type": "string"
+        },
+        "owner": {
+          "properties": {
+            "users": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "groups": {
+              "items": {
+                "format": "uuid",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "noteIds": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "contractId",
+        "contractStatus",
+        "owner"
+      ]
+    },
+    "Appointment": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "appointmentTime": {
+          "maxLength": 15,
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Appointment"
+          ],
+          "type": "string"
+        },
+        "appointmentType": {
+          "enum": [
+            "Windows/Door",
+            "Siding/Soffit-Fascia",
+            "Roof",
+            "Fence",
+            "Deck",
+            "Bath",
+            "Basement",
+            "Kitchen"
+          ],
+          "type": "string"
+        },
+        "date": {
+          "maximum": 50,
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "NEW",
+            "TO_CONFIRM",
+            "COULD_NOT_REACH",
+            "CONFIRMED",
+            "UNASSIGNED",
+            "CALL_CANCEL",
+            "EXTRA",
+            "ASSIGNED",
+            "ONE_LEG",
+            "NO_SHOW",
+            "SALE",
+            "REP_TIE",
+            "PITCH_MISS",
+            "BLOWOUT",
+            "RESCHEDULE",
+            "REHASH"
+          ],
+          "type": "string"
+        },
+        "lead": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "stepNumber": {
+          "type": "integer"
+        },
+        "notes": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "appointmentTime",
+        "type",
+        "appointmentType",
+        "date",
+        "status"
+      ]
+    },
+    "Contract": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Contract"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "SIGNED",
+            "APPROVED",
+            "PENDING",
+            "SENT",
+            "DRAFT"
+          ],
+          "type": "string"
+        },
+        "contract": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "lead": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "order": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "datetime": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "lastRequested": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "status",
+        "name"
+      ]
+    },
+    "Product": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Product"
+          ],
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "NEW_PRODUCT",
+            "PRODUCT_MEASURED",
+            "PURCHASED_PRODUCT",
+            "PRODUCT_COMPLETE",
+            "PRODUCT_CANCELED"
+          ],
+          "type": "string"
+        },
+        "orderId": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "vendor": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "id": {
+              "format": "uuid",
+              "type": "string"
+            }
+          },
+          "type": "object",
+          "required": [
+            "name"
+          ]
+        },
+        "productType": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "totals": {
+          "items": {
+            "type": "number"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "status",
+        "vendor",
+        "productType",
+        "category",
+        "totals"
+      ]
+    },
+    "Permission": {
+      "properties": {
+        "id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "user": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Permission"
+          ],
+          "type": "string"
+        },
+        "group": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "scopes": {
+          "items": {
+            "maxLength": 80,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "records": {
+          "items": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "tabs": {
+          "items": {
+            "maxLength": 80,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "createdOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "createdBy": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "updatedOn": {
+          "minimum": 946684800,
+          "maximum": 2147483646,
+          "type": "integer"
+        },
+        "updatedBy": {
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object",
+      "required": [
+        "type",
+        "scopes",
+        "records",
+        "tabs"
+      ]
+    },
+    "Appointment-list": {
+      "type": "array",
+      "title": "Appointment List Definition",
+      "description": "This is a List of Appointment",
+      "items": {
+        "$ref": "#/definitions/Appointment"
+      }
+    },
+    "Contract-list": {
+      "type": "array",
+      "title": "Contract List Definition",
+      "description": "This is a List of Contract",
+      "items": {
+        "$ref": "#/definitions/Contract"
+      }
+    },
+    "Corporation-list": {
+      "type": "array",
+      "title": "Corporation List Definition",
+      "description": "This is a List of Corporation",
+      "items": {
+        "$ref": "#/definitions/Corporation"
+      }
+    },
+    "Invoice-list": {
+      "type": "array",
+      "title": "Invoice List Definition",
+      "description": "This is a List of Invoice",
+      "items": {
+        "$ref": "#/definitions/Invoice"
+      }
+    },
+    "Lead-list": {
+      "type": "array",
+      "title": "Lead List Definition",
+      "description": "This is a List of Lead",
+      "items": {
+        "$ref": "#/definitions/Lead"
+      }
+    },
+    "Message-list": {
+      "type": "array",
+      "title": "Message List Definition",
+      "description": "This is a List of Message",
+      "items": {
+        "$ref": "#/definitions/Message"
+      }
+    },
+    "Note-list": {
+      "type": "array",
+      "title": "Note List Definition",
+      "description": "This is a List of Note",
+      "items": {
+        "$ref": "#/definitions/Note"
+      }
+    },
+    "PaidTimeOff-list": {
+      "type": "array",
+      "title": "PaidTimeOff List Definition",
+      "description": "This is a List of PaidTimeOff",
+      "items": {
+        "$ref": "#/definitions/PaidTimeOff"
+      }
+    },
+    "Payment-list": {
+      "type": "array",
+      "title": "Payment List Definition",
+      "description": "This is a List of Payment",
+      "items": {
+        "$ref": "#/definitions/Payment"
+      }
+    },
+    "Permission-list": {
+      "type": "array",
+      "title": "Permission List Definition",
+      "description": "This is a List of Permission",
+      "items": {
+        "$ref": "#/definitions/Permission"
+      }
+    },
+    "Phonecall-list": {
+      "type": "array",
+      "title": "Phonecall List Definition",
+      "description": "This is a List of Phonecall",
+      "items": {
+        "$ref": "#/definitions/Phonecall"
+      }
+    },
+    "Product-list": {
+      "type": "array",
+      "title": "Product List Definition",
+      "description": "This is a List of Product",
+      "items": {
+        "$ref": "#/definitions/Product"
+      }
+    },
+    "Residence-list": {
+      "type": "array",
+      "title": "Residence List Definition",
+      "description": "This is a List of Residence",
+      "items": {
+        "$ref": "#/definitions/Residence"
+      }
+    },
+    "Role-list": {
+      "type": "array",
+      "title": "Role List Definition",
+      "description": "This is a List of Role",
+      "items": {
+        "$ref": "#/definitions/Role"
+      }
+    },
+    "Scorecard-list": {
+      "type": "array",
+      "title": "Scorecard List Definition",
+      "description": "This is a List of Scorecard",
+      "items": {
+        "$ref": "#/definitions/Scorecard"
+      }
+    },
+    "Timeclock-list": {
+      "type": "array",
+      "title": "Timeclock List Definition",
+      "description": "This is a List of Timeclock",
+      "items": {
+        "$ref": "#/definitions/Timeclock"
+      }
+    },
+    "Twillio-list": {
+      "type": "array",
+      "title": "Twillio List Definition",
+      "description": "This is a List of Twillio",
+      "items": {
+        "$ref": "#/definitions/Twillio"
+      }
+    },
+    "User-list": {
+      "type": "array",
+      "title": "User List Definition",
+      "description": "This is a List of User",
+      "items": {
+        "$ref": "#/definitions/User"
+      }
+    },
+    "UserLocation-list": {
+      "type": "array",
+      "title": "UserLocation List Definition",
+      "description": "This is a List of UserLocation",
+      "items": {
+        "$ref": "#/definitions/UserLocation"
+      }
+    },
+    "Record-Request-Definition": {
+      "type": "object",
+      "title": "Record Request Definition",
+      "required": [
+        "id",
+        "type"
+      ],
+      "description": "This is a request to get or delete an object.",
+      "example": {
+        "type": "User",
+        "id": "recordUUID"
+      },
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID of Record"
+        },
+        "type": {
+          "type": "string",
+          "description": "Record Type"
+        }
+      }
+    }
+  },
+  "responses": {
+    "Appointment-Response": {
+      "description": "This is a successful response with a single Appointment Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Appointment"
+          }
+        }
+      }
+    },
+    "Appointment-List-Response": {
+      "description": "This is a successful response with a list of Appointment Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Appointment-list"
+          }
+        }
+      }
+    },
+    "Appointment-Remove-Response": {
+      "description": "This is a successful response from removing a single Appointment Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Contract-Response": {
+      "description": "This is a successful response with a single Contract Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Contract"
+          }
+        }
+      }
+    },
+    "Contract-List-Response": {
+      "description": "This is a successful response with a list of Contract Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Contract-list"
+          }
+        }
+      }
+    },
+    "Contract-Remove-Response": {
+      "description": "This is a successful response from removing a single Contract Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Corporation-Response": {
+      "description": "This is a successful response with a single Corporation Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Corporation"
+          }
+        }
+      }
+    },
+    "Corporation-List-Response": {
+      "description": "This is a successful response with a list of Corporation Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Corporation-list"
+          }
+        }
+      }
+    },
+    "Corporation-Remove-Response": {
+      "description": "This is a successful response from removing a single Corporation Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Invoice-Response": {
+      "description": "This is a successful response with a single Invoice Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Invoice"
+          }
+        }
+      }
+    },
+    "Invoice-List-Response": {
+      "description": "This is a successful response with a list of Invoice Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Invoice-list"
+          }
+        }
+      }
+    },
+    "Invoice-Remove-Response": {
+      "description": "This is a successful response from removing a single Invoice Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Lead-Response": {
+      "description": "This is a successful response with a single Lead Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Lead"
+          }
+        }
+      }
+    },
+    "Lead-List-Response": {
+      "description": "This is a successful response with a list of Lead Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Lead-list"
+          }
+        }
+      }
+    },
+    "Lead-Remove-Response": {
+      "description": "This is a successful response from removing a single Lead Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Message-Response": {
+      "description": "This is a successful response with a single Message Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Message"
+          }
+        }
+      }
+    },
+    "Message-List-Response": {
+      "description": "This is a successful response with a list of Message Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Message-list"
+          }
+        }
+      }
+    },
+    "Message-Remove-Response": {
+      "description": "This is a successful response from removing a single Message Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Note-Response": {
+      "description": "This is a successful response with a single Note Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Note"
+          }
+        }
+      }
+    },
+    "Note-List-Response": {
+      "description": "This is a successful response with a list of Note Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Note-list"
+          }
+        }
+      }
+    },
+    "Note-Remove-Response": {
+      "description": "This is a successful response from removing a single Note Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "PaidTimeOff-Response": {
+      "description": "This is a successful response with a single PaidTimeOff Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/PaidTimeOff"
+          }
+        }
+      }
+    },
+    "PaidTimeOff-List-Response": {
+      "description": "This is a successful response with a list of PaidTimeOff Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/PaidTimeOff-list"
+          }
+        }
+      }
+    },
+    "PaidTimeOff-Remove-Response": {
+      "description": "This is a successful response from removing a single PaidTimeOff Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Payment-Response": {
+      "description": "This is a successful response with a single Payment Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Payment"
+          }
+        }
+      }
+    },
+    "Payment-List-Response": {
+      "description": "This is a successful response with a list of Payment Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Payment-list"
+          }
+        }
+      }
+    },
+    "Payment-Remove-Response": {
+      "description": "This is a successful response from removing a single Payment Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Permission-Response": {
+      "description": "This is a successful response with a single Permission Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Permission"
+          }
+        }
+      }
+    },
+    "Permission-List-Response": {
+      "description": "This is a successful response with a list of Permission Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Permission-list"
+          }
+        }
+      }
+    },
+    "Permission-Remove-Response": {
+      "description": "This is a successful response from removing a single Permission Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Phonecall-Response": {
+      "description": "This is a successful response with a single Phonecall Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Phonecall"
+          }
+        }
+      }
+    },
+    "Phonecall-List-Response": {
+      "description": "This is a successful response with a list of Phonecall Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Phonecall-list"
+          }
+        }
+      }
+    },
+    "Phonecall-Remove-Response": {
+      "description": "This is a successful response from removing a single Phonecall Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Product-Response": {
+      "description": "This is a successful response with a single Product Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Product"
+          }
+        }
+      }
+    },
+    "Product-List-Response": {
+      "description": "This is a successful response with a list of Product Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Product-list"
+          }
+        }
+      }
+    },
+    "Product-Remove-Response": {
+      "description": "This is a successful response from removing a single Product Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Residence-Response": {
+      "description": "This is a successful response with a single Residence Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Residence"
+          }
+        }
+      }
+    },
+    "Residence-List-Response": {
+      "description": "This is a successful response with a list of Residence Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Residence-list"
+          }
+        }
+      }
+    },
+    "Residence-Remove-Response": {
+      "description": "This is a successful response from removing a single Residence Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Role-Response": {
+      "description": "This is a successful response with a single Role Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Role"
+          }
+        }
+      }
+    },
+    "Role-List-Response": {
+      "description": "This is a successful response with a list of Role Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Role-list"
+          }
+        }
+      }
+    },
+    "Role-Remove-Response": {
+      "description": "This is a successful response from removing a single Role Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Scorecard-Response": {
+      "description": "This is a successful response with a single Scorecard Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Scorecard"
+          }
+        }
+      }
+    },
+    "Scorecard-List-Response": {
+      "description": "This is a successful response with a list of Scorecard Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Scorecard-list"
+          }
+        }
+      }
+    },
+    "Scorecard-Remove-Response": {
+      "description": "This is a successful response from removing a single Scorecard Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Timeclock-Response": {
+      "description": "This is a successful response with a single Timeclock Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Timeclock"
+          }
+        }
+      }
+    },
+    "Timeclock-List-Response": {
+      "description": "This is a successful response with a list of Timeclock Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Timeclock-list"
+          }
+        }
+      }
+    },
+    "Timeclock-Remove-Response": {
+      "description": "This is a successful response from removing a single Timeclock Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Twillio-Response": {
+      "description": "This is a successful response with a single Twillio Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Twillio"
+          }
+        }
+      }
+    },
+    "Twillio-List-Response": {
+      "description": "This is a successful response with a list of Twillio Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/Twillio-list"
+          }
+        }
+      }
+    },
+    "Twillio-Remove-Response": {
+      "description": "This is a successful response from removing a single Twillio Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "User-Response": {
+      "description": "This is a successful response with a single User Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      }
+    },
+    "User-List-Response": {
+      "description": "This is a successful response with a list of User Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/User-list"
+          }
+        }
+      }
+    },
+    "User-Remove-Response": {
+      "description": "This is a successful response from removing a single User Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "UserLocation-Response": {
+      "description": "This is a successful response with a single UserLocation Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/UserLocation"
+          }
+        }
+      }
+    },
+    "UserLocation-List-Response": {
+      "description": "This is a successful response with a list of UserLocation Objects",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "$ref": "#/definitions/UserLocation-list"
+          }
+        }
+      }
+    },
+    "UserLocation-Remove-Response": {
+      "description": "This is a successful response from removing a single UserLocation Object",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Error-Response": {
+      "description": "An error response is a response that has success as `false`. ",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "string"
+          },
+          "response": {
+            "type": [
+              "string",
+              "object"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6151 @@
+openapi: 3.0.0
+info:
+  title: Basic CRUD API
+  version: "1.0"
+  description: "This is the Base API that the entire thing is built from "
+  contact:
+    name: Adam
+    url: https://augimenteddestiny.com
+    email: support@augmenteddestiny.com
+  license:
+    name: Commercial License
+tags:
+  - name: Appointment
+  - name: Contract
+  - name: Corporation
+  - name: Invoice
+  - name: Lead
+  - name: Message
+  - name: Note
+  - name: Order
+  - name: PaidTimeOff
+  - name: Payment
+  - name: PayrollTotals
+  - name: Permission
+  - name: Phonecall
+  - name: Product
+  - name: Residence
+  - name: Role
+  - name: Scorecard
+  - name: Task
+  - name: Timeclock
+  - name: Timeoff
+  - name: Twillio
+  - name: User
+  - name: UserLocation
+paths:
+  /Appointment/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Appointment-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Appointment
+      summary: Search for Appointments
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchAppointment
+  /Appointment/id:
+    post:
+      summary: Get Appointment
+      operationId: getAppointment
+      responses:
+        "200":
+          $ref: "#/components/responses/Appointment-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Appointment's Vertex by it's ID. "
+      tags:
+        - Appointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Appointment record.
+  /Appointment:
+    get:
+      summary: List Appointments
+      operationId: listAppointments
+      description: Lists Appointments
+      responses:
+        "200":
+          $ref: "#/components/responses/Appointment-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Appointment
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Appointment-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Appointment
+      operationId: insertAppointment
+      description: "Insert a new Appointment Vertex into the Graph. "
+      tags:
+        - Appointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Appointment"
+        description: Insert Appointment as a new record
+    put:
+      summary: Update Appointment
+      operationId: updateAppointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Appointment"
+        description: New record details for Appointment
+      responses:
+        "200":
+          $ref: "#/components/responses/Appointment-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Appointment Vertex Properties. "
+      tags:
+        - Appointment
+    delete:
+      summary: Delete Appointment
+      operationId: deleteAppointment
+      responses:
+        "200":
+          $ref: "#/components/responses/Appointment-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Appointment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Appointment with given id
+  /Contract/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Contract-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Contract
+      summary: Search for Contracts
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchContract
+  /Contract/id:
+    post:
+      summary: Get Contract
+      operationId: getContract
+      responses:
+        "200":
+          $ref: "#/components/responses/Contract-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Contract's Vertex by it's ID. "
+      tags:
+        - Contract
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Contract record.
+  /Contract:
+    get:
+      summary: List Contracts
+      operationId: listContracts
+      description: Lists Contracts
+      responses:
+        "200":
+          $ref: "#/components/responses/Contract-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Contract
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Contract-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Contract
+      operationId: insertContract
+      description: "Insert a new Contract Vertex into the Graph. "
+      tags:
+        - Contract
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Contract"
+        description: Insert Contract as a new record
+    put:
+      summary: Update Contract
+      operationId: updateContract
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Contract"
+        description: New record details for Contract
+      responses:
+        "200":
+          $ref: "#/components/responses/Contract-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Contract Vertex Properties. "
+      tags:
+        - Contract
+    delete:
+      summary: Delete Contract
+      operationId: deleteContract
+      responses:
+        "200":
+          $ref: "#/components/responses/Contract-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Contract
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Contract with given id
+  /Corporation/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Corporation-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Corporation
+      summary: Search for Corporations
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchCorporation
+  /Corporation/id:
+    post:
+      summary: Get Corporation
+      operationId: getCorporation
+      responses:
+        "200":
+          $ref: "#/components/responses/Corporation-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Corporation's Vertex by it's ID. "
+      tags:
+        - Corporation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Corporation record.
+  /Corporation:
+    get:
+      summary: List Corporations
+      operationId: listCorporations
+      description: Lists Corporations
+      responses:
+        "200":
+          $ref: "#/components/responses/Corporation-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Corporation
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Corporation-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Corporation
+      operationId: insertCorporation
+      description: "Insert a new Corporation Vertex into the Graph. "
+      tags:
+        - Corporation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Corporation"
+        description: Insert Corporation as a new record
+    put:
+      summary: Update Corporation
+      operationId: updateCorporation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Corporation"
+        description: New record details for Corporation
+      responses:
+        "200":
+          $ref: "#/components/responses/Corporation-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Corporation Vertex Properties. "
+      tags:
+        - Corporation
+    delete:
+      summary: Delete Corporation
+      operationId: deleteCorporation
+      responses:
+        "200":
+          $ref: "#/components/responses/Corporation-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Corporation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Corporation with given id
+  /Invoice/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Invoice-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Invoice
+      summary: Search for Invoices
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchInvoice
+  /Invoice/id:
+    post:
+      summary: Get Invoice
+      operationId: getInvoice
+      responses:
+        "200":
+          $ref: "#/components/responses/Invoice-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Invoice's Vertex by it's ID. "
+      tags:
+        - Invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Invoice record.
+  /Invoice:
+    get:
+      summary: List Invoices
+      operationId: listInvoices
+      description: Lists Invoices
+      responses:
+        "200":
+          $ref: "#/components/responses/Invoice-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Invoice
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Invoice-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Invoice
+      operationId: insertInvoice
+      description: "Insert a new Invoice Vertex into the Graph. "
+      tags:
+        - Invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Invoice"
+        description: Insert Invoice as a new record
+    put:
+      summary: Update Invoice
+      operationId: updateInvoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Invoice"
+        description: New record details for Invoice
+      responses:
+        "200":
+          $ref: "#/components/responses/Invoice-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Invoice Vertex Properties. "
+      tags:
+        - Invoice
+    delete:
+      summary: Delete Invoice
+      operationId: deleteInvoice
+      responses:
+        "200":
+          $ref: "#/components/responses/Invoice-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Invoice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Invoice with given id
+  /Lead/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Lead-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Lead
+      summary: Search for Leads
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchLead
+  /Lead/id:
+    post:
+      summary: Get Lead
+      operationId: getLead
+      responses:
+        "200":
+          $ref: "#/components/responses/Lead-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Lead's Vertex by it's ID. "
+      tags:
+        - Lead
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Lead record.
+  /Lead:
+    get:
+      summary: List Leads
+      operationId: listLeads
+      description: Lists Leads
+      responses:
+        "200":
+          $ref: "#/components/responses/Lead-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Lead
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Lead-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Lead
+      operationId: insertLead
+      description: "Insert a new Lead Vertex into the Graph. "
+      tags:
+        - Lead
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Lead"
+        description: Insert Lead as a new record
+    put:
+      summary: Update Lead
+      operationId: updateLead
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Lead"
+        description: New record details for Lead
+      responses:
+        "200":
+          $ref: "#/components/responses/Lead-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Lead Vertex Properties. "
+      tags:
+        - Lead
+    delete:
+      summary: Delete Lead
+      operationId: deleteLead
+      responses:
+        "200":
+          $ref: "#/components/responses/Lead-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Lead
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Lead with given id
+  /Message/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Message-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Message
+      summary: Search for Messages
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchMessage
+  /Message/id:
+    post:
+      summary: Get Message
+      operationId: getMessage
+      responses:
+        "200":
+          $ref: "#/components/responses/Message-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Message's Vertex by it's ID. "
+      tags:
+        - Message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Message record.
+  /Message:
+    get:
+      summary: List Messages
+      operationId: listMessages
+      description: Lists Messages
+      responses:
+        "200":
+          $ref: "#/components/responses/Message-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Message
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Message-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Message
+      operationId: insertMessage
+      description: "Insert a new Message Vertex into the Graph. "
+      tags:
+        - Message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Message"
+        description: Insert Message as a new record
+    put:
+      summary: Update Message
+      operationId: updateMessage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Message"
+        description: New record details for Message
+      responses:
+        "200":
+          $ref: "#/components/responses/Message-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Message Vertex Properties. "
+      tags:
+        - Message
+    delete:
+      summary: Delete Message
+      operationId: deleteMessage
+      responses:
+        "200":
+          $ref: "#/components/responses/Message-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Message with given id
+  /Note/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Note-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Note
+      summary: Search for Notes
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchNote
+  /Note/id:
+    post:
+      summary: Get Note
+      operationId: getNote
+      responses:
+        "200":
+          $ref: "#/components/responses/Note-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Note's Vertex by it's ID. "
+      tags:
+        - Note
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Note record.
+  /Note:
+    get:
+      summary: List Notes
+      operationId: listNotes
+      description: Lists Notes
+      responses:
+        "200":
+          $ref: "#/components/responses/Note-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Note
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Note-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Note
+      operationId: insertNote
+      description: "Insert a new Note Vertex into the Graph. "
+      tags:
+        - Note
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Note"
+        description: Insert Note as a new record
+    put:
+      summary: Update Note
+      operationId: updateNote
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Note"
+        description: New record details for Note
+      responses:
+        "200":
+          $ref: "#/components/responses/Note-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Note Vertex Properties. "
+      tags:
+        - Note
+    delete:
+      summary: Delete Note
+      operationId: deleteNote
+      responses:
+        "200":
+          $ref: "#/components/responses/Note-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Note
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Note with given id
+  /Order/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Order-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Order
+      summary: Search for Orders
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchOrder
+  /Order/id:
+    post:
+      summary: Get Order
+      operationId: getOrder
+      responses:
+        "200":
+          $ref: "#/components/responses/Order-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Order's Vertex by it's ID. "
+      tags:
+        - Order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Order record.
+  /Order:
+    get:
+      summary: List Orders
+      operationId: listOrders
+      description: Lists Orders
+      responses:
+        "200":
+          $ref: "#/components/responses/Order-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Order
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Order-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Order
+      operationId: insertOrder
+      description: "Insert a new Order Vertex into the Graph. "
+      tags:
+        - Order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Order"
+        description: Insert Order as a new record
+    put:
+      summary: Update Order
+      operationId: updateOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Order"
+        description: New record details for Order
+      responses:
+        "200":
+          $ref: "#/components/responses/Order-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Order Vertex Properties. "
+      tags:
+        - Order
+    delete:
+      summary: Delete Order
+      operationId: deleteOrder
+      responses:
+        "200":
+          $ref: "#/components/responses/Order-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Order with given id
+  /PaidTimeOff/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/PaidTimeOff-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - PaidTimeOff
+      summary: Search for PaidTimeOffs
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchPaidTimeOff
+  /PaidTimeOff/id:
+    post:
+      summary: Get PaidTimeOff
+      operationId: getPaidTimeOff
+      responses:
+        "200":
+          $ref: "#/components/responses/PaidTimeOff-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a PaidTimeOff's Vertex by it's ID. "
+      tags:
+        - PaidTimeOff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a PaidTimeOff record.
+  /PaidTimeOff:
+    get:
+      summary: List PaidTimeOffs
+      operationId: listPaidTimeOffs
+      description: Lists PaidTimeOffs
+      responses:
+        "200":
+          $ref: "#/components/responses/PaidTimeOff-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - PaidTimeOff
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/PaidTimeOff-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert PaidTimeOff
+      operationId: insertPaidTimeOff
+      description: "Insert a new PaidTimeOff Vertex into the Graph. "
+      tags:
+        - PaidTimeOff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaidTimeOff"
+        description: Insert PaidTimeOff as a new record
+    put:
+      summary: Update PaidTimeOff
+      operationId: updatePaidTimeOff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PaidTimeOff"
+        description: New record details for PaidTimeOff
+      responses:
+        "200":
+          $ref: "#/components/responses/PaidTimeOff-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the PaidTimeOff Vertex Properties. "
+      tags:
+        - PaidTimeOff
+    delete:
+      summary: Delete PaidTimeOff
+      operationId: deletePaidTimeOff
+      responses:
+        "200":
+          $ref: "#/components/responses/PaidTimeOff-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - PaidTimeOff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete PaidTimeOff with given id
+  /Payment/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Payment-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Payment
+      summary: Search for Payments
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchPayment
+  /Payment/id:
+    post:
+      summary: Get Payment
+      operationId: getPayment
+      responses:
+        "200":
+          $ref: "#/components/responses/Payment-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Payment's Vertex by it's ID. "
+      tags:
+        - Payment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Payment record.
+  /Payment:
+    get:
+      summary: List Payments
+      operationId: listPayments
+      description: Lists Payments
+      responses:
+        "200":
+          $ref: "#/components/responses/Payment-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Payment
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Payment-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Payment
+      operationId: insertPayment
+      description: "Insert a new Payment Vertex into the Graph. "
+      tags:
+        - Payment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Payment"
+        description: Insert Payment as a new record
+    put:
+      summary: Update Payment
+      operationId: updatePayment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Payment"
+        description: New record details for Payment
+      responses:
+        "200":
+          $ref: "#/components/responses/Payment-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Payment Vertex Properties. "
+      tags:
+        - Payment
+    delete:
+      summary: Delete Payment
+      operationId: deletePayment
+      responses:
+        "200":
+          $ref: "#/components/responses/Payment-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Payment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Payment with given id
+  /PayrollTotals/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/PayrollTotals-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - PayrollTotals
+      summary: Search for PayrollTotalss
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchPayrollTotals
+  /PayrollTotals/id:
+    post:
+      summary: Get PayrollTotals
+      operationId: getPayrollTotals
+      responses:
+        "200":
+          $ref: "#/components/responses/PayrollTotals-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a PayrollTotals's Vertex by it's ID. "
+      tags:
+        - PayrollTotals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a PayrollTotals record.
+  /PayrollTotals:
+    get:
+      summary: List PayrollTotalss
+      operationId: listPayrollTotalss
+      description: Lists PayrollTotalss
+      responses:
+        "200":
+          $ref: "#/components/responses/PayrollTotals-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - PayrollTotals
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/PayrollTotals-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert PayrollTotals
+      operationId: insertPayrollTotals
+      description: "Insert a new PayrollTotals Vertex into the Graph. "
+      tags:
+        - PayrollTotals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PayrollTotals"
+        description: Insert PayrollTotals as a new record
+    put:
+      summary: Update PayrollTotals
+      operationId: updatePayrollTotals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PayrollTotals"
+        description: New record details for PayrollTotals
+      responses:
+        "200":
+          $ref: "#/components/responses/PayrollTotals-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the PayrollTotals Vertex Properties. "
+      tags:
+        - PayrollTotals
+    delete:
+      summary: Delete PayrollTotals
+      operationId: deletePayrollTotals
+      responses:
+        "200":
+          $ref: "#/components/responses/PayrollTotals-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - PayrollTotals
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete PayrollTotals with given id
+  /Permission/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Permission-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Permission
+      summary: Search for Permissions
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchPermission
+  /Permission/id:
+    post:
+      summary: Get Permission
+      operationId: getPermission
+      responses:
+        "200":
+          $ref: "#/components/responses/Permission-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Permission's Vertex by it's ID. "
+      tags:
+        - Permission
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Permission record.
+  /Permission:
+    get:
+      summary: List Permissions
+      operationId: listPermissions
+      description: Lists Permissions
+      responses:
+        "200":
+          $ref: "#/components/responses/Permission-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Permission
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Permission-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Permission
+      operationId: insertPermission
+      description: "Insert a new Permission Vertex into the Graph. "
+      tags:
+        - Permission
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Permission"
+        description: Insert Permission as a new record
+    put:
+      summary: Update Permission
+      operationId: updatePermission
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Permission"
+        description: New record details for Permission
+      responses:
+        "200":
+          $ref: "#/components/responses/Permission-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Permission Vertex Properties. "
+      tags:
+        - Permission
+    delete:
+      summary: Delete Permission
+      operationId: deletePermission
+      responses:
+        "200":
+          $ref: "#/components/responses/Permission-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Permission
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Permission with given id
+  /Phonecall/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Phonecall-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Phonecall
+      summary: Search for Phonecalls
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchPhonecall
+  /Phonecall/id:
+    post:
+      summary: Get Phonecall
+      operationId: getPhonecall
+      responses:
+        "200":
+          $ref: "#/components/responses/Phonecall-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Phonecall's Vertex by it's ID. "
+      tags:
+        - Phonecall
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Phonecall record.
+  /Phonecall:
+    get:
+      summary: List Phonecalls
+      operationId: listPhonecalls
+      description: Lists Phonecalls
+      responses:
+        "200":
+          $ref: "#/components/responses/Phonecall-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Phonecall
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Phonecall-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Phonecall
+      operationId: insertPhonecall
+      description: "Insert a new Phonecall Vertex into the Graph. "
+      tags:
+        - Phonecall
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Phonecall"
+        description: Insert Phonecall as a new record
+    put:
+      summary: Update Phonecall
+      operationId: updatePhonecall
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Phonecall"
+        description: New record details for Phonecall
+      responses:
+        "200":
+          $ref: "#/components/responses/Phonecall-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Phonecall Vertex Properties. "
+      tags:
+        - Phonecall
+    delete:
+      summary: Delete Phonecall
+      operationId: deletePhonecall
+      responses:
+        "200":
+          $ref: "#/components/responses/Phonecall-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Phonecall
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Phonecall with given id
+  /Product/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Product-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Product
+      summary: Search for Products
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchProduct
+  /Product/id:
+    post:
+      summary: Get Product
+      operationId: getProduct
+      responses:
+        "200":
+          $ref: "#/components/responses/Product-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Product's Vertex by it's ID. "
+      tags:
+        - Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Product record.
+  /Product:
+    get:
+      summary: List Products
+      operationId: listProducts
+      description: Lists Products
+      responses:
+        "200":
+          $ref: "#/components/responses/Product-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Product
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Product-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Product
+      operationId: insertProduct
+      description: "Insert a new Product Vertex into the Graph. "
+      tags:
+        - Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+        description: Insert Product as a new record
+    put:
+      summary: Update Product
+      operationId: updateProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+        description: New record details for Product
+      responses:
+        "200":
+          $ref: "#/components/responses/Product-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Product Vertex Properties. "
+      tags:
+        - Product
+    delete:
+      summary: Delete Product
+      operationId: deleteProduct
+      responses:
+        "200":
+          $ref: "#/components/responses/Product-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Product with given id
+  /Residence/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Residence-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Residence
+      summary: Search for Residences
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchResidence
+  /Residence/id:
+    post:
+      summary: Get Residence
+      operationId: getResidence
+      responses:
+        "200":
+          $ref: "#/components/responses/Residence-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Residence's Vertex by it's ID. "
+      tags:
+        - Residence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Residence record.
+  /Residence:
+    get:
+      summary: List Residences
+      operationId: listResidences
+      description: Lists Residences
+      responses:
+        "200":
+          $ref: "#/components/responses/Residence-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Residence
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Residence-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Residence
+      operationId: insertResidence
+      description: "Insert a new Residence Vertex into the Graph. "
+      tags:
+        - Residence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Residence"
+        description: Insert Residence as a new record
+    put:
+      summary: Update Residence
+      operationId: updateResidence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Residence"
+        description: New record details for Residence
+      responses:
+        "200":
+          $ref: "#/components/responses/Residence-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Residence Vertex Properties. "
+      tags:
+        - Residence
+    delete:
+      summary: Delete Residence
+      operationId: deleteResidence
+      responses:
+        "200":
+          $ref: "#/components/responses/Residence-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Residence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Residence with given id
+  /Role/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Role-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Role
+      summary: Search for Roles
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchRole
+  /Role/id:
+    post:
+      summary: Get Role
+      operationId: getRole
+      responses:
+        "200":
+          $ref: "#/components/responses/Role-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Role's Vertex by it's ID. "
+      tags:
+        - Role
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Role record.
+  /Role:
+    get:
+      summary: List Roles
+      operationId: listRoles
+      description: Lists Roles
+      responses:
+        "200":
+          $ref: "#/components/responses/Role-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Role
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Role-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Role
+      operationId: insertRole
+      description: "Insert a new Role Vertex into the Graph. "
+      tags:
+        - Role
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Role"
+        description: Insert Role as a new record
+    put:
+      summary: Update Role
+      operationId: updateRole
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Role"
+        description: New record details for Role
+      responses:
+        "200":
+          $ref: "#/components/responses/Role-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Role Vertex Properties. "
+      tags:
+        - Role
+    delete:
+      summary: Delete Role
+      operationId: deleteRole
+      responses:
+        "200":
+          $ref: "#/components/responses/Role-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Role
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Role with given id
+  /Scorecard/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Scorecard-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Scorecard
+      summary: Search for Scorecards
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchScorecard
+  /Scorecard/id:
+    post:
+      summary: Get Scorecard
+      operationId: getScorecard
+      responses:
+        "200":
+          $ref: "#/components/responses/Scorecard-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Scorecard's Vertex by it's ID. "
+      tags:
+        - Scorecard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Scorecard record.
+  /Scorecard:
+    get:
+      summary: List Scorecards
+      operationId: listScorecards
+      description: Lists Scorecards
+      responses:
+        "200":
+          $ref: "#/components/responses/Scorecard-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Scorecard
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Scorecard-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Scorecard
+      operationId: insertScorecard
+      description: "Insert a new Scorecard Vertex into the Graph. "
+      tags:
+        - Scorecard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Scorecard"
+        description: Insert Scorecard as a new record
+    put:
+      summary: Update Scorecard
+      operationId: updateScorecard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Scorecard"
+        description: New record details for Scorecard
+      responses:
+        "200":
+          $ref: "#/components/responses/Scorecard-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Scorecard Vertex Properties. "
+      tags:
+        - Scorecard
+    delete:
+      summary: Delete Scorecard
+      operationId: deleteScorecard
+      responses:
+        "200":
+          $ref: "#/components/responses/Scorecard-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Scorecard
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Scorecard with given id
+  /Task/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Task-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Task
+      summary: Search for Tasks
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchTask
+  /Task/id:
+    post:
+      summary: Get Task
+      operationId: getTask
+      responses:
+        "200":
+          $ref: "#/components/responses/Task-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Task's Vertex by it's ID. "
+      tags:
+        - Task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Task record.
+  /Task:
+    get:
+      summary: List Tasks
+      operationId: listTasks
+      description: Lists Tasks
+      responses:
+        "200":
+          $ref: "#/components/responses/Task-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Task
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Task-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Task
+      operationId: insertTask
+      description: "Insert a new Task Vertex into the Graph. "
+      tags:
+        - Task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+        description: Insert Task as a new record
+    put:
+      summary: Update Task
+      operationId: updateTask
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Task"
+        description: New record details for Task
+      responses:
+        "200":
+          $ref: "#/components/responses/Task-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Task Vertex Properties. "
+      tags:
+        - Task
+    delete:
+      summary: Delete Task
+      operationId: deleteTask
+      responses:
+        "200":
+          $ref: "#/components/responses/Task-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Task with given id
+  /Timeclock/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeclock-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Timeclock
+      summary: Search for Timeclocks
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchTimeclock
+  /Timeclock/id:
+    post:
+      summary: Get Timeclock
+      operationId: getTimeclock
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeclock-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Timeclock's Vertex by it's ID. "
+      tags:
+        - Timeclock
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Timeclock record.
+  /Timeclock:
+    get:
+      summary: List Timeclocks
+      operationId: listTimeclocks
+      description: Lists Timeclocks
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeclock-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Timeclock
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeclock-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Timeclock
+      operationId: insertTimeclock
+      description: "Insert a new Timeclock Vertex into the Graph. "
+      tags:
+        - Timeclock
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Timeclock"
+        description: Insert Timeclock as a new record
+    put:
+      summary: Update Timeclock
+      operationId: updateTimeclock
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Timeclock"
+        description: New record details for Timeclock
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeclock-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Timeclock Vertex Properties. "
+      tags:
+        - Timeclock
+    delete:
+      summary: Delete Timeclock
+      operationId: deleteTimeclock
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeclock-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Timeclock
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Timeclock with given id
+  /Timeoff/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeoff-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Timeoff
+      summary: Search for Timeoffs
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchTimeoff
+  /Timeoff/id:
+    post:
+      summary: Get Timeoff
+      operationId: getTimeoff
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeoff-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Timeoff's Vertex by it's ID. "
+      tags:
+        - Timeoff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Timeoff record.
+  /Timeoff:
+    get:
+      summary: List Timeoffs
+      operationId: listTimeoffs
+      description: Lists Timeoffs
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeoff-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Timeoff
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeoff-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Timeoff
+      operationId: insertTimeoff
+      description: "Insert a new Timeoff Vertex into the Graph. "
+      tags:
+        - Timeoff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Timeoff"
+        description: Insert Timeoff as a new record
+    put:
+      summary: Update Timeoff
+      operationId: updateTimeoff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Timeoff"
+        description: New record details for Timeoff
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeoff-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Timeoff Vertex Properties. "
+      tags:
+        - Timeoff
+    delete:
+      summary: Delete Timeoff
+      operationId: deleteTimeoff
+      responses:
+        "200":
+          $ref: "#/components/responses/Timeoff-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Timeoff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Timeoff with given id
+  /Twillio/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Twillio-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - Twillio
+      summary: Search for Twillios
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchTwillio
+  /Twillio/id:
+    post:
+      summary: Get Twillio
+      operationId: getTwillio
+      responses:
+        "200":
+          $ref: "#/components/responses/Twillio-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a Twillio's Vertex by it's ID. "
+      tags:
+        - Twillio
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a Twillio record.
+  /Twillio:
+    get:
+      summary: List Twillios
+      operationId: listTwillios
+      description: Lists Twillios
+      responses:
+        "200":
+          $ref: "#/components/responses/Twillio-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - Twillio
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/Twillio-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert Twillio
+      operationId: insertTwillio
+      description: "Insert a new Twillio Vertex into the Graph. "
+      tags:
+        - Twillio
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Twillio"
+        description: Insert Twillio as a new record
+    put:
+      summary: Update Twillio
+      operationId: updateTwillio
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Twillio"
+        description: New record details for Twillio
+      responses:
+        "200":
+          $ref: "#/components/responses/Twillio-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the Twillio Vertex Properties. "
+      tags:
+        - Twillio
+    delete:
+      summary: Delete Twillio
+      operationId: deleteTwillio
+      responses:
+        "200":
+          $ref: "#/components/responses/Twillio-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - Twillio
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete Twillio with given id
+  /User/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/User-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - User
+      summary: Search for Users
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchUser
+  /User/id:
+    post:
+      summary: Get User
+      operationId: getUser
+      responses:
+        "200":
+          $ref: "#/components/responses/User-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a User's Vertex by it's ID. "
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a User record.
+  /User:
+    get:
+      summary: List Users
+      operationId: listUsers
+      description: Lists Users
+      responses:
+        "200":
+          $ref: "#/components/responses/User-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - User
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/User-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert User
+      operationId: insertUser
+      description: "Insert a new User Vertex into the Graph. "
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        description: Insert User as a new record
+    put:
+      summary: Update User
+      operationId: updateUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        description: New record details for User
+      responses:
+        "200":
+          $ref: "#/components/responses/User-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the User Vertex Properties. "
+      tags:
+        - User
+    delete:
+      summary: Delete User
+      operationId: deleteUser
+      responses:
+        "200":
+          $ref: "#/components/responses/User-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete User with given id
+  /UserLocation/search:
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/UserLocation-List-Response"
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+      requestBody:
+        $ref: "#/components/requestBodies/searchAppointmentBody"
+      tags:
+        - UserLocation
+      summary: Search for UserLocations
+      description: "List all of the contracts that have a specific attribute: value pairs. "
+      operationId: searchUserLocation
+  /UserLocation/id:
+    post:
+      summary: Get UserLocation
+      operationId: getUserLocation
+      responses:
+        "200":
+          $ref: "#/components/responses/UserLocation-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Gets a UserLocation's Vertex by it's ID. "
+      tags:
+        - UserLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Request to get a UserLocation record.
+  /UserLocation:
+    get:
+      summary: List UserLocations
+      operationId: listUserLocations
+      description: Lists UserLocations
+      responses:
+        "200":
+          $ref: "#/components/responses/UserLocation-List-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      tags:
+        - UserLocation
+      parameters:
+        - in: query
+          name: limit
+          description: This is the max amount of whatever record you are requesting.
+          schema:
+            type: number
+            default: "20"
+        - in: query
+          name: skip
+          description: "Number of records to omit from start of scan. "
+          schema:
+            type: string
+            default: "0"
+        - in: query
+          name: order
+          description: Order of database scan. Must be an attribute of the type
+          schema:
+            type: string
+            default: _ts
+        - in: query
+          name: dir
+          description: Direction of the ordering from the order parameter.
+          schema:
+            type: string
+            default: desc
+    post:
+      responses:
+        "200":
+          $ref: "#/components/responses/UserLocation-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      summary: Insert UserLocation
+      operationId: insertUserLocation
+      description: "Insert a new UserLocation Vertex into the Graph. "
+      tags:
+        - UserLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserLocation"
+        description: Insert UserLocation as a new record
+    put:
+      summary: Update UserLocation
+      operationId: updateUserLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserLocation"
+        description: New record details for UserLocation
+      responses:
+        "200":
+          $ref: "#/components/responses/UserLocation-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Updates the UserLocation Vertex Properties. "
+      tags:
+        - UserLocation
+    delete:
+      summary: Delete UserLocation
+      operationId: deleteUserLocation
+      responses:
+        "200":
+          $ref: "#/components/responses/UserLocation-Remove-Response"
+        "400":
+          $ref: "#/components/responses/Error-Response"
+      description: "Deletes the Vertex associated with provided Id. "
+      tags:
+        - UserLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record-Request-Definition"
+        description: Delete UserLocation with given id
+servers:
+  - url: https://midtown-ts.azurewebsites.net/api/base
+components:
+  responses:
+    Appointment-Response:
+      description: This is a successful response with a single Appointment Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Appointment"
+    Appointment-List-Response:
+      description: This is a successful response with a list of Appointment Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Appointment-list"
+    Appointment-Remove-Response:
+      description: This is a successful response from removing a single Appointment Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Contract-Response:
+      description: This is a successful response with a single Contract Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Contract"
+    Contract-List-Response:
+      description: This is a successful response with a list of Contract Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Contract-list"
+    Contract-Remove-Response:
+      description: This is a successful response from removing a single Contract Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Corporation-Response:
+      description: This is a successful response with a single Corporation Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Corporation"
+    Corporation-List-Response:
+      description: This is a successful response with a list of Corporation Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Corporation-list"
+    Corporation-Remove-Response:
+      description: This is a successful response from removing a single Corporation Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Invoice-Response:
+      description: This is a successful response with a single Invoice Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Invoice"
+    Invoice-List-Response:
+      description: This is a successful response with a list of Invoice Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Invoice-list"
+    Invoice-Remove-Response:
+      description: This is a successful response from removing a single Invoice Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Lead-Response:
+      description: This is a successful response with a single Lead Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Lead"
+    Lead-List-Response:
+      description: This is a successful response with a list of Lead Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Lead-list"
+    Lead-Remove-Response:
+      description: This is a successful response from removing a single Lead Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Message-Response:
+      description: This is a successful response with a single Message Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Message"
+    Message-List-Response:
+      description: This is a successful response with a list of Message Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Message-list"
+    Message-Remove-Response:
+      description: This is a successful response from removing a single Message Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Note-Response:
+      description: This is a successful response with a single Note Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Note"
+    Note-List-Response:
+      description: This is a successful response with a list of Note Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Note-list"
+    Note-Remove-Response:
+      description: This is a successful response from removing a single Note Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Order-Response:
+      description: This is a successful response with a single Order Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Order"
+    Order-List-Response:
+      description: This is a successful response with a list of Order Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Order-list"
+    Order-Remove-Response:
+      description: This is a successful response from removing a single Order Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    PaidTimeOff-Response:
+      description: This is a successful response with a single PaidTimeOff Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/PaidTimeOff"
+    PaidTimeOff-List-Response:
+      description: This is a successful response with a list of PaidTimeOff Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/PaidTimeOff-list"
+    PaidTimeOff-Remove-Response:
+      description: This is a successful response from removing a single PaidTimeOff Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Payment-Response:
+      description: This is a successful response with a single Payment Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Payment"
+    Payment-List-Response:
+      description: This is a successful response with a list of Payment Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Payment-list"
+    Payment-Remove-Response:
+      description: This is a successful response from removing a single Payment Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    PayrollTotals-Response:
+      description: This is a successful response with a single PayrollTotals Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/PayrollTotals"
+    PayrollTotals-List-Response:
+      description: This is a successful response with a list of PayrollTotals Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/PayrollTotals-list"
+    PayrollTotals-Remove-Response:
+      description: This is a successful response from removing a single PayrollTotals Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Permission-Response:
+      description: This is a successful response with a single Permission Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Permission"
+    Permission-List-Response:
+      description: This is a successful response with a list of Permission Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Permission-list"
+    Permission-Remove-Response:
+      description: This is a successful response from removing a single Permission Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Phonecall-Response:
+      description: This is a successful response with a single Phonecall Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Phonecall"
+    Phonecall-List-Response:
+      description: This is a successful response with a list of Phonecall Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Phonecall-list"
+    Phonecall-Remove-Response:
+      description: This is a successful response from removing a single Phonecall Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Product-Response:
+      description: This is a successful response with a single Product Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Product"
+    Product-List-Response:
+      description: This is a successful response with a list of Product Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Product-list"
+    Product-Remove-Response:
+      description: This is a successful response from removing a single Product Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Residence-Response:
+      description: This is a successful response with a single Residence Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Residence"
+    Residence-List-Response:
+      description: This is a successful response with a list of Residence Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Residence-list"
+    Residence-Remove-Response:
+      description: This is a successful response from removing a single Residence Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Role-Response:
+      description: This is a successful response with a single Role Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Role"
+    Role-List-Response:
+      description: This is a successful response with a list of Role Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Role-list"
+    Role-Remove-Response:
+      description: This is a successful response from removing a single Role Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Scorecard-Response:
+      description: This is a successful response with a single Scorecard Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Scorecard"
+    Scorecard-List-Response:
+      description: This is a successful response with a list of Scorecard Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Scorecard-list"
+    Scorecard-Remove-Response:
+      description: This is a successful response from removing a single Scorecard Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Task-Response:
+      description: This is a successful response with a single Task Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Task"
+    Task-List-Response:
+      description: This is a successful response with a list of Task Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Task-list"
+    Task-Remove-Response:
+      description: This is a successful response from removing a single Task Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Timeclock-Response:
+      description: This is a successful response with a single Timeclock Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Timeclock"
+    Timeclock-List-Response:
+      description: This is a successful response with a list of Timeclock Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Timeclock-list"
+    Timeclock-Remove-Response:
+      description: This is a successful response from removing a single Timeclock Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Timeoff-Response:
+      description: This is a successful response with a single Timeoff Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Timeoff"
+    Timeoff-List-Response:
+      description: This is a successful response with a list of Timeoff Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Timeoff-list"
+    Timeoff-Remove-Response:
+      description: This is a successful response from removing a single Timeoff Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Twillio-Response:
+      description: This is a successful response with a single Twillio Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Twillio"
+    Twillio-List-Response:
+      description: This is a successful response with a list of Twillio Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/Twillio-list"
+    Twillio-Remove-Response:
+      description: This is a successful response from removing a single Twillio Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    User-Response:
+      description: This is a successful response with a single User Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/User"
+    User-List-Response:
+      description: This is a successful response with a list of User Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/User-list"
+    User-Remove-Response:
+      description: This is a successful response from removing a single User Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    UserLocation-Response:
+      description: This is a successful response with a single UserLocation Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/UserLocation"
+    UserLocation-List-Response:
+      description: This is a successful response with a list of UserLocation Objects
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                $ref: "#/components/schemas/UserLocation-list"
+    UserLocation-Remove-Response:
+      description: This is a successful response from removing a single UserLocation Object
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+    Error-Response:
+      description: "An error response is a response that has success as `false`. "
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: string
+              response:
+                oneOf:
+                  - type: string
+                  - type: object
+  requestBodies:
+    searchAppointmentBody:
+      content:
+        application/json:
+          schema:
+            type: object
+  securitySchemes:
+    User_Authentication:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Bearer Token
+  schemas:
+    User:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - User
+          type: string
+        faceListId:
+          format: uuid
+          type: string
+        gender:
+          maxLength: 80
+          type: string
+        companyId:
+          format: uuid
+          type: string
+        verified:
+          type: boolean
+        firstName:
+          maxLength: 80
+          type: string
+        lastName:
+          maxLength: 80
+          type: string
+        phoneNumber:
+          pattern: \d\(\d{3}\)\d{3}-\d{4}
+          type: string
+        dateOfBirth:
+          minimum: 18
+          maximum: 100
+          type: integer
+        ssn:
+          maxLength: 80
+          type: string
+        companyTitle:
+          maxLength: 80
+          type: string
+        ipAddress:
+          maxLength: 80
+          type: string
+        group:
+          maxLength: 80
+          type: string
+        userType:
+          maxLength: 80
+          type: string
+        email:
+          format: email
+          type: string
+        permissionId:
+          format: uuid
+          type: string
+        theming:
+          properties:
+            type:
+              enum:
+                - UserSettings
+              type: string
+            productIDs:
+              items:
+                format: uuid
+                type: string
+              type: array
+            darkmode:
+              type: boolean
+          type: object
+          required:
+            - darkmode
+        twillioId:
+          format: uuid
+          type: string
+        intuitId:
+          format: uuid
+          type: string
+        payrollId:
+          format: uuid
+          type: string
+        contractId:
+          format: uuid
+          type: string
+        noteIds:
+          items:
+            format: uuid
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - gender
+        - verified
+        - firstName
+        - lastName
+        - dateOfBirth
+        - group
+        - userType
+        - email
+        - theming
+    Residence:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Address
+          type: string
+        streetAddress:
+          maxLength: 80
+          type: string
+        city:
+          maxLength: 80
+          type: string
+        zip:
+          maxLength: 80
+          type: string
+        state:
+          maxLength: 80
+          type: string
+        address:
+          properties:
+            streetNumber:
+              maxLength: 80
+              type: string
+            streetName:
+              maxLength: 80
+              type: string
+            municipality:
+              maxLength: 80
+              type: string
+            countrySecondarySubdivision:
+              maxLength: 80
+              type: string
+            countryTertiarySubdivision:
+              maxLength: 80
+              type: string
+            countrySubdivision:
+              maxLength: 2
+              type: string
+            countrySubdivisionName:
+              maxLength: 80
+              type: string
+            postalCode:
+              maxLength: 5
+              type: string
+            extendedPostalCode:
+              maxLength: 9
+              type: string
+            countryCode:
+              maxLength: 4
+              type: string
+            country:
+              maxLength: 80
+              type: string
+            countryCodeISO3:
+              maxLength: 5
+              type: string
+            freeformAddress:
+              maxLength: 100
+              type: string
+            localName:
+              maxLength: 80
+              type: string
+          type: object
+          required:
+            - streetNumber
+            - streetName
+            - municipality
+            - countrySecondarySubdivision
+            - countryTertiarySubdivision
+            - countrySubdivision
+            - countrySubdivisionName
+            - postalCode
+            - extendedPostalCode
+            - countryCode
+            - country
+            - countryCodeISO3
+            - freeformAddress
+            - localName
+        location:
+          properties:
+            lat:
+              type: number
+            lon:
+              type: number
+          type: object
+          required:
+            - lat
+            - lon
+        owner:
+          properties:
+            users:
+              items:
+                format: uuid
+                type: string
+              type: array
+            groups:
+              items:
+                format: uuid
+                type: string
+              type: array
+          type: object
+        noteIds:
+          items:
+            format: uuid
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - streetAddress
+        - city
+        - zip
+        - state
+        - address
+        - location
+        - owner
+    Twillio:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Twillio
+          type: string
+        messageSid:
+          items:
+            type: string
+          type: array
+        recordingSid:
+          items:
+            type: string
+          type: array
+        ApplicationSid:
+          items:
+            type: string
+          type: array
+        TwillioURL:
+          items:
+            type: string
+          type: array
+        isoCountryCode:
+          items:
+            type: string
+          type: array
+        CallSid:
+          items:
+            type: string
+          type: array
+        ConferenceSid:
+          items:
+            type: string
+          type: array
+        IncomingPhoneNumberSid:
+          items:
+            type: string
+          type: array
+        OutgoingCallerIdSid:
+          items:
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - messageSid
+        - recordingSid
+        - ApplicationSid
+        - TwillioURL
+        - isoCountryCode
+        - CallSid
+        - ConferenceSid
+        - IncomingPhoneNumberSid
+        - OutgoingCallerIdSid
+    Phonecall:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Phonecall
+          type: string
+        status:
+          enum:
+            - REHASH
+            - REHASH_2
+            - MEDIA1
+            - CV_CALLBACK
+            - HOME_SHOWS
+            - CR1
+            - CR2
+            - PC1
+            - HS1
+            - NH1
+            - SURVEY1
+            - RS1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - HS2
+            - HS3
+            - HS4
+            - HS5
+            - HS6
+            - MEDIA2
+            - MEDIA3
+            - MEDIA4
+            - NH2
+            - NH3
+            - NH4
+            - SURVEY2
+            - SURVEY3
+            - SURVEY4
+            - SURVEY5
+            - SURVEY6
+            - RS2
+            - RS3
+            - RS4
+            - RH_CANCEL
+            - BLOWOUT
+            - COMPLETE
+            - RESURECTION1
+            - RESURECTION2
+            - CUSTOMER_SURVEY
+            - NOT_NET
+            - CONFIRM1
+          type: string
+        direction:
+          enum:
+            - OUTBOUND
+            - INBOUND
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - direction
+    PayrollTotals:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - PayrollTotal
+          type: string
+        companyDebit:
+          maxLength: 80
+          type: string
+        reimbursements:
+          maxLength: 80
+          type: string
+        netPay:
+          maxLength: 80
+          type: string
+        correction:
+          maxLength: 80
+          type: string
+        employerTaxes:
+          maxLength: 80
+          type: string
+        employeeTaxes:
+          maxLength: 80
+          type: string
+        benefits:
+          maxLength: 80
+          type: string
+        employeeBenefitsDeductions:
+          maxLength: 80
+          type: string
+        employeeComponensations:
+          items:
+            properties:
+              type:
+                enum:
+                  - EmployeeCompensations
+                type: string
+              grossPay:
+                items:
+                  type: string
+                type: array
+              netPay:
+                items:
+                  type: string
+                type: array
+              paymentMethod:
+                items:
+                  type: string
+                type: array
+              fixedCompensationid:
+                items:
+                  format: uuid
+                  type: string
+                type: array
+              hourlyid:
+                items:
+                  format: uuid
+                  type: string
+                type: array
+            type: object
+            required:
+              - type
+              - grossPay
+              - netPay
+              - paymentMethod
+              - fixedCompensationid
+              - hourlyid
+          type: array
+        FixedCompensation:
+          items:
+            properties:
+              type:
+                enum:
+                  - FixedCompensation
+                type: string
+              name:
+                maxLength: 80
+                type: string
+              amount:
+                maxLength: 80
+                type: string
+              jobId:
+                maxLength: 80
+                type: string
+            type: object
+            required:
+              - type
+              - name
+              - amount
+              - jobId
+          type: array
+        HourlyCompensations:
+          items:
+            properties:
+              type:
+                enum:
+                  - HourlyCompensations
+                type: string
+              name:
+                maxLength: 80
+                type: string
+              hours:
+                maxLength: 80
+                type: string
+              jobId:
+                maxLength: 80
+                type: string
+              compensation_multiplier:
+                maxLength: 80
+                type: string
+            type: object
+            required:
+              - type
+              - name
+              - hours
+              - jobId
+              - compensation_multiplier
+          type: array
+        PayrollDeductions:
+          items:
+            properties:
+              type:
+                enum:
+                  - PayrollDeductions
+                type: string
+              name:
+                maxLength: 80
+                type: string
+              amount:
+                maxLength: 80
+                type: string
+            type: object
+            required:
+              - type
+              - name
+              - amount
+          type: array
+        Taxes:
+          items:
+            properties:
+              type:
+                enum:
+                  - Taxes
+                type: string
+              status:
+                enum:
+                  - OWED
+                  - PAYED
+                type: string
+              name:
+                maxLength: 80
+                type: string
+              employer:
+                type: boolean
+              amount:
+                maxLength: 80
+                type: string
+            type: object
+            required:
+              - type
+              - status
+              - name
+              - employer
+              - amount
+          type: array
+        Benefits:
+          items:
+            properties:
+              type:
+                enum:
+                  - Benefits
+                type: string
+              name:
+                maxLength: 80
+                type: string
+              employeeDeduction:
+                maxLength: 80
+                type: string
+              companyContribution:
+                maxLength: 80
+                type: string
+              imputed:
+                type: boolean
+            type: object
+            required:
+              - type
+              - name
+              - employeeDeduction
+              - companyContribution
+              - imputed
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - companyDebit
+        - reimbursements
+        - netPay
+        - correction
+        - employerTaxes
+        - employeeTaxes
+        - benefits
+        - employeeBenefitsDeductions
+        - PayrollDeductions
+        - Taxes
+        - Benefits
+    PaidTimeOff:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - PaidTimeOff
+          type: string
+        name:
+          maxLength: 80
+          type: string
+        hours:
+          maxLength: 80
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - name
+        - hours
+    Note:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Note
+          type: string
+        status:
+          enum:
+            - DRAFT
+            - SAVED
+            - REMOVED
+          type: string
+        noteText:
+          maxLength: 240
+          minLength: 0
+          type: string
+        imageURL:
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+    Message:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Message
+          type: string
+        status:
+          enum:
+            - New
+            - Draft
+            - Viewed
+            - Archived
+          type: string
+        to:
+          type: string
+        sendType:
+          enum:
+            - Group
+            - User
+          type: string
+        message:
+          type: string
+        sentAt:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        seenAt:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        owner:
+          properties:
+            users:
+              items:
+                format: uuid
+                type: string
+              type: array
+            groups:
+              items:
+                format: uuid
+                type: string
+              type: array
+          type: object
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - to
+        - sendType
+        - message
+        - owner
+    Scorecard:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        title:
+          maxLength: 80
+          type: string
+        description:
+          maxLength: 200
+          type: string
+        scores:
+          items:
+            properties:
+              id:
+                format: uuid
+                type: string
+              user:
+                format: uuid
+                type: string
+              createdOn:
+                minimum: 946684800
+                maximum: 2147483646
+                type: integer
+              createdBy:
+                format: uuid
+                type: string
+              updatedOn:
+                minimum: 946684800
+                maximum: 2147483646
+                type: integer
+              updatedBy:
+                format: uuid
+                type: string
+            type: object
+          type: array
+        scorecardType:
+          enum:
+            - GROUP
+            - INDIVIDUAL
+          type: string
+        series:
+          enum:
+            - SINGLE
+            - TIME
+          type: string
+        display:
+          enum:
+            - AREA_CHART
+            - BAR_CHART
+            - COMPLEX_GAUGE
+            - GROUPED_BAR_CHART
+            - HEAT_MAP
+            - LINE_CHART
+            - NUMBER_CARD
+            - PIE_CHART
+            - POLAR_CHART
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - title
+        - description
+        - scores
+        - scorecardType
+        - series
+        - display
+    Lead:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Lead
+          type: string
+        status:
+          enum:
+            - AVOID
+            - INTEREST
+            - NEW
+            - CUSTOMER
+            - RECYCLE
+            - PITCHING
+            - ORDER
+            - JOB
+          type: string
+        ownerType:
+          enum:
+            - Single
+            - Dual
+          type: string
+        title:
+          enum:
+            - Mr.
+            - Mrs.
+          type: string
+        firstName:
+          maxLength: 80
+          type: string
+        lastName:
+          maxLength: 80
+          type: string
+        title_2:
+          enum:
+            - Mr.
+            - Mrs.
+          type: string
+        firstName_2:
+          maxLength: 80
+          minLength: 0
+          type: string
+        lastName_2:
+          type: string
+        emailAddress:
+          format: email
+          type: string
+        primaryPhone:
+          pattern: \d\(\d{3}\)\d{3}-\d{4}
+          type: string
+        primaryPhoneType:
+          enum:
+            - Cell
+            - Work
+            - Home
+            - Fax
+          type: string
+        secondaryPhone:
+          pattern: \d\(\d{3}\)\d{3}-\d{4}
+          type: string
+        secondaryPhoneType:
+          enum:
+            - Cell
+            - Work
+            - Home
+            - Fax
+          type: string
+        residence:
+          format: uuid
+          type: string
+        leadSource:
+          items:
+            type: string
+          type: array
+        owner:
+          properties:
+            users:
+              items:
+                format: uuid
+                type: string
+              type: array
+            groups:
+              items:
+                format: uuid
+                type: string
+              type: array
+          type: object
+        noteIds:
+          items:
+            format: uuid
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - ownerType
+        - title
+        - firstName
+        - lastName
+        - emailAddress
+        - primaryPhoneType
+        - leadSource
+        - owner
+    Timeclock:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Timeclock
+          type: string
+        status:
+          enum:
+            - OFF_CLOCK
+            - ON_CLOCK
+            - VACATION
+            - SICK_LEAVE
+            - START_BREAK
+            - END_BREAK
+          type: string
+        date:
+          minimum: 10957
+          maximum: 24855
+          type: integer
+        noteIds:
+          items:
+            format: uuid
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - date
+    UserLocation:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Timeclock
+          type: string
+        locations:
+          properties:
+            lat:
+              type: number
+            lon:
+              type: number
+          type: object
+          required:
+            - lat
+            - lon
+        currentArea:
+          format: uuid
+          type: string
+        date:
+          minimum: 10957
+          maximum: 24855
+          type: integer
+        owner:
+          properties:
+            users:
+              items:
+                format: uuid
+                type: string
+              type: array
+            groups:
+              items:
+                format: uuid
+                type: string
+              type: array
+          type: object
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - locations
+        - date
+        - owner
+    Invoice:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Sales
+          type: string
+        salesID:
+          format: uuid
+          type: string
+        Description:
+          maxLength: 80
+          type: string
+        Amount:
+          maxLength: 80
+          type: string
+        DetailType:
+          maxLength: 80
+          type: string
+        UnitPrice:
+          maxLength: 80
+          type: string
+        Qty:
+          maxLength: 80
+          type: string
+        TaxCodeRef:
+          maxLength: 80
+          type: string
+        salesItemLineDetail:
+          maxLength: 80
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - Description
+        - Amount
+        - DetailType
+        - UnitPrice
+        - Qty
+        - TaxCodeRef
+        - salesItemLineDetail
+    Corporation:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Corporation
+          type: string
+        corporationID:
+          format: uuid
+          type: string
+        businessClassification:
+          maxLength: 80
+          type: string
+        businessType:
+          maxLength: 80
+          type: string
+        businessName:
+          maxLength: 80
+          type: string
+        ein:
+          maxLength: 80
+          type: string
+        businessAddress:
+          items:
+            format: uuid
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - businessClassification
+        - businessType
+        - businessName
+        - ein
+        - businessAddress
+    Role:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        roleId:
+          items:
+            format: uuid
+            type: string
+          type: array
+        roleName:
+          items:
+            format: uuid
+            type: string
+          type: array
+        detailID:
+          format: uuid
+          type: string
+        vendorID:
+          format: uuid
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - roleId
+        - roleName
+    Payment:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - ContractStatus
+          type: string
+        contractId:
+          maxLength: 80
+          type: string
+        contractStatus:
+          maxLength: 80
+          type: string
+        owner:
+          properties:
+            users:
+              items:
+                format: uuid
+                type: string
+              type: array
+            groups:
+              items:
+                format: uuid
+                type: string
+              type: array
+          type: object
+        noteIds:
+          items:
+            format: uuid
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - contractId
+        - contractStatus
+        - owner
+    Appointment:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        appointmentTime:
+          maxLength: 15
+          type: string
+        type:
+          enum:
+            - Appointment
+          type: string
+        appointmentType:
+          enum:
+            - Windows/Door
+            - Siding/Soffit-Fascia
+            - Roof
+            - Fence
+            - Deck
+            - Bath
+            - Basement
+            - Kitchen
+          type: string
+        date:
+          maximum: 50
+          type: number
+        status:
+          enum:
+            - NEW
+            - TO_CONFIRM
+            - COULD_NOT_REACH
+            - CONFIRMED
+            - UNASSIGNED
+            - CALL_CANCEL
+            - EXTRA
+            - ASSIGNED
+            - ONE_LEG
+            - NO_SHOW
+            - SALE
+            - REP_TIE
+            - PITCH_MISS
+            - BLOWOUT
+            - RESCHEDULE
+            - REHASH
+          type: string
+        lead:
+          format: uuid
+          type: string
+        stepNumber:
+          type: integer
+        notes:
+          items:
+            format: uuid
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - appointmentTime
+        - type
+        - appointmentType
+        - date
+        - status
+    Contract:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Contract
+          type: string
+        status:
+          enum:
+            - SIGNED
+            - APPROVED
+            - PENDING
+            - SENT
+            - DRAFT
+          type: string
+        contract:
+          format: uuid
+          type: string
+        lead:
+          format: uuid
+          type: string
+        order:
+          format: uuid
+          type: string
+        datetime:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        name:
+          maxLength: 50
+          type: string
+        lastRequested:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - name
+    Order:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Order
+          type: string
+        status:
+          enum:
+            - saleConfirmed
+            - signedContract
+            - contractApprove
+            - addProduction
+            - orderCancel
+            - measureProduct
+            - addQuickbooks
+            - financeRejected
+            - deadLead
+            - permit
+            - lienWaver
+            - digright
+            - executeOrder
+            - intuitBookCondfirmation
+            - deliverMaterial
+            - orderProgress
+            - problemOrder
+            - orderCompleted
+            - customerSurver
+            - recycle
+          type: string
+        legal:
+          properties:
+            permit:
+              type: object
+            signature:
+              type: object
+            contract:
+              type: object
+            lienWaver:
+              type: object
+            digright:
+              type: object
+          type: object
+          required:
+            - permit
+            - signature
+            - contract
+            - lienWaver
+            - digright
+        sales:
+          properties:
+            commission:
+              type: number
+            users:
+              items:
+                format: uuid
+                type: string
+              type: array
+          type: object
+          required:
+            - commission
+            - users
+        measurementTotals:
+          items:
+            properties:
+              unitsPerSection:
+                type: number
+              unit:
+                type: number
+              extras:
+                type: object
+            type: object
+            required:
+              - unitsPerSection
+              - unit
+              - extras
+          type: array
+        materialTotals:
+          items:
+            properties:
+              unitsPerSection:
+                type: number
+              unit:
+                type: number
+              costPerUnit:
+                type: number
+              total:
+                type: number
+            type: object
+            required:
+              - unitsPerSection
+              - unit
+              - costPerUnit
+              - total
+          type: array
+        financialTotals:
+          items:
+            properties:
+              perSection:
+                type: number
+              extraPrice:
+                type: number
+              sectionItem:
+                type: number
+              total:
+                type: number
+            type: object
+            required:
+              - perSection
+              - extraPrice
+              - sectionItem
+              - total
+          type: array
+        financial:
+          enum:
+            - ACCEPTED
+            - REJECTED
+          type: string
+        alive:
+          enum:
+            - DEAD
+            - RECYCLE
+            - ACTIVE
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - legal
+        - sales
+        - measurementTotals
+        - materialTotals
+        - financialTotals
+        - financial
+        - alive
+    Product:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Product
+          type: string
+        status:
+          enum:
+            - NEW_PRODUCT
+            - PRODUCT_MEASURED
+            - PURCHASED_PRODUCT
+            - PRODUCT_COMPLETE
+            - PRODUCT_CANCELED
+          type: string
+        orderId:
+          format: uuid
+          type: string
+        vendor:
+          properties:
+            name:
+              type: string
+            id:
+              format: uuid
+              type: string
+          type: object
+          required:
+            - name
+        productType:
+          type: string
+        category:
+          type: string
+        measurements:
+          items:
+            type: object
+          type: array
+        materials:
+          items:
+            type: object
+          type: array
+        totals:
+          items:
+            type: number
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - vendor
+        - productType
+        - category
+        - measurements
+        - materials
+        - totals
+    Timeoff:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Timeoff
+          type: string
+        status:
+          enum:
+            - PENDING
+            - ACCEPTED
+            - REJECTED
+          type: string
+        department:
+          enum:
+            - Finance
+            - Marketing
+            - Production
+            - Sales
+          type: string
+        requestType:
+          enum:
+            - oneTimeRequest
+            - recurringRequest
+          type: string
+        reason:
+          enum:
+            - Vacation
+            - Personal Leave
+            - Funeral/Bereavement
+            - Jury Duty
+            - Family Reasons
+            - Medical Leave
+            - To Vote
+            - Sales (90 days)
+            - custom
+          type: string
+        customReason:
+          maxLength: 80
+          type: string
+        oneTimeRequest:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        workDays:
+          enum:
+            - Monday
+            - Tuesday
+            - Wednesday
+            - Thursday
+            - Friday
+            - Saturday
+          type: string
+        recurringRequest:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        repeatFor:
+          maxLength: 80
+          type: string
+        halfDayTime:
+          maxLength: 80
+          type: string
+        halfDayTime_2:
+          maxLength: 80
+          type: string
+        fullDay:
+          maxLength: 80
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - status
+        - department
+        - requestType
+        - reason
+        - customReason
+        - workDays
+        - repeatFor
+        - halfDayTime
+        - halfDayTime_2
+        - fullDay
+    Permission:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Permission
+          type: string
+        group:
+          format: uuid
+          type: string
+        scopes:
+          items:
+            maxLength: 80
+            type: string
+          type: array
+        records:
+          items:
+            format: uuid
+            type: string
+          type: array
+        tabs:
+          items:
+            maxLength: 80
+            type: string
+          type: array
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - scopes
+        - records
+        - tabs
+    Task:
+      properties:
+        id:
+          format: uuid
+          type: string
+        user:
+          format: uuid
+          type: string
+        type:
+          enum:
+            - Task
+          type: string
+        subType:
+          enum:
+            - Appointment
+            - Area
+            - Phone Call
+            - Meeting
+          type: string
+        appointment:
+          format: uuid
+          type: string
+        startTime:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        endTime:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        assigned:
+          items:
+            format: uuid
+            type: string
+          type: array
+        notes:
+          items:
+            format: uuid
+            type: string
+          type: array
+        GeoJSON:
+          properties:
+            type:
+              enum:
+                - Polygon
+              type: string
+            coordinates:
+              items:
+                items:
+                  type: number
+                minItems: 2
+                type: array
+              minItems: 4
+              type: array
+            bbox:
+              items:
+                type: number
+              minItems: 4
+              type: array
+          type: object
+          required:
+            - type
+            - coordinates
+        callType:
+          enum:
+            - New Lead
+            - Reschedule
+            - Rehash
+            - Survey
+          type: string
+        title:
+          maxLength: 50
+          type: string
+        description:
+          maxLength: 200
+          type: string
+        createdOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        createdBy:
+          format: uuid
+          type: string
+        updatedOn:
+          minimum: 946684800
+          maximum: 2147483646
+          type: integer
+        updatedBy:
+          format: uuid
+          type: string
+      type: object
+      required:
+        - type
+        - subType
+        - assigned
+        - GeoJSON
+        - callType
+        - title
+        - description
+    Appointment-list:
+      type: array
+      title: Appointment List Definition
+      description: This is a List of Appointment
+      items:
+        $ref: "#/components/schemas/Appointment"
+    Contract-list:
+      type: array
+      title: Contract List Definition
+      description: This is a List of Contract
+      items:
+        $ref: "#/components/schemas/Contract"
+    Corporation-list:
+      type: array
+      title: Corporation List Definition
+      description: This is a List of Corporation
+      items:
+        $ref: "#/components/schemas/Corporation"
+    Invoice-list:
+      type: array
+      title: Invoice List Definition
+      description: This is a List of Invoice
+      items:
+        $ref: "#/components/schemas/Invoice"
+    Lead-list:
+      type: array
+      title: Lead List Definition
+      description: This is a List of Lead
+      items:
+        $ref: "#/components/schemas/Lead"
+    Message-list:
+      type: array
+      title: Message List Definition
+      description: This is a List of Message
+      items:
+        $ref: "#/components/schemas/Message"
+    Note-list:
+      type: array
+      title: Note List Definition
+      description: This is a List of Note
+      items:
+        $ref: "#/components/schemas/Note"
+    Order-list:
+      type: array
+      title: Order List Definition
+      description: This is a List of Order
+      items:
+        $ref: "#/components/schemas/Order"
+    PaidTimeOff-list:
+      type: array
+      title: PaidTimeOff List Definition
+      description: This is a List of PaidTimeOff
+      items:
+        $ref: "#/components/schemas/PaidTimeOff"
+    Payment-list:
+      type: array
+      title: Payment List Definition
+      description: This is a List of Payment
+      items:
+        $ref: "#/components/schemas/Payment"
+    PayrollTotals-list:
+      type: array
+      title: PayrollTotals List Definition
+      description: This is a List of PayrollTotals
+      items:
+        $ref: "#/components/schemas/PayrollTotals"
+    Permission-list:
+      type: array
+      title: Permission List Definition
+      description: This is a List of Permission
+      items:
+        $ref: "#/components/schemas/Permission"
+    Phonecall-list:
+      type: array
+      title: Phonecall List Definition
+      description: This is a List of Phonecall
+      items:
+        $ref: "#/components/schemas/Phonecall"
+    Product-list:
+      type: array
+      title: Product List Definition
+      description: This is a List of Product
+      items:
+        $ref: "#/components/schemas/Product"
+    Residence-list:
+      type: array
+      title: Residence List Definition
+      description: This is a List of Residence
+      items:
+        $ref: "#/components/schemas/Residence"
+    Role-list:
+      type: array
+      title: Role List Definition
+      description: This is a List of Role
+      items:
+        $ref: "#/components/schemas/Role"
+    Scorecard-list:
+      type: array
+      title: Scorecard List Definition
+      description: This is a List of Scorecard
+      items:
+        $ref: "#/components/schemas/Scorecard"
+    Task-list:
+      type: array
+      title: Task List Definition
+      description: This is a List of Task
+      items:
+        $ref: "#/components/schemas/Task"
+    Timeclock-list:
+      type: array
+      title: Timeclock List Definition
+      description: This is a List of Timeclock
+      items:
+        $ref: "#/components/schemas/Timeclock"
+    Timeoff-list:
+      type: array
+      title: Timeoff List Definition
+      description: This is a List of Timeoff
+      items:
+        $ref: "#/components/schemas/Timeoff"
+    Twillio-list:
+      type: array
+      title: Twillio List Definition
+      description: This is a List of Twillio
+      items:
+        $ref: "#/components/schemas/Twillio"
+    User-list:
+      type: array
+      title: User List Definition
+      description: This is a List of User
+      items:
+        $ref: "#/components/schemas/User"
+    UserLocation-list:
+      type: array
+      title: UserLocation List Definition
+      description: This is a List of UserLocation
+      items:
+        $ref: "#/components/schemas/UserLocation"
+    Record-Request-Definition:
+      type: object
+      title: Record Request Definition
+      required:
+        - id
+        - type
+      description: This is a request to get or delete an object.
+      example:
+        type: User
+        id: recordUUID
+      properties:
+        id:
+          type: string
+          description: ID of Record
+        type:
+          type: string
+          description: Record Type

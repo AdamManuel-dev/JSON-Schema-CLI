@@ -1,0 +1,1 @@
+node schemGen.js | fx 'x => x.definitions.Timeoff' | fx 'x => x' | quicktype -l typescript --just-types --src-lang schema -o Timeoff.ts

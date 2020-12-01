@@ -1,0 +1,622 @@
+[
+  {
+    "key": "streetaddress",
+    "type": "input",
+    "templateOptions": {
+      "label": " Streetaddress",
+      "placeholder": "",
+      "description": " Streetaddress",
+      "required": true
+    }
+  },
+  {
+    "key": "city",
+    "type": "input",
+    "templateOptions": {
+      "label": " City",
+      "placeholder": "",
+      "description": " City",
+      "required": true
+    }
+  },
+  {
+    "key": "state",
+    "type": "input",
+    "templateOptions": {
+      "label": " State",
+      "placeholder": "",
+      "description": " State",
+      "required": true
+    }
+  },
+  {
+    "key": "zip",
+    "type": "input",
+    "templateOptions": {
+      "label": " Zip",
+      "placeholder": "",
+      "description": " Zip",
+      "required": true
+    }
+  },
+  {
+    "key": "buyername",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyername",
+      "placeholder": "",
+      "description": " Buyername",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerphone",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyerphone",
+      "placeholder": "",
+      "description": " Buyerphone",
+      "required": true
+    }
+  },
+  {
+    "key": "buyeremail",
+    "type": "input",
+    "templateOptions": {
+      "label": " Buyeremail",
+      "placeholder": "",
+      "description": " Buyeremail",
+      "required": true
+    }
+  },
+  {
+    "key": "buyerfinancing",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Buyerfinancing",
+      "description": " Buyerfinancing",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "decking",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Decking",
+      "description": " Decking",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wrap",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wrap",
+      "description": " Wrap",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "cedarDeck",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Cedar Deck",
+      "description": " Cedar Deck",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "2X8Joist",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 2x8 Joist",
+      "description": " 2x8 Joist",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "deckColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Deck Color",
+      "placeholder": "",
+      "description": " Deck Color",
+      "required": true
+    }
+  },
+  {
+    "key": "wrapColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Wrap Color",
+      "placeholder": "",
+      "description": " Wrap Color",
+      "required": true
+    }
+  },
+  {
+    "key": "laidStraight",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Laid Straight",
+      "description": " Laid Straight",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "2X10Joist",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 2x10 Joist",
+      "description": " 2x10 Joist",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorLaidStraight",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Laid Straight",
+      "description": " Color Laid Straight",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "vinylWrap",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Vinyl Wrap",
+      "description": " Vinyl Wrap",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "laidAtAngle",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Laid At Angle",
+      "description": " Laid At Angle",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "dogEars",
+    "type": "input",
+    "templateOptions": {
+      "label": " Dog Ears",
+      "placeholder": "",
+      "description": " Dog Ears",
+      "required": true
+    }
+  },
+  {
+    "key": "colorLaidatAngle",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Laidat Angle",
+      "description": " Color Laidat Angle",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorWhite",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color White",
+      "description": " Color White",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorTan",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Tan",
+      "description": " Color Tan",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "4X4RailingPost",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 4x4railing Post",
+      "description": " 4x4railing Post",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "elevation",
+    "type": "input",
+    "templateOptions": {
+      "label": " Elevation",
+      "placeholder": "",
+      "description": " Elevation",
+      "required": true
+    }
+  },
+  {
+    "key": "handrail",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Handrail",
+      "description": " Handrail",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wrapDeckBands",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wrap Deck Bands",
+      "description": " Wrap Deck Bands",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "6X6UpgradedRailingPost",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " 6x6upgraded Railing Post",
+      "description": " 6x6upgraded Railing Post",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "landing",
+    "type": "input",
+    "templateOptions": {
+      "label": " Landing",
+      "placeholder": "",
+      "description": " Landing",
+      "required": true
+    }
+  },
+  {
+    "key": "colorWhite",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color White",
+      "description": " Color White",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wrapBeamFront",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wrap Beam Front",
+      "description": " Wrap Beam Front",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "alumSpindles",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Alum Spindles",
+      "description": " Alum Spindles",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "stepsYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Steps Yes",
+      "description": " Steps Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "stepsNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Steps No",
+      "description": " Steps No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tapCapColor",
+    "type": "input",
+    "templateOptions": {
+      "label": " Tap Cap Color",
+      "placeholder": "",
+      "description": " Tap Cap Color",
+      "required": true
+    }
+  },
+  {
+    "key": "wrapBeamSides",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wrap Beam Sides",
+      "description": " Wrap Beam Sides",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorWhite",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color White",
+      "description": " Color White",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "colorBlack",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Color Black",
+      "description": " Color Black",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "concretePad",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Concrete Pad",
+      "description": " Concrete Pad",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "squarePickets",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Square Pickets",
+      "description": " Square Pickets",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "decorativeSpindles",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Decorative Spindles",
+      "description": " Decorative Spindles",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "wrapBeamRear",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Wrap Beam Rear",
+      "description": " Wrap Beam Rear",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "underdeckSystemYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Underdeck System Yes",
+      "description": " Underdeck System Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "underdeckSystemNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Underdeck System No",
+      "description": " Underdeck System No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "tearOff",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Tear Off",
+      "description": " Tear Off",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "alum",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Alum",
+      "description": " Alum",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "whiteSqft",
+    "type": "input",
+    "templateOptions": {
+      "label": " White S Q F T",
+      "placeholder": "",
+      "description": " White S Q F T",
+      "required": true
+    }
+  },
+  {
+    "key": "sqFt",
+    "type": "input",
+    "templateOptions": {
+      "label": " Sq F T",
+      "placeholder": "",
+      "description": " Sq F T",
+      "required": true
+    }
+  },
+  {
+    "key": "postCoversYes",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Post Covers Yes",
+      "description": " Post Covers Yes",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "postCoversNo",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Post Covers No",
+      "description": " Post Covers No",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "addNotes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Add Notes",
+      "placeholder": "",
+      "description": " Add Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "patioCoverSqft",
+    "type": "input",
+    "templateOptions": {
+      "label": " Patio Cover S Q F T",
+      "placeholder": "",
+      "description": " Patio Cover S Q F T",
+      "required": true
+    }
+  },
+  {
+    "key": "cust",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Cust",
+      "description": " Cust",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "midtown",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": " Midtown",
+      "description": " Midtown",
+      "pattern": "false",
+      "required": false
+    }
+  },
+  {
+    "key": "color",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color",
+      "placeholder": "",
+      "description": " Color",
+      "required": true
+    }
+  },
+  {
+    "key": "colorSqft",
+    "type": "input",
+    "templateOptions": {
+      "label": " Color S Q F T",
+      "placeholder": "",
+      "description": " Color S Q F T",
+      "required": true
+    }
+  },
+  {
+    "key": "addNotes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Add Notes",
+      "placeholder": "",
+      "description": " Add Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "notes",
+    "type": "input",
+    "templateOptions": {
+      "label": " Notes",
+      "placeholder": "",
+      "description": " Notes",
+      "required": true
+    }
+  },
+  {
+    "key": "totalprice",
+    "type": "input",
+    "templateOptions": {
+      "label": " Totalprice",
+      "placeholder": "",
+      "description": " Totalprice",
+      "required": true
+    }
+  },
+  {
+    "key": "downpayment",
+    "type": "input",
+    "templateOptions": {
+      "label": " Downpayment",
+      "placeholder": "",
+      "description": " Downpayment",
+      "required": true
+    }
+  },
+  {
+    "key": "unpaidbalance",
+    "type": "input",
+    "templateOptions": {
+      "label": " Unpaidbalance",
+      "placeholder": "",
+      "description": " Unpaidbalance",
+      "required": true
+    }
+  }
+]
